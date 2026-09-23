@@ -19,6 +19,7 @@ python3 -m venv .venv
 .venv/bin/uk-atlas validate-config
 .venv/bin/uk-atlas audit-panels
 .venv/bin/uk-atlas collect-fixture --output data/fixtures/vertical-slice.json
+.venv/bin/uk-atlas collect-layers-fixture --output data/fixtures/data-layers.json
 .venv/bin/uk-atlas validate-release --input data/fixtures/vertical-slice.json
 .venv/bin/uk-atlas export-frontend --input data/fixtures/vertical-slice.json
 cd frontend && npm install && npm run dev
@@ -35,9 +36,12 @@ validate-config       validate topics, outlet registry, account panel and geogra
 audit-panels          report seed/review status and language coverage warnings
 dry-run               show capped collection plan without provider calls
 collect-fixture       create a deterministic local vertical-slice archive
+collect-layers-fixture create source-separated price/weather/disruption fixtures
 collect               provider collection entry point (credentials required)
 aggregate             validate and materialise prepared serving aggregates
 check-quality         check completeness, duplicates, denominators and source status
+check-layers          check source-layer duplicates and snapshot coverage
+export-layer-parquet  write the versioned source-observation Parquet archive
 validate-release      check cross-table release IDs and aligned denominators
 sync-supabase         stage prepared rows; requires SUPABASE_DATABASE_URL to apply
 export-frontend       export a release asset consumed by the browser

@@ -11,7 +11,10 @@ cp .env.example .env
 .venv/bin/uk-atlas audit-panels
 .venv/bin/uk-atlas dry-run --start 2026-08-01 --end 2026-08-30
 .venv/bin/uk-atlas collect-fixture
+.venv/bin/uk-atlas collect-layers-fixture
 .venv/bin/uk-atlas check-quality
+.venv/bin/uk-atlas check-layers
+.venv/bin/uk-atlas export-layer-parquet
 .venv/bin/uk-atlas validate-release
 .venv/bin/uk-atlas aggregate
 .venv/bin/uk-atlas sync-supabase       # payload only unless --apply-migration is explicit

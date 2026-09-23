@@ -11,6 +11,7 @@ from pathlib import Path
 from .config import config_hash, load_config, load_political_config
 from .panel import load_account_panel, load_outlet_registry
 from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, write_json
+from .source_layers import build_layer_fixture, layer_quality_report, write_layer_parquet
 from .validation import audit_configuration, audit_release
 
 
@@ -33,8 +34,11 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("audit-panels")
     dry = sub.add_parser("dry-run"); dry.add_argument("--start", default="2026-08-01"); dry.add_argument("--end", default="2026-08-30"); dry.add_argument("--max-bytes", type=int, default=0)
     fixture = sub.add_parser("collect-fixture"); fixture.add_argument("--output", default="data/fixtures/vertical-slice.json")
+    layers_fixture = sub.add_parser("collect-layers-fixture"); layers_fixture.add_argument("--output", default="data/fixtures/data-layers.json")
     aggregate = sub.add_parser("aggregate"); aggregate.add_argument("--input", default="data/fixtures/vertical-slice.json"); aggregate.add_argument("--output", default="data/processed/quality-report.json")
     quality = sub.add_parser("check-quality"); quality.add_argument("--input", default="data/fixtures/vertical-slice.json")
+    layers_quality = sub.add_parser("check-layers"); layers_quality.add_argument("--input", default="data/fixtures/data-layers.json")
+    parquet = sub.add_parser("export-layer-parquet"); parquet.add_argument("--input", default="data/fixtures/data-layers.json"); parquet.add_argument("--output", default="data/processed/layer_observations.parquet")
     release_audit = sub.add_parser("validate-release"); release_audit.add_argument("--input", default="data/fixtures/vertical-slice.json")
     export = sub.add_parser("export-frontend"); export.add_argument("--input", default="data/fixtures/vertical-slice.json"); export.add_argument("--output", default="frontend/public/data/release.json")
     sub.add_parser("release-verify")
@@ -53,6 +57,8 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps({"status": "planned", "source": "gdelt_ngrams", "days": days, "topics": 4, "estimated_bytes_cap": args.max_bytes, "billable": False, "message": "No provider request made; use BigQuery credentials explicitly for a real capped run."}, indent=2)); return 0
     if args.command == "collect-fixture":
         path = write_json(build_fixture(), args.output); print(f"wrote {path}"); return 0
+    if args.command == "collect-layers-fixture":
+        path = write_json(build_layer_fixture(), args.output); print(f"wrote {path}"); return 0
     if args.command in {"aggregate", "check-quality"}:
         data = json.loads(Path(args.input).read_text())
         report = quality_report(data)
@@ -63,6 +69,14 @@ def main(argv: list[str] | None = None) -> int:
         report = audit_release(json.loads(Path(args.input).read_text()))
         print(json.dumps(report, indent=2))
         return 0 if report["status"] == "pass" else 1
+    if args.command == "check-layers":
+        report = layer_quality_report(json.loads(Path(args.input).read_text()))
+        print(json.dumps(report, indent=2))
+        return 0 if report["status"] == "pass" else 1
+    if args.command == "export-layer-parquet":
+        output = write_layer_parquet(json.loads(Path(args.input).read_text()), args.output)
+        print(f"wrote {output}")
+        return 0
     if args.command == "export-frontend":
         data = json.loads(Path(args.input).read_text()); path = export_frontend(data, args.output); print(f"wrote {path}"); return 0
     if args.command == "release-verify":
@@ -78,6 +92,8 @@ def main(argv: list[str] | None = None) -> int:
             "daily_attention": data.get("daily_attention", []),
             "physical_observations": data.get("physical_observations", []),
             "events": data.get("events", []),
+            "layer_observations": data.get("data_layers", []),
+            "source_snapshots": data.get("source_snapshots", []),
             "applied": bool(args.apply_migration),
         }
         output = write_json(payload, ROOT / "data/processed/supabase_payload.json")

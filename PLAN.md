@@ -22,6 +22,11 @@
    worksheet. Remaining work is T&E-owned: source access, native-speaker review,
    classifier/outlet audits, pre-registered hypotheses and approved geographies.
    Acceptance: decisions below are resolved before a published research release.
+6. **Source-layer expansion** — build the prepared observation and source-snapshot
+   contracts for prices, weather, physical hazards, disruption, markets and deferred
+   search/local feeds. Acceptance: every registered layer has units, cadence,
+   provenance, quality status and a deterministic fixture or explicit access-pending
+   state.
 
 ## Decisions still needed from T&E
 
@@ -42,3 +47,8 @@
 - 2026-09-23: Milestone 5 local readiness completed: `audit-panels`,
   `validate-release`, cross-table release-ID checks and the validation/pre-registration
   worksheet are available. External validation and access decisions remain open.
+- 2026-09-23: Milestone 6 source-layer expansion completed locally: 11 registered
+  layers, 335 source-separated fixture observations, source snapshots, CSV/JSON
+  parsers, provider request-plan adapters, unit validators, `collect-layers-fixture`
+  and `check-layers`. Official Trends and local disruption remain explicit
+  `access_pending` records.

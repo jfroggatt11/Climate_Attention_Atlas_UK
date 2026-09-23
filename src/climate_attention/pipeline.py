@@ -20,6 +20,7 @@ from .contracts import (
     utc_now,
 )
 from .panel import load_account_panel, load_outlet_registry
+from .source_layers import build_layer_fixture
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -129,18 +130,22 @@ def build_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30))
         source_url="https://firms.modaps.eosdis.nasa.gov/", release_id=release_id,
         geometry={"type": "Point", "coordinates": [-2.1, 53.0]},
     ).model_dump(mode="json"))
+    layer_data = build_layer_fixture(start, end)
+    layer_snapshots = {item["source"]: item["snapshot_id"] for item in layer_data["source_snapshots"]}
     return {
         "release": DatasetRelease(
             release_id=release_id, created_at=utc_now(), date_start=start, date_end=end,
             configuration_version="uk-pilot-v1", configuration_hash=config_sha,
-            source_snapshots={"gdelt_ngrams": "fixture-v1", "bluesky": "seed-panel-fixture-v1", "modis_mod13c2": "imported-fixture-v1", "gdacs": "fixture-v1", "firms": "fixture-v1"},
-            parquet_outputs=["data/processed/daily_attention.parquet", "data/processed/article_records.parquet"],
-            supabase_rows={"daily_attention": len(news), "article_records": len(articles), "events": len(events), "physical_observations": len(physical)},
+            source_snapshots={"gdelt_ngrams": "fixture-v1", "bluesky": "seed-panel-fixture-v1", "modis_mod13c2": "imported-fixture-v1", "gdacs": "fixture-v1", "firms": "fixture-v1", **layer_snapshots},
+            parquet_outputs=["data/processed/daily_attention.parquet", "data/processed/article_records.parquet", "data/processed/layer_observations.parquet"],
+            supabase_rows={"daily_attention": len(news), "article_records": len(articles), "events": len(events), "physical_observations": len(physical), "layer_observations": len(layer_data["observations"])},
             frontend_assets=["frontend/public/data/release.json"], status="fixture",
         ).model_dump(mode="json"),
         "daily_attention": news, "news_denominators": denominators, "articles": articles,
         "social_posts": posts, "physical_observations": physical, "events": events,
         "metadata": {"topic_count": len(topics), "panel_accounts": len(accounts), "panel_definition": "seed monitored accounts; not UK social attention", "article_denominator": "distinct captured GDELT UK news URLs"},
+        "data_layers": layer_data["observations"], "source_snapshots": layer_data["source_snapshots"],
+        "layer_definitions": layer_data["layer_definitions"],
     }
 
 

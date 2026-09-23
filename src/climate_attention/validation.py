@@ -66,7 +66,7 @@ def audit_release(data: dict[str, Any]) -> dict[str, Any]:
     if mismatched_news:
         errors.append(f"{len(mismatched_news)} GDELT rows do not align to the daily denominator")
     missing_release_ids = []
-    for collection in ("daily_attention", "social_posts", "physical_observations", "events", "articles"):
+    for collection in ("daily_attention", "social_posts", "physical_observations", "events", "articles", "data_layers"):
         for row in data.get(collection, []):
             if row.get("release_id") != release_id:
                 missing_release_ids.append(f"{collection}:{row.get('release_id')}")

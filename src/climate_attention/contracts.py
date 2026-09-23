@@ -196,6 +196,63 @@ class PhysicalObservation(Contract):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+class ObservationRecord(Contract):
+    """Provider-neutral observation for prices, weather, disruption and indices."""
+
+    schema_version: Literal[1] = 1
+    observation_id: str
+    source: str
+    series_id: str
+    metric: str
+    observed_at: date
+    geography: str = "GB"
+    geography_level: Literal["country", "nation", "region", "local_authority", "station", "market"] = "country"
+    value: float | None
+    unit: str
+    quality_status: QualityStatus = QualityStatus.observed
+    completeness: float | None = Field(default=None, ge=0, le=1)
+    revision_status: Literal["initial", "revised", "final", "not_applicable"] = "not_applicable"
+    collection_run_id: str
+    collected_at: datetime
+    release_id: str
+    metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class SourceSnapshot(Contract):
+    """Evidence that a source was checked, including gaps and provider limits."""
+
+    schema_version: Literal[1] = 1
+    source: str
+    snapshot_id: str
+    status: Literal["fixture", "available", "partial", "missing", "outage", "access_pending"]
+    observed_start: date | None = None
+    observed_end: date | None = None
+    retrieved_at: datetime
+    endpoint: str | None = None
+    request_count: int = Field(default=0, ge=0)
+    rate_limit_note: str | None = None
+    completeness: float | None = Field(default=None, ge=0, le=1)
+    notes: str
+    release_id: str
+
+
+class DataLayerDefinition(Contract):
+    """Operational registry entry for a planned or available source layer."""
+
+    schema_version: Literal[1] = 1
+    layer_id: str
+    label: str
+    provider: str
+    cadence: Literal["daily", "weekly", "monthly", "event_driven", "on_demand"]
+    geography: str
+    units: list[str] = Field(min_length=1)
+    status: Literal["fixture_ready", "adapter_ready", "access_pending", "deferred"]
+    source_url: str | None = None
+    access_requirement: str
+    independence_note: str
+    release_id: str
+
+
 class RunManifest(Contract):
     schema_version: Literal[1] = 1
     run_id: str
