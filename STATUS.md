@@ -1,9 +1,8 @@
 # Build status
 
-- **Current milestone:** 6 — source-layer expansion
-- **Last completed:** source registry and contracts for prices, weather, hazards,
-  disruption, markets, FIRMS/MODIS extensions, access-pending layers, provider
-  request plans, unit checks and atomic Parquet export
+- **Current milestone:** 6 — source-layer expansion and frontend alignment
+- **Last completed:** rebuilt the frontend around the approved screen mockup while
+  retaining the real UK administrative boundary layer and connected release data
 - **Verification commands:**
   - `.venv/bin/uk-atlas validate-config`
   - `.venv/bin/uk-atlas audit-panels`
@@ -18,6 +17,12 @@
   registered sources; 42 Python tests pass; frontend test and production
   build passed; `audit-panels` reports expected draft-language, Welsh-coverage and
   seed-panel warnings; `validate-release` passes.
+- **Frontend note:** the latest layout follows the supplied timeline/map mockup
+  structure and route map. Search, local-authority attention, custom metrics and
+  some builder controls remain labelled as planned until those datasets and
+  interactions are available. The map workspace now uses more of the desktop
+  viewport while retaining stacked controls and smaller canvas limits on narrow
+  screens.
 - **Known issues:** GDELT BigQuery, official Google Trends, production Bluesky
   Jetstream, DESNZ/ONS/HadUK-Grid/EA/rail/oil integrations and finer geography are
   intentionally deferred until T&E access and review. Seed phrases and account

@@ -52,3 +52,14 @@
   parsers, provider request-plan adapters, unit validators, `collect-layers-fixture`
   and `check-layers`. Official Trends and local disruption remain explicit
   `access_pending` records.
+- 2026-09-23: Frontend alignment pass replaced the earlier dark/sidebar pilot with
+  the approved light atlas shell and mockup structure: timeline control rows,
+  two-axis series builder, event chips, measure cards, chart/evidence split,
+  three-column UK map workspace, time controls, saved-view URLs, `/data` source
+  catalogue and source-aware `/methods` view. The prototype now uses the approved
+  route map and labels unavailable geography/feeds explicitly.
+- 2026-09-23: Applied viewport-fit tuning to the mockup-aligned frontend: capped
+  map height, reduced medium-width column sizes, and responsive map playback controls.
+- 2026-09-23: Increased the desktop map workspace width and canvas height after
+  screenshot review so the map is the dominant surface again; medium and mobile
+  breakpoints retain bounded heights and stacked controls.
