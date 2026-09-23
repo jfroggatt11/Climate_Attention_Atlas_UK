@@ -1,0 +1,10 @@
+schema_version: 1
+registry_version: uk-outlets-v1
+outlets:
+  - {outlet_id: bbc, domain: bbc.co.uk, outlet_name: BBC, country: GB, classification: public_service, reviewed: false}
+  - {outlet_id: guardian, domain: theguardian.com, outlet_name: The Guardian, country: GB, classification: national, reviewed: false}
+  - {outlet_id: reuters, domain: reuters.com, outlet_name: Reuters, country: GB, classification: national, reviewed: false}
+  - {outlet_id: ft, domain: ft.com, outlet_name: Financial Times, country: GB, classification: national, reviewed: false}
+  - {outlet_id: independent, domain: independent.co.uk, outlet_name: The Independent, country: GB, classification: national, reviewed: false}
+  - {outlet_id: itv, domain: itv.com, outlet_name: ITV News, country: GB, classification: national, reviewed: false}
+  - {outlet_id: birmingham_mail, domain: birminghammail.co.uk, outlet_name: Birmingham Mail, country: GB, classification: regional, reviewed: false}

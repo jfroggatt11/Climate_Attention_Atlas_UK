@@ -1,0 +1,8 @@
+schema_version: 1
+panel_version: uk-bluesky-seed-v1
+description: Seed panel for a narrow, explicitly labelled monitored-account measure. Review before production use.
+accounts:
+  - {account_id: te, did: did:plc:te-example, handle: transportenvironment.example, display_name: T&E (seed), category: organisation, country: GB, review_status: seed}
+  - {account_id: uk_climate_org, did: did:plc:climate-example, handle: climate-commentary.example, display_name: Climate organisation (seed), category: climate, country: GB, review_status: seed}
+  - {account_id: transport_journalist, did: did:plc:transport-example, handle: transport-journalist.example, display_name: Transport journalist (seed), category: journalist, country: GB, review_status: seed}
+  - {account_id: green_politics, did: did:plc:politics-example, handle: green-politics.example, display_name: UK politician (seed), category: politician, country: GB, review_status: seed}

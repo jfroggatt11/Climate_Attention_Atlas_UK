@@ -1,0 +1,7 @@
+schema_version: 1
+geographies:
+  - {id: GB, label: United Kingdom, level: country, supported: true}
+  - {id: ENG, label: England, level: nation, parent: GB, supported: false}
+  - {id: SCT, label: Scotland, level: nation, parent: GB, supported: false}
+  - {id: WLS, label: Wales, level: nation, parent: GB, supported: false}
+  - {id: NIR, label: Northern Ireland, level: nation, parent: GB, supported: false}
