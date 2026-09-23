@@ -17,8 +17,10 @@
    Saved views, Data and Methods routes, URL state, freshness/status metadata, chart
    evidence and export affordances. Acceptance: production build and frontend tests
    pass.
-5. **T&E handover and validation** — obtain source access, native-speaker review,
-   classifier/outlet audits, pre-register hypotheses and add approved geographies.
+5. **T&E handover and validation** — local preflight is now implemented with
+   configuration/panel audits, cross-table release checks and a pre-registration
+   worksheet. Remaining work is T&E-owned: source access, native-speaker review,
+   classifier/outlet audits, pre-registered hypotheses and approved geographies.
    Acceptance: decisions below are resolved before a published research release.
 
 ## Decisions still needed from T&E
@@ -32,3 +34,11 @@
 - Choose the official Google Trends API access path and publication terms.
 - Approve county/local-authority boundary source and unsupported-geography display.
 - Pre-register primary hypotheses, multiple-testing decisions and matched-date checks.
+
+## Progress log
+
+- 2026-09-23: Milestones 1–4 completed; the detailed Natural Earth UK boundary layer
+  replaced the schematic map shapes.
+- 2026-09-23: Milestone 5 local readiness completed: `audit-panels`,
+  `validate-release`, cross-table release-ID checks and the validation/pre-registration
+  worksheet are available. External validation and access decisions remain open.

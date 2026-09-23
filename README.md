@@ -17,7 +17,9 @@ real collection when T&E credentials and access approvals are ready.
 python3 -m venv .venv
 .venv/bin/pip install -e '.[dev]'
 .venv/bin/uk-atlas validate-config
+.venv/bin/uk-atlas audit-panels
 .venv/bin/uk-atlas collect-fixture --output data/fixtures/vertical-slice.json
+.venv/bin/uk-atlas validate-release --input data/fixtures/vertical-slice.json
 .venv/bin/uk-atlas export-frontend --input data/fixtures/vertical-slice.json
 cd frontend && npm install && npm run dev
 ```
@@ -30,11 +32,13 @@ The frontend can also be built with `cd frontend && npm run build`.
 
 ```text
 validate-config       validate topics, outlet registry, account panel and geographies
+audit-panels          report seed/review status and language coverage warnings
 dry-run               show capped collection plan without provider calls
 collect-fixture       create a deterministic local vertical-slice archive
 collect               provider collection entry point (credentials required)
 aggregate             validate and materialise prepared serving aggregates
 check-quality         check completeness, duplicates, denominators and source status
+validate-release      check cross-table release IDs and aligned denominators
 sync-supabase         stage prepared rows; requires SUPABASE_DATABASE_URL to apply
 export-frontend       export a release asset consumed by the browser
 release-verify        verify release ID, hashes and frontend asset contract

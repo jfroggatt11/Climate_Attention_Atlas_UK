@@ -11,6 +11,7 @@ from pathlib import Path
 from .config import config_hash, load_config, load_political_config
 from .panel import load_account_panel, load_outlet_registry
 from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, write_json
+from .validation import audit_configuration, audit_release
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -29,10 +30,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="uk-atlas")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate-config")
+    sub.add_parser("audit-panels")
     dry = sub.add_parser("dry-run"); dry.add_argument("--start", default="2026-08-01"); dry.add_argument("--end", default="2026-08-30"); dry.add_argument("--max-bytes", type=int, default=0)
     fixture = sub.add_parser("collect-fixture"); fixture.add_argument("--output", default="data/fixtures/vertical-slice.json")
     aggregate = sub.add_parser("aggregate"); aggregate.add_argument("--input", default="data/fixtures/vertical-slice.json"); aggregate.add_argument("--output", default="data/processed/quality-report.json")
     quality = sub.add_parser("check-quality"); quality.add_argument("--input", default="data/fixtures/vertical-slice.json")
+    release_audit = sub.add_parser("validate-release"); release_audit.add_argument("--input", default="data/fixtures/vertical-slice.json")
     export = sub.add_parser("export-frontend"); export.add_argument("--input", default="data/fixtures/vertical-slice.json"); export.add_argument("--output", default="frontend/public/data/release.json")
     sub.add_parser("release-verify")
     sync = sub.add_parser("sync-supabase"); sync.add_argument("--input", default="data/fixtures/vertical-slice.json"); sync.add_argument("--apply-migration", action="store_true")
@@ -40,6 +43,10 @@ def main(argv: list[str] | None = None) -> int:
     runs = sub.add_parser("runs"); runs.add_argument("action", choices=["inspect", "retry"])
     args = parser.parse_args(argv)
     if args.command == "validate-config": return validate_config()
+    if args.command == "audit-panels":
+        report = audit_configuration(CONFIG)
+        print(json.dumps(report, indent=2))
+        return 0 if report["status"] == "pass" else 1
     if args.command == "dry-run":
         start, end = date.fromisoformat(args.start), date.fromisoformat(args.end)
         days = (end - start).days + 1
@@ -51,6 +58,10 @@ def main(argv: list[str] | None = None) -> int:
         report = quality_report(data)
         if args.command == "aggregate": write_json(report, args.output); print(json.dumps(report, indent=2))
         else: print(json.dumps(report, indent=2))
+        return 0 if report["status"] == "pass" else 1
+    if args.command == "validate-release":
+        report = audit_release(json.loads(Path(args.input).read_text()))
+        print(json.dumps(report, indent=2))
         return 0 if report["status"] == "pass" else 1
     if args.command == "export-frontend":
         data = json.loads(Path(args.input).read_text()); path = export_frontend(data, args.output); print(f"wrote {path}"); return 0
