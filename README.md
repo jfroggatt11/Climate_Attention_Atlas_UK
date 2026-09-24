@@ -51,8 +51,9 @@ release-verify        verify release status, hashes, row counts, files and front
 runs inspect|retry    inspect or resume durable run state
 ```
 
-See [STATUS.md](STATUS.md), [PLAN.md](PLAN.md), [docs/operations.md](docs/operations.md),
+See [STATUS.md](STATUS.md), [PLAN.md](PLAN.md), [docs/LIVE_DATA_ONRAMP.md](docs/LIVE_DATA_ONRAMP.md), [docs/operations.md](docs/operations.md),
 and [docs/data-dictionary.md](docs/data-dictionary.md) for handover details. The
+Bluesky measurement choices are documented in [docs/BLUESKY_PANEL_OPTIONS.md](docs/BLUESKY_PANEL_OPTIONS.md).
 frontend deliberately labels the GDELT denominator as captured GDELT UK news and
 the social denominator as posts from monitored Bluesky accounts. “Attention” is
 not one undifferentiated scale, and the pilot makes no causal claim.

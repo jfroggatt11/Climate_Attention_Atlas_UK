@@ -1,0 +1,11 @@
+schema_version: 1
+
+# GDELT's source-country identifier is distinct from the frontend geography id.
+# Keep this mapping explicit so a live query cannot silently widen its scope.
+countries:
+  unitedkingdom:
+    label: United Kingdom
+    enabled: true
+    google_geo: GB
+    iso3: GBR
+    gdelt_ngram_label: United Kingdom

@@ -1,6 +1,6 @@
 schema_version: 1
 panel_version: uk-bluesky-seed-v1
-description: Seed panel for a narrow, explicitly labelled monitored-account measure. Review before production use.
+description: Seed panel for a narrow, explicitly labelled monitored-account measure. The country field is a review assertion, not an observed platform location. Review before production use.
 accounts:
   - {account_id: te, did: did:plc:te-example, handle: transportenvironment.example, display_name: T&E (seed), category: organisation, country: GB, review_status: seed}
   - {account_id: uk_climate_org, did: did:plc:climate-example, handle: climate-commentary.example, display_name: Climate organisation (seed), category: climate, country: GB, review_status: seed}

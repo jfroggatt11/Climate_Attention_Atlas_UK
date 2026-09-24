@@ -8,7 +8,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from .config import load_config, load_political_config, release_config_hash, release_config_hashes
+from .config import load_config, load_country_config, load_political_config, release_config_hash, release_config_hashes
 from .panel import load_account_panel, load_outlet_registry
 from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, release_content_hash, write_json
 from .source_layers import build_layer_fixture, layer_quality_report, write_layer_parquet
@@ -21,9 +21,10 @@ ROOT = Path(__file__).resolve().parents[2]
 def validate_config() -> int:
     topics = load_config(CONFIG / "topics.uk-pilot.yaml")
     political = load_political_config(CONFIG / "political_signals.uk-pilot.yaml")
+    countries = load_country_config(CONFIG / "countries.uk-pilot.yaml")
     outlets = load_outlet_registry(CONFIG / "outlet_registry.yaml")
     accounts = load_account_panel(CONFIG / "account_panel.yaml")
-    print(json.dumps({"status": "pass", "topics": [topic.id for topic in topics.topics], "political_signals": len(political.signals), "outlets": len(outlets), "accounts": len(accounts), "configuration_version": "uk-pilot-v1", "configuration_hash": release_config_hash(CONFIG), "configuration_files": release_config_hashes(CONFIG)}, indent=2))
+    print(json.dumps({"status": "pass", "topics": [topic.id for topic in topics.topics], "political_signals": len(political.signals), "outlets": len(outlets), "accounts": len(accounts), "countries": [country.id for country in countries.countries], "configuration_version": "uk-pilot-v1", "configuration_hash": release_config_hash(CONFIG), "configuration_files": release_config_hashes(CONFIG)}, indent=2))
     return 0
 
 

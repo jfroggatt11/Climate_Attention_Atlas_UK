@@ -1,5 +1,8 @@
 # Pilot operations
 
+The live-data sequence and credential checklist are maintained in
+[LIVE_DATA_ONRAMP.md](LIVE_DATA_ONRAMP.md). Start there before enabling a provider.
+
 The commands below are intentionally separate so collection, analysis,
 synchronisation and publication remain observable operations.
 

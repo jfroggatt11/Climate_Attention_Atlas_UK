@@ -10,7 +10,7 @@ def test_fixture_is_byte_reproducible_and_has_release_content_hash():
     assert first == second
     assert first["release"]["created_at"] == "2026-08-31T12:00:00Z"
     assert first["release"]["content_hash"] == release_content_hash(first)
-    assert len(first["release"]["configuration_files"]) == 6
+    assert len(first["release"]["configuration_files"]) == 7
 
 
 def test_release_audit_rejects_incoherent_gdelt_arithmetic_and_social_denominator():

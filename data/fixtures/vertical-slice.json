@@ -16010,16 +16010,17 @@
   ],
   "release": {
     "configuration_files": {
-      "account_panel.yaml": "e18b958a650def5c341c7b8f22f42aa1297eb4e8ba0884ee95cb004f09ddf404",
+      "account_panel.yaml": "cd8d895fe32dd5c723259533dacd78ee6ede53cd0f85a6ccdaec9f8ab8cda26e",
+      "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
       "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "outlet_registry.yaml": "4f91724facb9785439250c022bbd17652899804fdc80c43177433e766a5f7a39",
       "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d",
       "source_layers.yaml": "cadf8b141ea30b10dc137c4f5879d957f82000218612418529de29c30e7b128b",
       "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f"
     },
-    "configuration_hash": "fe4108889a17c97a02bdf4a2853becf8dc7ad09da67961f0cf2944494f2e7ba3",
+    "configuration_hash": "777b9741d8943a11ac6a7066230dade90a5a176ce6db43a8be7e74f278c655ae",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "5a369fa4c2c9ca4f4fde84493f23fc7057ac996c1854cad8115d85decb3d1ba3",
+    "content_hash": "cab5a5f7f3410d18eb389f01f84bd23e7a670c6eaa8172154d48e1b0b1d0d374",
     "created_at": "2026-08-31T12:00:00Z",
     "date_end": "2026-08-30",
     "date_start": "2026-08-01",

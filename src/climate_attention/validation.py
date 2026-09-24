@@ -7,7 +7,7 @@ import hashlib
 from pathlib import Path
 from typing import Any
 
-from .config import load_config, load_political_config
+from .config import load_config, load_country_config, load_political_config
 from .panel import load_account_panel, load_outlet_registry
 
 
@@ -18,6 +18,7 @@ def audit_configuration(config_dir: str | Path) -> dict[str, Any]:
     config_path = Path(config_dir)
     topics = load_config(config_path / "topics.uk-pilot.yaml")
     political = load_political_config(config_path / "political_signals.uk-pilot.yaml")
+    countries = load_country_config(config_path / "countries.uk-pilot.yaml")
     outlets = load_outlet_registry(config_path / "outlet_registry.yaml")
     accounts = load_account_panel(config_path / "account_panel.yaml")
     topic_ids = {item.id for item in topics.topics}
@@ -45,6 +46,7 @@ def audit_configuration(config_dir: str | Path) -> dict[str, Any]:
         "political_signals": len(political.signals),
         "outlets": len(outlets),
         "accounts": len(accounts),
+        "countries": len(countries.countries),
         "panel_reviewed_accounts": sum(item.review_status == "reviewed" for item in accounts),
     }
 

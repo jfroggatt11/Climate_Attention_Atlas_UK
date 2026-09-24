@@ -64,6 +64,16 @@
 - 2026-09-23: Increased the desktop map workspace width and canvas height after
   screenshot review so the map is the dominant surface again; medium and mobile
   breakpoints retain bounded heights and stacked controls.
+- 2026-09-24: Added the main timeline plot switch: the existing multi-series line
+  chart can now be changed to a layered relative-intensity band view. The mode is
+  URL-persisted, uses the selected topics, marks event periods, and states that
+  each layer is scaled to its own peak.
+- 2026-09-24: Revised the layered view after review: it now has selectable News and
+  Social families, topic chips, band hover/click highlighting, compact geometry,
+  and explicit pending states for Political and Search until approved feeds exist.
+- 2026-09-24: Cleaned the timeline hierarchy after review: visualisation selection
+  moved to the top of the page, and the line axis builder and layered family/topic
+  picker are now mutually exclusive.
 - 2026-09-24: P0 release-integrity pass completed: fixture timestamps and content
   hashes are deterministic, all release configuration inputs are hashed, GDELT and
   Bluesky denominators reconcile to explicit universes, release verification checks

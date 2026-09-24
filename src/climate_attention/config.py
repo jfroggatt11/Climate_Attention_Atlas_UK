@@ -132,6 +132,7 @@ RELEASE_CONFIG_FILES = (
     "outlet_registry.yaml",
     "source_layers.yaml",
     "geographies.yaml",
+    "countries.uk-pilot.yaml",
     "political_signals.uk-pilot.yaml",
 )
 
