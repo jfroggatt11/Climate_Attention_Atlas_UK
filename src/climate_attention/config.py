@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from hashlib import sha256
+import json
 from pathlib import Path
 from typing import Any, Literal
 
@@ -119,6 +120,31 @@ def load_config(path: str | Path) -> TopicConfig:
 
 def config_hash(path: str | Path) -> str:
     return sha256(Path(path).read_bytes()).hexdigest()
+
+
+# These files define the population, topic, source and geography dimensions of
+# a release.  Keeping the list in one place prevents a release from being
+# reproducible only with its topic YAML while the monitored panel or source
+# registry changes underneath it.
+RELEASE_CONFIG_FILES = (
+    "topics.uk-pilot.yaml",
+    "account_panel.yaml",
+    "outlet_registry.yaml",
+    "source_layers.yaml",
+    "geographies.yaml",
+    "political_signals.uk-pilot.yaml",
+)
+
+
+def release_config_hashes(config_dir: str | Path) -> dict[str, str]:
+    root = Path(config_dir)
+    return {name: config_hash(root / name) for name in RELEASE_CONFIG_FILES}
+
+
+def release_config_hash(config_dir: str | Path) -> str:
+    """Hash every configuration input that can change a fixture or release."""
+    payload = json.dumps(release_config_hashes(config_dir), sort_keys=True, separators=(",", ":"))
+    return sha256(payload.encode("utf-8")).hexdigest()
 
 
 class Country(StrictModel):

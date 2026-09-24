@@ -6,10 +6,11 @@
    topic, article, social, search, event, physical, manifest and release contracts;
    validate configuration and document language gaps. Acceptance: `validate-config`
    passes and no secret/generated archive is tracked.
-2. **Reliable vertical slice** — run the deterministic capped fixture through GDELT
+2. **Reliable vertical slice** — run the deterministic capped synthetic fixture through GDELT
    news counts and aligned captured-news denominator, Bluesky monitored-panel posts,
    MODIS NDVI anomaly and one GDACS/FIRMS-style event. Acceptance: quality checks
-   pass, missing days remain missing, and release manifest is reproducible.
+   pass, missing days remain missing, denominators reconcile to captured/observed
+   universes, and the release manifest is byte-for-byte reproducible.
 3. **Serving/export layer** — materialise prepared rows, provide Supabase payloads,
    and export one release asset with a release ID. Acceptance: export contract and
    release verification pass.
@@ -63,3 +64,7 @@
 - 2026-09-23: Increased the desktop map workspace width and canvas height after
   screenshot review so the map is the dominant surface again; medium and mobile
   breakpoints retain bounded heights and stacked controls.
+- 2026-09-24: P0 release-integrity pass completed: fixture timestamps and content
+  hashes are deterministic, all release configuration inputs are hashed, GDELT and
+  Bluesky denominators reconcile to explicit universes, release verification checks
+  files/assets/row counts, and the map respects monthly NDVI periods.

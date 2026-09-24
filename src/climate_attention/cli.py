@@ -8,9 +8,9 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from .config import config_hash, load_config, load_political_config
+from .config import load_config, load_political_config, release_config_hash, release_config_hashes
 from .panel import load_account_panel, load_outlet_registry
-from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, write_json
+from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, release_content_hash, write_json
 from .source_layers import build_layer_fixture, layer_quality_report, write_layer_parquet
 from .validation import audit_configuration, audit_release
 
@@ -23,7 +23,7 @@ def validate_config() -> int:
     political = load_political_config(CONFIG / "political_signals.uk-pilot.yaml")
     outlets = load_outlet_registry(CONFIG / "outlet_registry.yaml")
     accounts = load_account_panel(CONFIG / "account_panel.yaml")
-    print(json.dumps({"status": "pass", "topics": [topic.id for topic in topics.topics], "political_signals": len(political.signals), "outlets": len(outlets), "accounts": len(accounts), "configuration_version": "uk-pilot-v1", "topic_config_hash": config_hash(CONFIG / "topics.uk-pilot.yaml")}, indent=2))
+    print(json.dumps({"status": "pass", "topics": [topic.id for topic in topics.topics], "political_signals": len(political.signals), "outlets": len(outlets), "accounts": len(accounts), "configuration_version": "uk-pilot-v1", "configuration_hash": release_config_hash(CONFIG), "configuration_files": release_config_hashes(CONFIG)}, indent=2))
     return 0
 
 
@@ -81,9 +81,45 @@ def main(argv: list[str] | None = None) -> int:
         data = json.loads(Path(args.input).read_text()); path = export_frontend(data, args.output); print(f"wrote {path}"); return 0
     if args.command == "release-verify":
         path = ROOT / "frontend/public/data/release.json"
-        data = json.loads(path.read_text()); release = data["release"]
-        required = {"release_id", "configuration_hash", "source_snapshots", "frontend_assets"}
-        missing = sorted(required - release.keys()); print(json.dumps({"status": "pass" if not missing else "fail", "release_id": release.get("release_id"), "missing": missing}, indent=2)); return 0 if not missing else 1
+        errors: list[str] = []
+        try:
+            data = json.loads(path.read_text(encoding="utf-8")); release = data["release"]
+        except (OSError, json.JSONDecodeError, KeyError) as exc:
+            print(json.dumps({"status": "fail", "errors": [f"cannot read release asset: {exc}"]}, indent=2)); return 1
+        required = {"release_id", "configuration_hash", "configuration_files", "source_snapshots", "frontend_assets", "supabase_rows", "content_hash", "status"}
+        errors.extend(f"missing release field: {field}" for field in sorted(required - release.keys()))
+        if release.get("status") not in {"fixture", "candidate", "published", "rolled_back"}:
+            errors.append("release.status is invalid")
+        elif release.get("status") != "fixture":
+            errors.append("the checked-in synthetic asset must remain status=fixture")
+        if release.get("configuration_hash") != release_config_hash(CONFIG):
+            errors.append("release configuration hash does not match the checked-in configuration")
+        if release.get("configuration_files") != release_config_hashes(CONFIG):
+            errors.append("release configuration file hashes do not match the checked-in configuration")
+        audit = audit_release(data)
+        errors.extend(audit["errors"])
+        if release.get("content_hash") != release_content_hash(data):
+            errors.append("release content hash is invalid")
+        expected_rows = {"daily_attention": "daily_attention", "article_records": "articles", "events": "events", "physical_observations": "physical_observations", "layer_observations": "data_layers"}
+        for name, collection in expected_rows.items():
+            if release.get("supabase_rows", {}).get(name) != len(data.get(collection, [])):
+                errors.append(f"row count mismatch for {name}")
+        for relative in [*release.get("parquet_outputs", []), *release.get("frontend_assets", [])]:
+            if not (ROOT / relative).exists():
+                errors.append(f"declared release output is missing: {relative}")
+        for relative in release.get("frontend_assets", []):
+            asset = ROOT / relative
+            if asset.suffix == ".json" and asset.exists():
+                try:
+                    asset_data = json.loads(asset.read_text(encoding="utf-8"))
+                    if asset_data.get("release", {}).get("release_id") != release.get("release_id"):
+                        errors.append(f"frontend asset has a different release ID: {relative}")
+                    if asset_data.get("release", {}).get("content_hash") != release.get("content_hash"):
+                        errors.append(f"frontend asset has a different content hash: {relative}")
+                except json.JSONDecodeError:
+                    errors.append(f"frontend asset is not valid JSON: {relative}")
+        report = {"status": "pass" if not errors else "fail", "release_id": release.get("release_id"), "errors": errors, "audit": audit}
+        print(json.dumps(report, indent=2)); return 0 if not errors else 1
     if args.command == "sync-supabase":
         data = json.loads(Path(args.input).read_text())
         payload = {

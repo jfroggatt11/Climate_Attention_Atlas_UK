@@ -128,6 +128,8 @@ class DailyNewsDenominator(Contract):
     source: Literal["gdelt_ngrams"] = "gdelt_ngrams"
     geography: str = "GB"
     captured_article_count: int = Field(ge=0)
+    captured_url_manifest: dict[str, Any]
+    capture_universe_hash: str = Field(min_length=12)
     definition: str = "distinct captured GDELT UK news URLs"
     quality_status: QualityStatus = QualityStatus.observed
     release_id: str
@@ -277,12 +279,14 @@ class DatasetRelease(Contract):
     date_end: date
     configuration_version: str
     configuration_hash: str
+    configuration_files: dict[str, str] = Field(default_factory=dict)
     source_snapshots: dict[str, str]
     parquet_outputs: list[str]
     supabase_rows: dict[str, int]
     frontend_assets: list[str]
     status: Literal["fixture", "candidate", "published", "rolled_back"] = "fixture"
     methodology_note: str = "Associations and timing are exploratory; this release does not establish causality."
+    content_hash: str = ""
 
 
 def utc_now() -> datetime:

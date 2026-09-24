@@ -39,9 +39,9 @@ def _days(start: date, end: date) -> Iterable[date]:
         current += timedelta(days=1)
 
 
-def load_layer_registry(path: str | Path = ROOT / "config/source_layers.yaml") -> list[DataLayerDefinition]:
+def load_layer_registry(path: str | Path = ROOT / "config/source_layers.yaml", *, release_id: str = RELEASE_ID) -> list[DataLayerDefinition]:
     document = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
-    return [DataLayerDefinition.model_validate({**item, "release_id": RELEASE_ID}) for item in document.get("layers", [])]
+    return [DataLayerDefinition.model_validate({**item, "release_id": release_id}) for item in document.get("layers", [])]
 
 
 def parse_csv_observations(
@@ -102,7 +102,7 @@ def parse_json_observations(
     return result
 
 
-def build_layer_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30)) -> dict[str, Any]:
+def build_layer_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30), *, release_id: str = RELEASE_ID, run_id: str = RUN_ID) -> dict[str, Any]:
     """Build source-separated records for every layer that can be prepared locally."""
     observations: list[dict[str, Any]] = []
     snapshots: list[dict[str, Any]] = []
@@ -114,8 +114,8 @@ def build_layer_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8
             observation_id=f"{source}_{series}_{day.isoformat()}", source=source, series_id=series,
             metric=metric, observed_at=day, geography=geography, geography_level=geography_level,
             value=value, unit=unit, quality_status=status or (QualityStatus.observed if value is not None else QualityStatus.missing),
-            completeness=completeness, revision_status=revision, collection_run_id=RUN_ID,
-            collected_at=_dt(day, 14), release_id=RELEASE_ID, metadata=metadata or {},
+            completeness=completeness, revision_status=revision, collection_run_id=run_id,
+            collected_at=_dt(day, 14), release_id=release_id, metadata=metadata or {},
         ).model_dump(mode="json"))
 
     for index, day in enumerate(_days(start, end)):
@@ -137,7 +137,7 @@ def build_layer_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8
     add("google_trends_official", "climate_change", "search_interest", "index_0_100", start, None, status=QualityStatus.unsupported, completeness=0.0, metadata={"reason": "official API access pending"})
     add("local_disruption", "approved_local_feed", "incident_count", "incidents", start, None, status=QualityStatus.unsupported, completeness=0.0, geography="GB", metadata={"reason": "local feed inventory pending"})
 
-    for definition in load_layer_registry():
+    for definition in load_layer_registry(release_id=release_id):
         layer_rows = [row for row in observations if row["source"] == definition.layer_id]
         observed = [row for row in layer_rows if row["value"] is not None]
         statuses = {row["quality_status"] for row in layer_rows}
@@ -150,12 +150,12 @@ def build_layer_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8
             observed_end=max((row["observed_at"] for row in layer_rows), default=None), retrieved_at=_dt(end, 16),
             endpoint=definition.source_url, request_count=0, rate_limit_note="Fixture; no provider request made.",
             completeness=round(len(observed) / len(layer_rows), 3) if layer_rows else 0.0,
-            notes=definition.access_requirement, release_id=RELEASE_ID,
+            notes=definition.access_requirement, release_id=release_id,
         ).model_dump(mode="json"))
     return {
-        "schema_version": 1, "release_id": RELEASE_ID, "run_id": RUN_ID,
+        "schema_version": 1, "release_id": release_id, "run_id": run_id,
         "observations": observations, "source_snapshots": snapshots,
-        "layer_definitions": [item.model_dump(mode="json") for item in load_layer_registry()],
+        "layer_definitions": [item.model_dump(mode="json") for item in load_layer_registry(release_id=release_id)],
     }
 
 

@@ -12,6 +12,7 @@
   - `.venv/bin/uk-atlas check-layers --input data/fixtures/data-layers.json`
   - `.venv/bin/uk-atlas validate-release --input data/fixtures/vertical-slice.json`
   - `.venv/bin/uk-atlas export-frontend --input data/fixtures/vertical-slice.json`
+  - `.venv/bin/uk-atlas release-verify`
   - `cd frontend && npm test && npm run build`
 - **Latest verification:** source-layer fixture contains 335 observations across 11
   registered sources; 42 Python tests pass; frontend test and production
@@ -31,4 +32,6 @@
   preserve the same contracts and snapshots, review the account panel and topic
   language coverage, then run capped live refreshes before publication.
 
-The release asset uses `uk-atlas-fixture-2026-09-23` and is clearly marked fixture.
+The release asset is a deterministic synthetic fixture identified by its date range
+(`uk-atlas-fixture-2026-08-01-2026-08-30`) and is clearly marked `fixture`; it must
+not be treated as a research release.

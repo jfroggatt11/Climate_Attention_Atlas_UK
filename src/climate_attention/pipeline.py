@@ -8,7 +8,7 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from .config import config_hash, load_config
+from .config import load_config, release_config_hash, release_config_hashes
 from .contracts import (
     ArticleRecord,
     DatasetRelease,
@@ -17,7 +17,6 @@ from .contracts import (
     EventRecord,
     PhysicalObservation,
     SocialPost,
-    utc_now,
 )
 from .panel import load_account_panel, load_outlet_registry
 from .source_layers import build_layer_fixture
@@ -29,6 +28,16 @@ CONFIG = ROOT / "config"
 
 def _stable(value: str) -> str:
     return hashlib.sha256(value.encode()).hexdigest()[:12]
+
+
+def release_content_hash(data: dict[str, Any]) -> str:
+    """Hash release content without making the hash field self-referential."""
+    import copy
+
+    payload = copy.deepcopy(data)
+    payload.setdefault("release", {})["content_hash"] = ""
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
 
 
 def _dt(day: date, hour: int = 12) -> datetime:
@@ -47,9 +56,10 @@ def build_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30))
     topic_cfg = load_config(CONFIG / "topics.uk-pilot.yaml")
     outlets = load_outlet_registry(CONFIG / "outlet_registry.yaml")
     accounts = load_account_panel(CONFIG / "account_panel.yaml")
-    config_sha = config_hash(CONFIG / "topics.uk-pilot.yaml")
-    run_id = "fixture-run-2026-09-23"
-    release_id = "uk-atlas-fixture-2026-09-23"
+    config_sha = release_config_hash(CONFIG)
+    configuration_files = release_config_hashes(CONFIG)
+    run_id = f"fixture-run-{start.isoformat()}-{end.isoformat()}"
+    release_id = f"uk-atlas-fixture-{start.isoformat()}-{end.isoformat()}"
     topics = [
         (topic.id, topic.label, [p.text for p in topic.ngram_phrases[:3]])
         for topic in topic_cfg.topics
@@ -62,20 +72,28 @@ def build_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30))
     events: list[dict[str, Any]] = []
     for index, day in enumerate(_date_range(start, end)):
         denominator = 880 + (index * 17) % 140
+        capture_seed = f"gdelt-captured-url:{day}"
+        captured_url_hashes = [_stable(f"{capture_seed}:{item}") for item in range(denominator)]
+        capture_universe_hash = hashlib.sha256(",".join(captured_url_hashes).encode("utf-8")).hexdigest()
         denominators.append(DailyNewsDenominator(
-            date=day, captured_article_count=denominator, release_id=release_id
+            date=day, captured_article_count=denominator,
+            captured_url_manifest={"algorithm": "sha256-truncated-12", "seed": capture_seed, "count": denominator},
+            capture_universe_hash=capture_universe_hash, release_id=release_id
         ).model_dump(mode="json"))
         for topic_index, (topic_id, label, phrases) in enumerate(topics):
             # A smooth deterministic series with an event-linked bump, useful for UI smoke tests.
             base = 24 + topic_index * 11 + (index * (topic_index + 3)) % 22
             bump = 32 if 12 <= index <= 15 and topic_id in {"climate_change", "clean_transport"} else 0
             count = base + bump
+            matched_url_start = (topic_index * 97) % denominator
             news.append(DailyAttention(
                 date=day, source="gdelt_ngrams", topic_id=topic_id, measure="share",
                 value=round(count / denominator, 5), unit="share_of_captured_gdelt_news",
                 denominator=denominator, denominator_definition="distinct captured GDELT UK news URLs",
                 completeness=1.0, observed_at=_dt(day), collected_at=_dt(day, 13), release_id=release_id,
-                metadata={"raw_article_count": count, "source_scope": "UK publishing geography"},
+                metadata={"raw_article_count": count, "source_scope": "UK publishing geography",
+                          "capture_universe_hash": capture_universe_hash,
+                          "matched_url_range": {"start": matched_url_start, "count": count}},
             ).model_dump(mode="json"))
             if index % 3 != 0:  # sparse article evidence sample, while daily totals remain complete
                 article_id = f"art_{_stable(f'{day}-{topic_id}')}"
@@ -89,34 +107,39 @@ def build_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30))
                     configuration_version="uk-pilot-v1", collection_run_id=run_id, observed_at=_dt(day),
                     collected_at=_dt(day, 13), release_id=release_id,
                 ).model_dump(mode="json"))
-        # Bluesky is a separate monitored-panel denominator, never mixed with news.
-        panel_total = 18 + index % 5
-        for account_index, account in enumerate(accounts[: min(len(accounts), 3)]):
+        # Bluesky is a separate monitored-panel denominator, calculated from the
+        # posts actually observed for this day rather than a fabricated total.
+        day_posts: list[dict[str, Any]] = []
+        for account_index, account in enumerate(accounts):
             if (index + account_index) % 2 == 0:
                 topic_id = topics[(index + account_index) % len(topics)][0]
-                posts.append(SocialPost(
+                day_posts.append(SocialPost(
                     post_id=f"post_{_stable(f'{day}-{account.account_id}')}", account_did=account.did,
                     handle=account.handle, post_uri=f"at://{account.did}/app.bsky.feed.post/{_stable(str(day))}",
                     posted_at=_dt(day, 9 + account_index), text=f"Fixture post about {topic_id.replace('_', ' ')}",
                     topic_ids=[topic_id], cursor=f"cursor-{day.isoformat()}", collection_run_id=run_id,
                     release_id=release_id,
                 ).model_dump(mode="json"))
+        posts.extend(day_posts)
+        panel_total = len(day_posts)
+        panel_post_ids = [post["post_id"] for post in day_posts]
         for topic_index, (topic_id, _, _) in enumerate(topics):
-            topic_posts = sum(topic_id in post["topic_ids"] for post in posts if post["posted_at"].startswith(day.isoformat()))
+            topic_posts = sum(topic_id in post["topic_ids"] for post in day_posts)
             news.append(DailyAttention(
                 date=day, source="bluesky", topic_id=topic_id, measure="share",
                 value=round(topic_posts / panel_total, 5), unit="share_of_monitored_panel_posts",
                 denominator=panel_total, denominator_definition="posts from monitored Bluesky accounts",
                 completeness=0.85, observed_at=_dt(day), collected_at=_dt(day, 14), release_id=release_id,
-                metadata={"raw_post_count": topic_posts, "panel_accounts": len(accounts), "panel_status": "seed"},
+                metadata={"raw_post_count": topic_posts, "panel_accounts": len(accounts), "panel_status": "seed",
+                          "observed_panel_post_ids": panel_post_ids},
             ).model_dump(mode="json"))
         # Monthly MODIS is represented once in this compact demo; only first day of month is used here.
         if day.day == 1:
             physical.append(PhysicalObservation(
-                observation_id="modis_gb_2026-08", source="modis_mod13c2", metric="ndvi_anomaly",
+                observation_id=f"modis_gb_{day.isoformat()}", source="modis_mod13c2", metric="ndvi_anomaly",
                 observed_at=day, value=0.08, unit="index_anomaly", baseline_start_year=2001,
                 baseline_end_year=2020, valid_area_fraction=0.91, release_id=release_id,
-                metadata={"product": "MOD13C2.061", "period": "2026-08", "geography_definition": "UK country-scale 0.05-degree valid cells"},
+                metadata={"product": "MOD13C2.061", "period": day.strftime("%Y-%m"), "geography_definition": "UK country-scale 0.05-degree valid cells", "data_status": "synthetic_fixture"},
             ).model_dump(mode="json"))
     events.append(EventRecord(
         event_id="gdacs-uk-demo-01", source="gdacs", event_type="wildfire", name="UK summer wildfire context",
@@ -130,16 +153,17 @@ def build_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30))
         source_url="https://firms.modaps.eosdis.nasa.gov/", release_id=release_id,
         geometry={"type": "Point", "coordinates": [-2.1, 53.0]},
     ).model_dump(mode="json"))
-    layer_data = build_layer_fixture(start, end)
+    layer_data = build_layer_fixture(start, end, release_id=release_id, run_id=f"layers-{run_id}")
     layer_snapshots = {item["source"]: item["snapshot_id"] for item in layer_data["source_snapshots"]}
-    return {
+    data = {
         "release": DatasetRelease(
-            release_id=release_id, created_at=utc_now(), date_start=start, date_end=end,
-            configuration_version="uk-pilot-v1", configuration_hash=config_sha,
+            release_id=release_id, created_at=_dt(end + timedelta(days=1)), date_start=start, date_end=end,
+            configuration_version="uk-pilot-v1", configuration_hash=config_sha, configuration_files=configuration_files,
             source_snapshots={"gdelt_ngrams": "fixture-v1", "bluesky": "seed-panel-fixture-v1", "modis_mod13c2": "imported-fixture-v1", "gdacs": "fixture-v1", "firms": "fixture-v1", **layer_snapshots},
-            parquet_outputs=["data/processed/daily_attention.parquet", "data/processed/article_records.parquet", "data/processed/layer_observations.parquet"],
+            parquet_outputs=[],
             supabase_rows={"daily_attention": len(news), "article_records": len(articles), "events": len(events), "physical_observations": len(physical), "layer_observations": len(layer_data["observations"])},
             frontend_assets=["frontend/public/data/release.json"], status="fixture",
+            methodology_note="Associations and timing are exploratory; this synthetic fixture is an engineering demonstration and does not establish causality.",
         ).model_dump(mode="json"),
         "daily_attention": news, "news_denominators": denominators, "articles": articles,
         "social_posts": posts, "physical_observations": physical, "events": events,
@@ -147,6 +171,8 @@ def build_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8, 30))
         "data_layers": layer_data["observations"], "source_snapshots": layer_data["source_snapshots"],
         "layer_definitions": layer_data["layer_definitions"],
     }
+    data["release"]["content_hash"] = release_content_hash(data)
+    return data
 
 
 def write_json(data: dict[str, Any], path: str | Path) -> Path:

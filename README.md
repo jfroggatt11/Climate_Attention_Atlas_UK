@@ -5,11 +5,12 @@ attention moves alongside events and physical conditions. The pilot keeps news,
 monitored-account social posts, search interest and MODIS vegetation observations
 as separate measures with explicit units and denominators.
 
-The first reliable vertical slice is local and reproducible: a capped GDELT-shaped
-fixture, a monitored Bluesky panel fixture, refreshed UK MODIS NDVI anomaly records,
-and one GDACS/FIRMS-style event layer are validated, aggregated and exported to the
-React frontend. The provider adapters copied from the MVP remain available for
-real collection when T&E credentials and access approvals are ready.
+The current release is a local, reproducible **synthetic fixture / engineering
+demonstration**: formulaic GDELT-shaped news, observed-count Bluesky panel rows,
+a single synthetic UK MODIS NDVI anomaly record, and GDACS/FIRMS-shaped events are
+validated and exported to the React frontend. It is not evidence of UK attention or
+physical conditions. Provider adapters remain available for real collection when
+T&E credentials and access approvals are ready.
 
 ## Quick start
 
@@ -22,6 +23,7 @@ python3 -m venv .venv
 .venv/bin/uk-atlas collect-layers-fixture --output data/fixtures/data-layers.json
 .venv/bin/uk-atlas validate-release --input data/fixtures/vertical-slice.json
 .venv/bin/uk-atlas export-frontend --input data/fixtures/vertical-slice.json
+.venv/bin/uk-atlas release-verify
 cd frontend && npm install && npm run dev
 ```
 
@@ -45,7 +47,7 @@ export-layer-parquet  write the versioned source-observation Parquet archive
 validate-release      check cross-table release IDs and aligned denominators
 sync-supabase         stage prepared rows; requires SUPABASE_DATABASE_URL to apply
 export-frontend       export a release asset consumed by the browser
-release-verify        verify release ID, hashes and frontend asset contract
+release-verify        verify release status, hashes, row counts, files and frontend asset
 runs inspect|retry    inspect or resume durable run state
 ```
 
