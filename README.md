@@ -54,6 +54,10 @@ cd frontend && npm run dev
 # MODIS requires an Earthdata token and a sovereign-country GeoJSON:
 .venv/bin/uk-atlas collect-modis-ndvi-live --start 2025-01-01 --end 2025-12-31 \
   --boundary-geojson data/live/boundaries/ne_10m_admin_0_countries.geojson
+.venv/bin/uk-atlas collect-modis-burned-area-live --start 2025-01-01 --end 2025-12-31 \
+  --boundary-geojson data/live/boundaries/ne_10m_admin_0_countries.geojson
+.venv/bin/uk-atlas collect-economics-live --start 2025-01-01 --end 2026-09-25 \
+  --symbols TSLA BP.L SHEL.L
 ```
 
 ## Operational command boundaries
@@ -67,9 +71,15 @@ collect-layers-fixture create source-separated price/weather/disruption fixtures
 collect               provider collection entry point (credentials required)
 collect-haduk-live    download and normalize Met Office country temperature
 collect-modis-ndvi-live  download monthly NASA country greenness (Earthdata)
+collect-modis-burned-area-live  collect NASA MCD64 burned area via AppEEARS
 collect-gdacs-live    collect free historical GDACS event context
 collect-ea-floods-live snapshot the current England Environment Agency feed
 collect-firms-live     collect NASA FIRMS country-day fire detections
+collect-desnz-live     collect official weekly road fuel prices
+collect-ons-cpi-live   collect official ONS CPI time series
+collect-brent-live     collect public FRED Brent spot prices
+collect-market-live    collect exploratory Tesla/BP/Shell closes
+collect-economics-live collect the economic bundle together
 aggregate             validate and materialise prepared serving aggregates
 check-quality         check completeness, duplicates, denominators and source status
 check-layers          check source-layer duplicates and snapshot coverage

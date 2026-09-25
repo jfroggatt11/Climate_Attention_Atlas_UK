@@ -66,6 +66,36 @@ backfill:
 uv run uk-atlas collect-ea-floods-live
 ```
 
+## Climate completion: burned area
+
+The old Wildfire-Trends implementation is retained in `satellite.py`. The
+Atlas now exposes the MCD64A1 Burn_Date path through AppEEARS. It uses the
+Earthdata username/password, submits a bounded UK task, keeps the task ID and
+native rasters under the ignored live directory, and emits daily hectares:
+
+```bash
+uv run uk-atlas collect-modis-burned-area-live \
+  --start 2025-01-01 --end 2025-12-31 \
+  --boundary-geojson data/live/boundaries/ne_10m_admin_0_countries.geojson
+```
+
+Burned area is separate from NDVI, FIRMS detections and GDACS events.
+
+## Economic context
+
+The no-key public feeds can be refreshed together:
+
+```bash
+uv run uk-atlas collect-economics-live \
+  --start 2025-01-01 --end 2026-09-25 \
+  --symbols TSLA BP.L SHEL.L
+```
+
+This collects official DESNZ weekly pump prices, ONS CPI, FRED Brent spot
+prices, and exploratory daily closes for Tesla, BP and Shell. The stock adapter
+is kept as market context and must be checked for redistribution terms before
+publication. It does not imply that company prices measure public attention.
+
 ## Review before release
 
 Inspect the bundle and snapshot first, then transform approved records into the
@@ -83,6 +113,6 @@ uv run uk-atlas validate-live-candidate
 
 The candidate is the frontend default. Add `?release=candidate` explicitly if
 needed; add `?release=fixture` to view the synthetic interface fixture. It
-contains real temperature, raw NDVI, FIRMS and GDACS snapshots, but the browser
-does not refresh them. News and Bluesky are empty in this candidate until their
-live collection and denominator review is complete.
+contains real temperature, raw NDVI, MCD64, FIRMS, GDACS and economic snapshots,
+but the browser does not refresh them. News and Bluesky are empty in this
+candidate until their live collection and denominator review is complete.

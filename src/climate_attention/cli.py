@@ -20,8 +20,10 @@ from .live import (
     collect_gdacs,
     collect_haduk_country,
     collect_modis_ndvi,
+    collect_modis_burned_area,
     load_live_countries,
 )
+from .economic import collect_brent, collect_desnz_fuel_prices, collect_market_prices, collect_ons_cpi
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -83,6 +85,13 @@ def main(argv: list[str] | None = None) -> int:
     modis.add_argument("--output", default="data/live/modis_mod13c2/bundle.json")
     modis.add_argument("--raw-dir", default="data/live/modis_mod13c2/raw")
     modis.add_argument("--countries", default="config/countries.uk-pilot.yaml")
+    burned = sub.add_parser("collect-modis-burned-area-live", help="collect NASA MODIS MCD64 burned area via AppEEARS")
+    burned.add_argument("--start", required=True)
+    burned.add_argument("--end", required=True)
+    burned.add_argument("--boundary-geojson", default="data/live/boundaries/ne_10m_admin_0_countries.geojson")
+    burned.add_argument("--output", default="data/live/modis_burned_area/bundle.json")
+    burned.add_argument("--raw-dir", default="data/live/modis_burned_area/raw")
+    burned.add_argument("--countries", default="config/countries.uk-pilot.yaml")
     firms = sub.add_parser("collect-firms-live", help="collect NASA FIRMS country-day fire detections")
     firms.add_argument("--start", required=True)
     firms.add_argument("--end", required=True)
@@ -90,6 +99,26 @@ def main(argv: list[str] | None = None) -> int:
     firms.add_argument("--cache-dir", default="data/live/firms/raw")
     firms.add_argument("--boundary-geojson", default="data/live/firms/boundaries/ne_50m_admin_0_countries.geojson")
     firms.add_argument("--countries", default="config/countries.uk-pilot.yaml")
+    desnz = sub.add_parser("collect-desnz-live", help="collect official weekly UK road fuel prices")
+    desnz.add_argument("--output", default="data/live/desnz_fuel_prices/bundle.json")
+    desnz.add_argument("--raw-dir", default="data/live/desnz_fuel_prices/raw")
+    ons = sub.add_parser("collect-ons-cpi-live", help="collect official ONS CPI time series")
+    ons.add_argument("--output", default="data/live/ons_cost_pressures/bundle.json")
+    ons.add_argument("--raw-dir", default="data/live/ons_cost_pressures/raw")
+    brent = sub.add_parser("collect-brent-live", help="collect public FRED Brent spot prices")
+    brent.add_argument("--output", default="data/live/brent_oil/bundle.json")
+    brent.add_argument("--raw-dir", default="data/live/brent_oil/raw")
+    market = sub.add_parser("collect-market-live", help="collect exploratory daily stock closes")
+    market.add_argument("--symbols", nargs="+", default=["TSLA", "BP.L", "SHEL.L"])
+    market.add_argument("--start")
+    market.add_argument("--end")
+    market.add_argument("--output", default="data/live/market_prices/bundle.json")
+    market.add_argument("--raw-dir", default="data/live/market_prices/raw")
+    economics = sub.add_parser("collect-economics-live", help="collect all key public economic series")
+    economics.add_argument("--symbols", nargs="+", default=["TSLA", "BP.L", "SHEL.L"])
+    economics.add_argument("--start")
+    economics.add_argument("--end")
+    economics.add_argument("--output-dir", default="data/live")
     runs = sub.add_parser("runs"); runs.add_argument("action", choices=["inspect", "retry"])
     args = parser.parse_args(argv)
     if args.command == "validate-config": return validate_config()
@@ -204,9 +233,29 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "collect-modis-ndvi-live":
         output = collect_modis_ndvi(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), raw_dir=Path(args.raw_dir), boundary_geojson=Path(args.boundary_geojson), countries=load_live_countries(Path(args.countries)))
         print(f"wrote {output}"); return 0
+    if args.command == "collect-modis-burned-area-live":
+        output = collect_modis_burned_area(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), raw_dir=Path(args.raw_dir), boundary_geojson=Path(args.boundary_geojson), countries=load_live_countries(Path(args.countries)))
+        print(f"wrote {output}"); return 0
     if args.command == "collect-firms-live":
         output = collect_firms(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), cache_dir=Path(args.cache_dir), boundary_geojson=Path(args.boundary_geojson), countries=load_live_countries(Path(args.countries)))
         print(f"wrote {output}"); return 0
+    if args.command == "collect-desnz-live":
+        output = collect_desnz_fuel_prices(output=Path(args.output), raw_dir=Path(args.raw_dir)); print(f"wrote {output}"); return 0
+    if args.command == "collect-ons-cpi-live":
+        output = collect_ons_cpi(output=Path(args.output), raw_dir=Path(args.raw_dir)); print(f"wrote {output}"); return 0
+    if args.command == "collect-brent-live":
+        output = collect_brent(output=Path(args.output), raw_dir=Path(args.raw_dir)); print(f"wrote {output}"); return 0
+    if args.command == "collect-market-live":
+        output = collect_market_prices(symbols=args.symbols, output=Path(args.output), raw_dir=Path(args.raw_dir), start=date.fromisoformat(args.start) if args.start else None, end=date.fromisoformat(args.end) if args.end else None); print(f"wrote {output}"); return 0
+    if args.command == "collect-economics-live":
+        output_dir = Path(args.output_dir)
+        paths = [
+            collect_desnz_fuel_prices(output=output_dir / "desnz_fuel_prices/bundle.json", raw_dir=output_dir / "desnz_fuel_prices/raw"),
+            collect_ons_cpi(output=output_dir / "ons_cost_pressures/bundle.json", raw_dir=output_dir / "ons_cost_pressures/raw"),
+            collect_brent(output=output_dir / "brent_oil/bundle.json", raw_dir=output_dir / "brent_oil/raw"),
+            collect_market_prices(symbols=args.symbols, output=output_dir / "market_prices/bundle.json", raw_dir=output_dir / "market_prices/raw", start=date.fromisoformat(args.start) if args.start else None, end=date.fromisoformat(args.end) if args.end else None),
+        ]
+        print(json.dumps({"status": "available", "bundles": [str(path) for path in paths]}, indent=2)); return 0
     if args.command == "runs":
         print(f"run action '{args.action}' is available after a provider run manifest is created"); return 0
     return 0

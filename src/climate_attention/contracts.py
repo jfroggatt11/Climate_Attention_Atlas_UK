@@ -184,7 +184,7 @@ class EventRecord(Contract):
 class PhysicalObservation(Contract):
     schema_version: Literal[1] = 1
     observation_id: str
-    source: Literal["modis_mod13c2", "modis_mcd64", "firms", "haduk_grid", "environment_agency"]
+    source: str
     metric: str
     observed_at: date
     geography: str = "GB"

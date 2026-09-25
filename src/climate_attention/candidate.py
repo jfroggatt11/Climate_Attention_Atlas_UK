@@ -16,7 +16,10 @@ from .validation import audit_release
 
 
 REQUIRED = ("haduk_grid_weather", "modis_mod13c2", "gdacs", "firms")
-OPTIONAL = ("environment_agency_alerts",)
+OPTIONAL = (
+    "environment_agency_alerts", "modis_burned_area", "desnz_fuel_prices",
+    "ons_cost_pressures", "brent_oil", "market_prices",
+)
 
 
 def _load_bundle(root: Path, source: str) -> tuple[dict[str, Any], str]:
@@ -94,6 +97,31 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
                       "note": "VIIRS detections, not distinct wildfires or burned area."},
         ).model_dump(mode="json"))
 
+    # Economic, alert and additional climate bundles use the common observation
+    # shape. Promote them into the same source-specific physical table without
+    # flattening their units or cadences into the attention series.
+    for source in OPTIONAL:
+        if source not in bundles:
+            continue
+        for row in bundles[source][0]["records"]:
+            observed_text = row.get("date") or row.get("observed_at")
+            if not observed_text:
+                continue
+            observed = date.fromisoformat(str(observed_text)[:10])
+            if not (start <= observed <= end) or row.get("value") is None:
+                continue
+            physical.append(PhysicalObservation(
+                observation_id=row.get("record_id") or f"{source}:{row.get('series_id', row.get('metric'))}:{observed}",
+                source=source,
+                metric=row.get("metric", row.get("series_id", "value")),
+                observed_at=observed,
+                geography=row.get("geography", "GB"),
+                value=float(row["value"]),
+                unit=row.get("unit", "unknown"),
+                release_id=release_id,
+                metadata={**row.get("metadata", {}), "series_id": row.get("series_id"), "source_bundle_sha256": source_hashes[source]},
+            ).model_dump(mode="json"))
+
     events = []
     for row in bundles["gdacs"][0]["records"]:
         if "GBR" not in row.get("country_iso3s", []):
@@ -116,6 +144,17 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
         {"layer_id": "firms", "label": "NASA FIRMS vegetation hotspots", "provider": "NASA FIRMS", "cadence": "daily", "geography": "GB", "units": ["detections"], "status": "adapter_ready", "source_url": "https://firms.modaps.eosdis.nasa.gov/", "access_requirement": "FIRMS MAP_KEY", "independence_note": "Satellite detections are not named fires or burned area.", "release_id": release_id},
         {"layer_id": "gdacs", "label": "GDACS major events", "provider": "GDACS", "cadence": "event_driven", "geography": "GB", "units": ["events"], "status": "adapter_ready", "source_url": "https://www.gdacs.org/", "access_requirement": "Public API", "independence_note": "Named event catalogue remains separate from attention and hotspot counts.", "release_id": release_id},
     ]
+    optional_definitions = {
+        "environment_agency_alerts": ("Environment Agency flood alerts", "Environment Agency", "event_driven", "alerts"),
+        "modis_burned_area": ("MODIS burned area", "NASA Earthdata AppEEARS", "monthly", "hectares"),
+        "desnz_fuel_prices": ("DESNZ road fuel prices", "Department for Energy Security and Net Zero", "weekly", "pence_per_litre"),
+        "ons_cost_pressures": ("ONS consumer prices", "Office for National Statistics", "monthly", "index_2015_100"),
+        "brent_oil": ("Brent crude spot price", "FRED / U.S. EIA", "daily", "usd_per_barrel"),
+        "market_prices": ("Company share prices", "Yahoo Finance chart endpoint", "daily", "local_currency_per_share"),
+    }
+    for source, (label, provider, cadence, unit) in optional_definitions.items():
+        if source in bundles:
+            definitions.append({"layer_id": source, "label": label, "provider": provider, "cadence": cadence, "geography": "market" if source in {"brent_oil", "market_prices"} else "GB", "units": [unit], "status": "adapter_ready", "source_url": bundles[source][0].get("source_snapshot", {}).get("endpoint"), "access_requirement": "Provider access and terms review", "independence_note": "Source-specific context retained separately from attention.", "release_id": release_id})
     from .contracts import DataLayerDefinition
     definitions = [DataLayerDefinition.model_validate(item).model_dump(mode="json") for item in definitions]
     snapshots_by_source = {item["source"]: item["snapshot_id"] for item in snapshots}
@@ -128,7 +167,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
             supabase_rows={"daily_attention": 0, "article_records": 0, "events": len(events),
                            "physical_observations": len(physical), "layer_observations": len(weather)},
             frontend_assets=["frontend/public/data/candidate.json"], status="candidate",
-            methodology_note="Physical context only. News and Bluesky attention are unavailable in this candidate. Raw NDVI is not an anomaly; FIRMS detections are not wildfires. Associations do not establish causality.",
+            methodology_note="Physical and economic context only. News and Bluesky attention are unavailable in this candidate. Raw NDVI is not an anomaly; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
         ).model_dump(mode="json"),
         "daily_attention": [], "news_denominators": [], "articles": [], "social_posts": [],
         "physical_observations": physical, "events": events, "data_layers": weather,

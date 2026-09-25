@@ -351,6 +351,69 @@ def collect_modis_ndvi(*, start: date, end: date, output: Path, raw_dir: Path,
     return _write_bundle(output, source="modis_mod13c2", records=records, snapshot=snapshot, provider_metadata={"granules": granules})
 
 
+def collect_modis_burned_area(*, start: date, end: date, output: Path, raw_dir: Path,
+                              boundary_geojson: Path, countries: list[Country]) -> Path:
+    """Submit an authenticated AppEEARS MCD64A1 Burn_Date task and normalize UK hectares.
+
+    AppEEARS is asynchronous, so the task ID is retained in the bundle metadata.
+    The raw rasters remain in the ignored live directory for audit and reruns.
+    """
+    from .geography import load_country_boundaries
+    from .satellite import (
+        AppEEARSClient,
+        MODIS_BURNED_AREA_PRODUCT,
+        MODIS_BURN_DATE_LAYER,
+        build_appeears_area_task,
+        load_aid_map,
+        parse_mcd64_burn_date_raster,
+    )
+    username = _dotenv_value("EARTHDATA_USERNAME")
+    password = _dotenv_value("EARTHDATA_PASSWORD")
+    if not username or not password:
+        raise RuntimeError("MCD64 AppEEARS collection requires EARTHDATA_USERNAME and EARTHDATA_PASSWORD")
+    boundaries = load_country_boundaries(ensure_country_boundaries(boundary_geojson), countries)
+    task, aid_map = build_appeears_area_task(
+        countries=countries, boundaries=boundaries, start=start, end=end,
+        task_name=f"uk-atlas-mcd64-{start.isoformat()}-{end.isoformat()}",
+        product=MODIS_BURNED_AREA_PRODUCT, layer=MODIS_BURN_DATE_LAYER,
+    )
+    aid_map_path = raw_dir / "aid-map.json"
+    request_path = raw_dir / "appeears-task.json"
+    from .satellite import write_appeears_task
+    write_appeears_task(task, aid_map, request_path=request_path, aid_map_path=aid_map_path)
+    with AppEEARSClient(username, password) as client:
+        task_id = client.submit(task)
+        client.wait(task_id)
+        downloaded = client.download_support_files(task_id, raw_dir / task_id, include_burn_date_rasters=True)
+    records: list[dict[str, Any]] = []
+    aid_lookup = load_aid_map(aid_map_path)
+    for path in downloaded:
+        if "Burn_Date" not in path.name or not path.suffix.lower().endswith("tif"):
+            continue
+        for item in parse_mcd64_burn_date_raster(path, aid_map=aid_lookup):
+            if item.country_iso3 != "GBR" or not (start <= item.date <= end):
+                continue
+            records.append({
+                "record_id": item.record_id, "date": item.date.isoformat(),
+                "series_id": "uk_burned_area", "metric": "burned_area",
+                "geography": "GB", "value": item.value, "unit": "hectares",
+                "metadata": {**item.metadata, "product": item.product, "country_iso3": item.country_iso3},
+            })
+    records.sort(key=lambda row: row["date"])
+    snapshot = {
+        "source": "modis_burned_area", "snapshot_id": f"mcd64-{task_id}",
+        "release_id": f"live-mcd64-{start.isoformat()}-{end.isoformat()}",
+        "status": "available" if records else "partial",
+        "observed_start": min((row["date"] for row in records), default=None),
+        "observed_end": max((row["date"] for row in records), default=None),
+        "retrieved_at": _now().isoformat(),
+        "endpoint": "https://appeears.earthdatacloud.nasa.gov/api/",
+        "request_count": 1, "completeness": 1.0 if records else 0.0,
+        "notes": "NASA MODIS MCD64A1.061 Burn_Date native-projection rasters converted to daily UK burned hectares; zero-burn days are retained when covered.",
+    }
+    return _write_bundle(output, source="modis_burned_area", records=records, snapshot=snapshot, provider_metadata={"task_id": task_id, "downloaded_files": [str(path) for path in downloaded]})
+
+
 def collect_firms(*, start: date, end: date, output: Path, cache_dir: Path,
                   boundary_geojson: Path, countries: list[Country]) -> Path:
     """Collect NASA FIRMS vegetation-fire detections and UK country-day totals."""
