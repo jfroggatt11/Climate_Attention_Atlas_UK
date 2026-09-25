@@ -81,6 +81,8 @@ uv run uk-atlas build-live-candidate
 uv run uk-atlas validate-live-candidate
 ```
 
-The candidate is available in the frontend at `?release=candidate`. It contains
-real temperature, raw NDVI, FIRMS and GDACS data. News and Bluesky are empty in
-this candidate until their live collection and denominator review is complete.
+The candidate is the frontend default. Add `?release=candidate` explicitly if
+needed; add `?release=fixture` to view the synthetic interface fixture. It
+contains real temperature, raw NDVI, FIRMS and GDACS snapshots, but the browser
+does not refresh them. News and Bluesky are empty in this candidate until their
+live collection and denominator review is complete.

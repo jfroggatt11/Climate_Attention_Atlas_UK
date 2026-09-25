@@ -36,8 +36,9 @@ Live temperature, greenness and public event collectors are documented in
 reviewable, source-separated bundles under `data/live/` and never replace the
 fixture release automatically.
 
-Build and validate the real-data candidate, then open it with
-`http://localhost:5173/?release=candidate`:
+Build and validate the real-data candidate, then open the app. The browser now
+uses the candidate by default; add `?release=fixture` when you explicitly want
+the synthetic interface fixture:
 
 ```bash
 .venv/bin/uk-atlas build-live-candidate

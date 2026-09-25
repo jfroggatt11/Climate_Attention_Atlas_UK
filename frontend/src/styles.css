@@ -83,12 +83,13 @@
       font-size: 11px;
       white-space: nowrap;
     }
-    .atlas-app .atlas-status i {
+.atlas-app .atlas-status i {
       width: 7px;
       height: 7px;
       background: var(--atlas-green);
       border-radius: 50%;
     }
+.atlas-release-banner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 24px;border-bottom:1px solid var(--atlas-line);font-size:11px}.atlas-release-banner strong{font-size:11px}.atlas-release-banner span{color:var(--atlas-muted)}.atlas-release-banner a{margin-left:auto;color:var(--atlas-green);font-weight:700;text-decoration:none}.atlas-release-banner.candidate{background:#eef8ef}.atlas-release-banner.candidate strong{color:#236342}.atlas-release-banner.fixture{background:#fff4e5}.atlas-release-banner.fixture strong{color:#8a5b22}
     .atlas-app .atlas-content { padding: 25px; }
     .atlas-app .atlas-heading {
       display: flex;
