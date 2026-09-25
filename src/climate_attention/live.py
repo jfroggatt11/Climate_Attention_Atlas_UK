@@ -253,11 +253,12 @@ def collect_haduk_country(*, year: int, output: Path, raw_dir: Path,
         # selection explicit so a future multi-country file cannot be widened.
         for dim in variable.dims:
             if dim not in {"time", "month", "date"} and variable.sizes[dim] > 1:
-                labels = [str(value) for value in dataset[dim].values]
-                selected = next((label for label in labels if label.casefold() in {"gb", "gbr", "united kingdom", "uk"}), None)
-                if selected is None:
+                labels_coord = dataset.get("geo_region") if "geo_region" in dataset else dataset[dim]
+                labels = [str(value, "utf-8") if isinstance(value, bytes) else str(value) for value in labels_coord.values]
+                selected_index = next((index for index, label in enumerate(labels) if label.strip().casefold() in {"gb", "gbr", "united kingdom", "uk"}), None)
+                if selected_index is None:
                     raise ValueError(f"cannot identify United Kingdom in HadUK dimension {dim}: {labels}")
-                variable = variable.sel({dim: selected})
+                variable = variable.isel({dim: selected_index})
         values = variable.values.reshape(-1)
         times = dataset["time"].values if "time" in dataset else []
         if len(times) != len(values):
@@ -348,3 +349,38 @@ def collect_modis_ndvi(*, start: date, end: date, output: Path, raw_dir: Path,
         "notes": "NASA MOD13C2 v061 monthly NDVI; country means are latitude-area-weighted over valid 0.05-degree cells.",
     }
     return _write_bundle(output, source="modis_mod13c2", records=records, snapshot=snapshot, provider_metadata={"granules": granules})
+
+
+def collect_firms(*, start: date, end: date, output: Path, cache_dir: Path,
+                  boundary_geojson: Path, countries: list[Country]) -> Path:
+    """Collect NASA FIRMS vegetation-fire detections and UK country-day totals."""
+    from .geography import load_country_boundaries
+    from .sources.firms import FIRMSProvider, ensure_natural_earth_boundaries, firms_map_key
+
+    boundaries_path = boundary_geojson
+    if not boundaries_path.exists():
+        boundaries_path = ensure_natural_earth_boundaries(boundaries_path)
+    boundaries = load_country_boundaries(boundaries_path, countries)
+    with FIRMSProvider(
+        map_key=firms_map_key(),
+        source="VIIRS_SNPP_SP",
+        boundary_index=boundaries,
+        countries=countries,
+        cache_dir=cache_dir,
+    ) as provider:
+        rows, requests, totals = provider.collect(start, end)
+    records = [item.model_dump(mode="json") for item in rows]
+    snapshot = {
+        "source": "firms",
+        "snapshot_id": f"firms-{start.isoformat()}-{end.isoformat()}",
+        "release_id": f"live-firms-{start.isoformat()}-{end.isoformat()}",
+        "status": "available",
+        "observed_start": start.isoformat(),
+        "observed_end": end.isoformat(),
+        "retrieved_at": _now().isoformat(),
+        "endpoint": "https://firms.modaps.eosdis.nasa.gov/api/area/csv",
+        "request_count": len(requests),
+        "completeness": 1.0,
+        "notes": "NASA FIRMS VIIRS_SNPP_SP world-area windows; low-confidence and non-vegetation detections are excluded, and detections are aggregated to configured country-days.",
+    }
+    return _write_bundle(output, source="firms", records=records, snapshot=snapshot, provider_metadata={"requests": requests, "totals": totals})

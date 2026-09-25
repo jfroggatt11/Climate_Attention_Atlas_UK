@@ -46,6 +46,10 @@ and never written to the bundle.
 FIRMS accepts either `NASA_FIRMS_API_KEY` (the name used in this project's
 `.env.example`) or the provider's `FIRMS_MAP_KEY` name.
 
+```bash
+uv run uk-atlas collect-firms-live --start 2025-01-01 --end 2025-01-07
+```
+
 ## Free event context
 
 GDACS needs no key and supports historical date ranges:

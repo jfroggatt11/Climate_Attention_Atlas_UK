@@ -40,6 +40,7 @@ fixture release automatically.
 .venv/bin/uk-atlas collect-haduk-live
 .venv/bin/uk-atlas collect-gdacs-live --start 2025-01-01 --end 2025-12-31
 .venv/bin/uk-atlas collect-ea-floods-live
+.venv/bin/uk-atlas collect-firms-live --start 2025-01-01 --end 2025-01-07
 # MODIS requires an Earthdata token and a sovereign-country GeoJSON:
 .venv/bin/uk-atlas collect-modis-ndvi-live --start 2025-01-01 --end 2025-12-31 \
   --boundary-geojson data/live/boundaries/ne_10m_admin_0_countries.geojson
@@ -58,6 +59,7 @@ collect-haduk-live    download and normalize Met Office country temperature
 collect-modis-ndvi-live  download monthly NASA country greenness (Earthdata)
 collect-gdacs-live    collect free historical GDACS event context
 collect-ea-floods-live snapshot the current England Environment Agency feed
+collect-firms-live     collect NASA FIRMS country-day fire detections
 aggregate             validate and materialise prepared serving aggregates
 check-quality         check completeness, duplicates, denominators and source status
 check-layers          check source-layer duplicates and snapshot coverage

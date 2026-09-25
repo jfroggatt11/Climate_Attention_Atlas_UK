@@ -15,6 +15,7 @@ from .source_layers import build_layer_fixture, layer_quality_report, write_laye
 from .validation import audit_configuration, audit_release
 from .live import (
     collect_environment_agency_floods,
+    collect_firms,
     collect_gdacs,
     collect_haduk_country,
     collect_modis_ndvi,
@@ -74,6 +75,13 @@ def main(argv: list[str] | None = None) -> int:
     modis.add_argument("--output", default="data/live/modis_mod13c2/bundle.json")
     modis.add_argument("--raw-dir", default="data/live/modis_mod13c2/raw")
     modis.add_argument("--countries", default="config/countries.uk-pilot.yaml")
+    firms = sub.add_parser("collect-firms-live", help="collect NASA FIRMS country-day fire detections")
+    firms.add_argument("--start", required=True)
+    firms.add_argument("--end", required=True)
+    firms.add_argument("--output", default="data/live/firms/bundle.json")
+    firms.add_argument("--cache-dir", default="data/live/firms/raw")
+    firms.add_argument("--boundary-geojson", default="data/live/firms/boundaries/ne_50m_admin_0_countries.geojson")
+    firms.add_argument("--countries", default="config/countries.uk-pilot.yaml")
     runs = sub.add_parser("runs"); runs.add_argument("action", choices=["inspect", "retry"])
     args = parser.parse_args(argv)
     if args.command == "validate-config": return validate_config()
@@ -177,6 +185,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"wrote {output}"); return 0
     if args.command == "collect-modis-ndvi-live":
         output = collect_modis_ndvi(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), raw_dir=Path(args.raw_dir), boundary_geojson=Path(args.boundary_geojson), countries=load_live_countries(Path(args.countries)))
+        print(f"wrote {output}"); return 0
+    if args.command == "collect-firms-live":
+        output = collect_firms(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), cache_dir=Path(args.cache_dir), boundary_geojson=Path(args.boundary_geojson), countries=load_live_countries(Path(args.countries)))
         print(f"wrote {output}"); return 0
     if args.command == "runs":
         print(f"run action '{args.action}' is available after a provider run manifest is created"); return 0

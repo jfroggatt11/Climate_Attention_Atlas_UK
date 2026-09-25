@@ -24,6 +24,7 @@ data/hazards/
 data/events/
 data/raw_events/
 data/reference/
+data/live/
 data/satellite/
 
 # Local Netlify folder
