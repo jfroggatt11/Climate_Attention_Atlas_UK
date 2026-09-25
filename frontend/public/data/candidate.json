@@ -493,8 +493,8 @@
       "access_requirement": "Earthdata Login",
       "cadence": "monthly",
       "geography": "GB",
-      "independence_note": "Raw satellite greenness index; no anomaly or grassland mask in this candidate.",
-      "label": "MODIS monthly NDVI",
+      "independence_note": "Raw satellite greenness index plus anomaly against the UK calendar-month 2001\u20132020 baseline carried forward from the old Wildfire-Trends pipeline.",
+      "label": "MODIS monthly NDVI and greenness anomaly",
       "layer_id": "modis_mod13c2",
       "provider": "NASA Earthdata",
       "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
@@ -502,7 +502,8 @@
       "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/",
       "status": "adapter_ready",
       "units": [
-        "index"
+        "index",
+        "index_anomaly"
       ]
     },
     {
@@ -648,22 +649,26 @@
       "haduk_grid_weather": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
       "market_prices": "e6f574fe127b3dd560a7c9e79b703a2a5cc34be77cb67661aecbd739b30a0fc6",
       "modis_burned_area": "0b1a5c10ca67fd9d0eeff3fc682eb081f1149ccdeb2318e25e82f0963a6a7132",
-      "modis_mod13c2": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+      "modis_mod13c2": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
       "ons_cost_pressures": "2ac555c50ba74f0b9ba7ace6458114af691fe4091ca337185a1656a08a31ba2b"
     }
   },
   "news_denominators": [],
   "physical_observations": [
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": 0.005863219851158785,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025001.061.2025035171541",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.19068713417092015,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14763
       },
@@ -679,15 +684,43 @@
       "value": 0.5433992430463968
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025001.061.2025035171541",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.19068713417092015
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:8f922a2c030a3cf3d49f:anomaly",
+      "observed_at": "2025-01-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9894108973929361,
+      "value": 0.005863219851158785
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": 0.015815372728346766,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025032.061.2025072100143",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.4880405486425753,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14829
       },
@@ -703,15 +736,43 @@
       "value": 0.5765181463527874
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025032.061.2025072100143",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.4880405486425753
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:e1f028b524d400265936:anomaly",
+      "observed_at": "2025-02-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9938341934186716,
+      "value": 0.015815372728346766
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": 0.004160604566417758,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025060.061.2025098184723",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.1178134202846449,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14845
       },
@@ -727,15 +788,43 @@
       "value": 0.5714624366935651
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025060.061.2025098184723",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.1178134202846449
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:04baca26b940ae41da7b:anomaly",
+      "observed_at": "2025-03-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9949065076067287,
+      "value": 0.004160604566417758
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.0001595878283595642,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025091.061.2025133163506",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.005430423240453914,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14853
       },
@@ -751,15 +840,43 @@
       "value": 0.62424386651226
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025091.061.2025133163506",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.005430423240453914
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:5f7f30dc2075652443a4:anomaly",
+      "observed_at": "2025-04-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9954426647007574,
+      "value": -0.0001595878283595642
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.00029857065091476453,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025121.061.2025163044304",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.014258545194661486,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14854
       },
@@ -775,15 +892,43 @@
       "value": 0.693086101864249
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025121.061.2025163044304",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.014258545194661486
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:52930c4556f14f32998f:anomaly",
+      "observed_at": "2025-05-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9955096843375109,
+      "value": -0.00029857065091476453
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.024185626373098623,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025152.061.2025219165905",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -1.9667077167765017,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14846
       },
@@ -799,15 +944,43 @@
       "value": 0.715761856297118
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025152.061.2025219165905",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -1.9667077167765017
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:4de651bac5232798f92c:anomaly",
+      "observed_at": "2025-06-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9949735272434823,
+      "value": -0.024185626373098623
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.047530421672192236,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025182.061.2025227032314",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -2.9707703786943225,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14851
       },
@@ -823,15 +996,43 @@
       "value": 0.6762335816302554
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025182.061.2025227032314",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -2.9707703786943225
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:517c4bf550ed5de6fad5:anomaly",
+      "observed_at": "2025-07-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9953086254272502,
+      "value": -0.047530421672192236
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.036021468946845436,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025213.061.2025259093641",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -2.575852795994068,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14842
       },
@@ -847,15 +1048,43 @@
       "value": 0.6529363992134789
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025213.061.2025259093641",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -2.575852795994068
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:05d55ba5a8f368a3508b:anomaly",
+      "observed_at": "2025-08-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.994705448696468,
+      "value": -0.036021468946845436
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.012412778149877624,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025244.061.2025290121318",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.8642595928670715,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14828
       },
@@ -871,15 +1100,43 @@
       "value": 0.6649253533633844
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025244.061.2025290121318",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.8642595928670715
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:ecb9c14d0d763f8f9bcd:anomaly",
+      "observed_at": "2025-09-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9937671737819181,
+      "value": -0.012412778149877624
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": 0.01321819813300562,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025274.061.2025306103720",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.6690862204700828,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14752
       },
@@ -895,15 +1152,43 @@
       "value": 0.6761711592468753
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025274.061.2025306103720",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.6690862204700828
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:992f753bea719e65742b:anomaly",
+      "observed_at": "2025-10-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9886736813886469,
+      "value": 0.01321819813300562
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": 0.015375781965494162,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025305.061.2025339133307",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.5877551700109485,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14783
       },
@@ -919,15 +1204,43 @@
       "value": 0.6452080190807364
     },
     {
-      "baseline_end_year": null,
-      "baseline_start_year": null,
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025305.061.2025339133307",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": 0.5877551700109485
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:81cf4b0c045bb557b5e8:anomaly",
+      "observed_at": "2025-11-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9907512901280076,
+      "value": 0.015375781965494162
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
       "geography": "GB",
       "metadata": {
         "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "anomaly": -0.00017186052611639635,
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
         "granule_id": "MOD13C2.A2025335.061.2026006151829",
-        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available.",
         "product": "MOD13C2.061",
-        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.00754338906401665,
         "total_pixel_count": 14921,
         "valid_pixel_count": 14762
       },
@@ -941,6 +1254,30 @@
       "unit": "index",
       "valid_area_fraction": 0.9893438777561826,
       "value": 0.574220330053999
+    },
+    {
+      "baseline_end_year": 2020,
+      "baseline_start_year": 2001,
+      "geography": "GB",
+      "metadata": {
+        "baseline_end_year": 2020,
+        "baseline_start_year": 2001,
+        "granule_id": "MOD13C2.A2025335.061.2026006151829",
+        "note": "NDVI anomaly relative to the matching calendar month in the 2001\u20132020 UK baseline.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "e59394ad32c5d8cf8b94bacc2a0d6340f7c0f7c86c7a58dca9548bacd4a7591c",
+        "standardized_anomaly": -0.00754338906401665
+      },
+      "metric": "ndvi_anomaly",
+      "observation_id": "satellite:be7e5fb52e050dcf5b4d:anomaly",
+      "observed_at": "2025-12-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index_anomaly",
+      "valid_area_fraction": 0.9893438777561826,
+      "value": -0.00017186052611639635
     },
     {
       "baseline_end_year": null,
@@ -34587,19 +34924,19 @@
       "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "outlet_registry.yaml": "4f91724facb9785439250c022bbd17652899804fdc80c43177433e766a5f7a39",
       "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d",
-      "source_layers.yaml": "db8f37c780dd7ac6dc26dd4def2842fe98e883df0f2958c8ff989ccde6d2967f",
+      "source_layers.yaml": "dfebfc786548853d04c0b9679d37253add4702f53a46eb41d7c191b8aac4e23c",
       "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f"
     },
-    "configuration_hash": "6b7faf8b2aec40d2ba2e9e56049cf99cab5d1e525d2f064781e20cecc15a4ef3",
+    "configuration_hash": "e250fd54789f1a4d6ea051c7c2043a9d28e7e46c0178fe6f05267a5930da30e3",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "97e3caeaf4289edd871de9c990bea5b2830dc050fdadf3b7eb45f3d26d9afec4",
-    "created_at": "2026-09-25T14:39:19.835538Z",
+    "content_hash": "b75f733794c5371a767514db06725419ba2c26edcced5be454b39249bdf9a8fa",
+    "created_at": "2026-09-25T16:26:44.251376Z",
     "date_end": "2025-12-31",
     "date_start": "2025-01-01",
     "frontend_assets": [
       "frontend/public/data/candidate.json"
     ],
-    "methodology_note": "Physical and economic context only. News and Bluesky attention are unavailable in this candidate. Raw NDVI is not an anomaly; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
+    "methodology_note": "Physical and economic context only. News and Bluesky attention are unavailable in this candidate. MODIS raw NDVI and greenness anomalies use a UK calendar-month 2001\u20132020 baseline; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
     "parquet_outputs": [],
     "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
     "schema_version": 1,
@@ -34612,7 +34949,7 @@
       "haduk_grid_weather": "haduk_grid_weather-f6c9b19653d1",
       "market_prices": "market_prices-e6f574fe127b",
       "modis_burned_area": "modis_burned_area-0b1a5c10ca67",
-      "modis_mod13c2": "modis_mod13c2-ae01928bbe2d",
+      "modis_mod13c2": "modis_mod13c2-e59394ad32c5",
       "ons_cost_pressures": "ons_cost_pressures-2ac555c50ba7"
     },
     "status": "candidate",
@@ -34621,7 +34958,7 @@
       "daily_attention": 0,
       "events": 6,
       "layer_observations": 12,
-      "physical_observations": 1520
+      "physical_observations": 1532
     }
   },
   "social_posts": [],
@@ -34644,7 +34981,7 @@
     {
       "completeness": 1.0,
       "endpoint": "https://opendap.earthdata.nasa.gov/collections/C2565788914-LPCLOUD/granules",
-      "notes": "NASA MOD13C2 v061 monthly NDVI; country means are latitude-area-weighted over valid 0.05-degree cells.",
+      "notes": "NASA MOD13C2 v061 monthly NDVI; country means are latitude-area-weighted over valid 0.05-degree cells. Greenness anomalies use the UK calendar-month 2001\u20132020 baseline carried forward from the old Wildfire-Trends pipeline.",
       "observed_end": "2025-12-01",
       "observed_start": "2025-01-01",
       "rate_limit_note": null,
@@ -34652,7 +34989,7 @@
       "request_count": 12,
       "retrieved_at": "2026-09-25T08:26:18.830096Z",
       "schema_version": 1,
-      "snapshot_id": "modis_mod13c2-ae01928bbe2d",
+      "snapshot_id": "modis_mod13c2-e59394ad32c5",
       "source": "modis_mod13c2",
       "status": "available"
     },

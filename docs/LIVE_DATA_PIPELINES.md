@@ -43,6 +43,12 @@ uv run uk-atlas collect-modis-ndvi-live \
 Credentials are read from the environment or the ignored project `.env` file
 and never written to the bundle.
 
+Each live row retains the raw NDVI and adds a greenness anomaly against the
+matching calendar month in the UK 2001–2020 MODIS baseline carried forward from
+the old Wildfire-Trends pipeline. The candidate release stores both measures:
+`ndvi` (index) and `ndvi_anomaly` (index anomaly), including baseline years,
+valid-area coverage and standardized anomaly metadata.
+
 FIRMS accepts either `NASA_FIRMS_API_KEY` (the name used in this project's
 `.env.example`) or the provider's `FIRMS_MAP_KEY` name.
 
@@ -113,6 +119,6 @@ uv run uk-atlas validate-live-candidate
 
 The candidate is the frontend default. Add `?release=candidate` explicitly if
 needed; add `?release=fixture` to view the synthetic interface fixture. It
-contains real temperature, raw NDVI, MCD64, FIRMS, GDACS and economic snapshots,
-but the browser does not refresh them. News and Bluesky are empty in this
+contains real temperature, raw NDVI, greenness anomaly, MCD64, FIRMS, GDACS and
+economic snapshots, but the browser does not refresh them. News and Bluesky are empty in this
 candidate until their live collection and denominator review is complete.

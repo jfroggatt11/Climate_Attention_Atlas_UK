@@ -24,6 +24,8 @@ data/hazards/
 data/events/
 data/raw_events/
 data/reference/
+!data/reference/
+!data/reference/modis_ndvi_uk_baseline_2001_2020.json
 data/live/
 data/satellite/
 

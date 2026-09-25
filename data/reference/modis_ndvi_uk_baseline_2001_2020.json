@@ -1,0 +1,85 @@
+{
+  "metric": "ndvi",
+  "geography": "GB",
+  "country_iso3": "GBR",
+  "baseline_start_year": 2001,
+  "baseline_end_year": 2020,
+  "source": "nasa_modis",
+  "product": "MOD13C2.061",
+  "source_file": "Wildfire-Trends/data/satellite/source=nasa_modis/metric=ndvi/observations.parquet",
+  "notes": "Monthly UK country mean climatology carried forward from the old Wildfire-Trends pipeline. Anomaly is observed NDVI minus the matching calendar-month baseline; standardized anomaly uses sample standard deviation.",
+  "months": [
+    {
+      "month": 1,
+      "mean": 0.537536023195238,
+      "std": 0.030747852374263265,
+      "sample_count": 20
+    },
+    {
+      "month": 2,
+      "mean": 0.5607027736244407,
+      "std": 0.03240585802211574,
+      "sample_count": 20
+    },
+    {
+      "month": 3,
+      "mean": 0.5673018321271474,
+      "std": 0.03531520056344571,
+      "sample_count": 20
+    },
+    {
+      "month": 4,
+      "mean": 0.6244034543406196,
+      "std": 0.029387733016961806,
+      "sample_count": 20
+    },
+    {
+      "month": 5,
+      "mean": 0.6933846725151638,
+      "std": 0.02093976957947658,
+      "sample_count": 20
+    },
+    {
+      "month": 6,
+      "mean": 0.7399474826702166,
+      "std": 0.012297519436563587,
+      "sample_count": 20
+    },
+    {
+      "month": 7,
+      "mean": 0.7237640033024476,
+      "std": 0.01599935895856153,
+      "sample_count": 20
+    },
+    {
+      "month": 8,
+      "mean": 0.6889578681603243,
+      "std": 0.013984288621952912,
+      "sample_count": 20
+    },
+    {
+      "month": 9,
+      "mean": 0.677338131513262,
+      "std": 0.014362326148674621,
+      "sample_count": 20
+    },
+    {
+      "month": 10,
+      "mean": 0.6629529611138697,
+      "std": 0.019755597602531486,
+      "sample_count": 20
+    },
+    {
+      "month": 11,
+      "mean": 0.6298322371152423,
+      "std": 0.02616018156881163,
+      "sample_count": 20
+    },
+    {
+      "month": 12,
+      "mean": 0.5743921905801154,
+      "std": 0.022782932798230255,
+      "sample_count": 20
+    }
+  ]
+}

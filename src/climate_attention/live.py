@@ -302,6 +302,49 @@ def load_live_countries(path: Path) -> list[Country]:
     return load_country_config(path).enabled_countries()
 
 
+def _annotate_modis_ndvi_anomalies(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Attach the old repo's UK 2001–2020 calendar-month NDVI baseline.
+
+    The satellite observation remains the live value.  The baseline is a small,
+    versioned reference table so an anomaly can be calculated reproducibly when
+    a new MOD13C2 month arrives, without pretending that the current-year
+    snapshot is itself a climatology.
+    """
+    baseline_path = Path(__file__).resolve().parents[2] / "data/reference/modis_ndvi_uk_baseline_2001_2020.json"
+    if not baseline_path.is_file():
+        return records
+    try:
+        payload = json.loads(baseline_path.read_text(encoding="utf-8"))
+        baseline = {int(item["month"]): item for item in payload.get("months", [])}
+        baseline_sha256 = _sha256(baseline_path)
+    except (OSError, TypeError, ValueError, KeyError):
+        return records
+    for row in records:
+        if row.get("country_iso3") not in (None, "GBR"):
+            continue
+        try:
+            month = date.fromisoformat(str(row["date"])[:10]).month
+            climatology = baseline[month]
+            value = float(row["value"])
+            mean = float(climatology["mean"])
+            std = float(climatology["std"])
+        except (KeyError, TypeError, ValueError, ZeroDivisionError):
+            continue
+        row["anomaly"] = value - mean
+        row["standardized_anomaly"] = (value - mean) / std if std else None
+        row["baseline_start_year"] = int(payload["baseline_start_year"])
+        row["baseline_end_year"] = int(payload["baseline_end_year"])
+        row.setdefault("metadata", {}).update({
+            "anomaly_baseline": "calendar-month UK MODIS climatology",
+            "baseline_start_year": row["baseline_start_year"],
+            "baseline_end_year": row["baseline_end_year"],
+            "baseline_sample_count": climatology.get("sample_count"),
+            "baseline_reference": str(baseline_path),
+            "baseline_reference_sha256": baseline_sha256,
+        })
+    return records
+
+
 def collect_modis_ndvi(*, start: date, end: date, output: Path, raw_dir: Path,
                        boundary_geojson: Path, countries: list[Country]) -> Path:
     """Fetch monthly MOD13C2 NDVI and calculate country means for configured countries."""
@@ -335,6 +378,7 @@ def collect_modis_ndvi(*, start: date, end: date, output: Path, raw_dir: Path,
         values = read_mod13c2_subset(path)
         observed = parse_mod13c2_date(granule_id)
         records.extend(item.model_dump(mode="json") for item in mod13c2_country_observations(values, boundaries=boundaries, observed=observed, granule_id=granule_id, metric="ndvi"))
+    _annotate_modis_ndvi_anomalies(records)
     snapshot = {
         "source": "modis_mod13c2",
         "snapshot_id": f"mod13c2-ndvi-{start.isoformat()}-{end.isoformat()}",
@@ -346,7 +390,7 @@ def collect_modis_ndvi(*, start: date, end: date, output: Path, raw_dir: Path,
         "endpoint": "https://opendap.earthdata.nasa.gov/collections/C2565788914-LPCLOUD/granules",
         "request_count": len(granules),
         "completeness": 1.0 if records else 0.0,
-        "notes": "NASA MOD13C2 v061 monthly NDVI; country means are latitude-area-weighted over valid 0.05-degree cells.",
+        "notes": "NASA MOD13C2 v061 monthly NDVI; country means are latitude-area-weighted over valid 0.05-degree cells. Greenness anomalies use the UK calendar-month 2001–2020 baseline carried forward from the old Wildfire-Trends pipeline.",
     }
     return _write_bundle(output, source="modis_mod13c2", records=records, snapshot=snapshot, provider_metadata={"granules": granules})
 

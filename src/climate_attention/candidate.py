@@ -74,14 +74,35 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
         physical.append(PhysicalObservation(
             observation_id=row["record_id"], source="modis_mod13c2", metric="ndvi",
             observed_at=observed, geography="GB", value=row["value"], unit="index",
+            baseline_start_year=row.get("baseline_start_year"),
+            baseline_end_year=row.get("baseline_end_year"),
             valid_area_fraction=(valid / total if valid is not None and total else None),
             release_id=release_id,
             metadata={"product": row["product"], "granule_id": row.get("metadata", {}).get("granule_id"),
                       "valid_pixel_count": valid, "total_pixel_count": total,
                       "aggregation": row.get("metadata", {}).get("aggregation"),
                       "source_bundle_sha256": source_hashes["modis_mod13c2"],
-                      "note": "Raw NDVI index; no climatological anomaly or grassland mask."},
+                      "anomaly": row.get("anomaly"),
+                      "standardized_anomaly": row.get("standardized_anomaly"),
+                      "baseline_start_year": row.get("baseline_start_year"),
+                      "baseline_end_year": row.get("baseline_end_year"),
+                      "note": "Raw NDVI index; greenness anomaly is retained separately when the UK calendar-month baseline is available."},
         ).model_dump(mode="json"))
+        if row.get("anomaly") is not None:
+            physical.append(PhysicalObservation(
+                observation_id=f"{row['record_id']}:anomaly", source="modis_mod13c2", metric="ndvi_anomaly",
+                observed_at=observed, geography="GB", value=float(row["anomaly"]), unit="index_anomaly",
+                baseline_start_year=row.get("baseline_start_year"),
+                baseline_end_year=row.get("baseline_end_year"),
+                valid_area_fraction=(valid / total if valid is not None and total else None),
+                release_id=release_id,
+                metadata={"product": row["product"], "granule_id": row.get("metadata", {}).get("granule_id"),
+                          "standardized_anomaly": row.get("standardized_anomaly"),
+                          "source_bundle_sha256": source_hashes["modis_mod13c2"],
+                          "baseline_start_year": row.get("baseline_start_year"),
+                          "baseline_end_year": row.get("baseline_end_year"),
+                          "note": "NDVI anomaly relative to the matching calendar month in the 2001–2020 UK baseline."},
+            ).model_dump(mode="json"))
     for row in bundles["firms"][0]["records"]:
         observed = date.fromisoformat(row["date"])
         if not (start <= observed <= end) or row.get("country_iso3") != "GBR":
@@ -140,7 +161,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
 
     definitions = [
         {"layer_id": "haduk_grid_weather", "label": "UK mean air temperature", "provider": "Met Office HadUK-Grid", "cadence": "monthly", "geography": "GB", "units": ["degrees_celsius"], "status": "adapter_ready", "source_url": "https://catalogue.ceda.ac.uk/uuid/ca4c331d666f4395b1346db9070094ab/", "access_requirement": "CEDA archive token", "independence_note": "Country area-average observed temperature; annual archive release.", "release_id": release_id},
-        {"layer_id": "modis_mod13c2", "label": "MODIS monthly NDVI", "provider": "NASA Earthdata", "cadence": "monthly", "geography": "GB", "units": ["index"], "status": "adapter_ready", "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/", "access_requirement": "Earthdata Login", "independence_note": "Raw satellite greenness index; no anomaly or grassland mask in this candidate.", "release_id": release_id},
+        {"layer_id": "modis_mod13c2", "label": "MODIS monthly NDVI and greenness anomaly", "provider": "NASA Earthdata", "cadence": "monthly", "geography": "GB", "units": ["index", "index_anomaly"], "status": "adapter_ready", "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/", "access_requirement": "Earthdata Login", "independence_note": "Raw satellite greenness index plus anomaly against the UK calendar-month 2001–2020 baseline carried forward from the old Wildfire-Trends pipeline.", "release_id": release_id},
         {"layer_id": "firms", "label": "NASA FIRMS vegetation hotspots", "provider": "NASA FIRMS", "cadence": "daily", "geography": "GB", "units": ["detections"], "status": "adapter_ready", "source_url": "https://firms.modaps.eosdis.nasa.gov/", "access_requirement": "FIRMS MAP_KEY", "independence_note": "Satellite detections are not named fires or burned area.", "release_id": release_id},
         {"layer_id": "gdacs", "label": "GDACS major events", "provider": "GDACS", "cadence": "event_driven", "geography": "GB", "units": ["events"], "status": "adapter_ready", "source_url": "https://www.gdacs.org/", "access_requirement": "Public API", "independence_note": "Named event catalogue remains separate from attention and hotspot counts.", "release_id": release_id},
     ]
@@ -167,7 +188,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
             supabase_rows={"daily_attention": 0, "article_records": 0, "events": len(events),
                            "physical_observations": len(physical), "layer_observations": len(weather)},
             frontend_assets=["frontend/public/data/candidate.json"], status="candidate",
-            methodology_note="Physical and economic context only. News and Bluesky attention are unavailable in this candidate. Raw NDVI is not an anomaly; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
+            methodology_note="Physical and economic context only. News and Bluesky attention are unavailable in this candidate. MODIS raw NDVI and greenness anomalies use a UK calendar-month 2001–2020 baseline; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
         ).model_dump(mode="json"),
         "daily_attention": [], "news_denominators": [], "articles": [], "social_posts": [],
         "physical_observations": physical, "events": events, "data_layers": weather,

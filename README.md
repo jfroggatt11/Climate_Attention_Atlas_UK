@@ -5,12 +5,12 @@ attention moves alongside events and physical conditions. The pilot keeps news,
 monitored-account social posts, polling, search interest and MODIS vegetation
 observations as separate layers with explicit units and denominators.
 
-The current release is a local, reproducible **synthetic fixture / engineering
-demonstration**: formulaic GDELT-shaped news, observed-count Bluesky panel rows,
-a single synthetic UK MODIS NDVI anomaly record, and GDACS/FIRMS-shaped events are
-validated and exported to the React frontend. It is not evidence of UK attention or
-physical conditions. Provider adapters remain available for real collection when
-T&E credentials and access approvals are ready.
+The checked-in fixture remains a local, reproducible **synthetic fixture / engineering
+demonstration** for interface tests. The browser defaults to a separate candidate
+release assembled from real temperature, MODIS raw NDVI and greenness anomalies,
+MCD64 burned area, FIRMS, GDACS and economic snapshots. News and Bluesky attention
+remain empty in that candidate until their live collection and denominator review is
+complete.
 
 ## Quick start
 
