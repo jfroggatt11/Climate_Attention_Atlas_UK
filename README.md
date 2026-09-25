@@ -2,8 +2,8 @@
 
 The UK Attention Atlas is T&E's research and monitoring pilot for exploring how
 attention moves alongside events and physical conditions. The pilot keeps news,
-monitored-account social posts, search interest and MODIS vegetation observations
-as separate measures with explicit units and denominators.
+monitored-account social posts, polling, search interest and MODIS vegetation
+observations as separate layers with explicit units and denominators.
 
 The current release is a local, reproducible **synthetic fixture / engineering
 demonstration**: formulaic GDELT-shaped news, observed-count Bluesky panel rows,

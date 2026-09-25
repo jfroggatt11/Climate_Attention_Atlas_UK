@@ -46,6 +46,7 @@ ADAPTERS: tuple[LayerAdapter, ...] = (
     LayerAdapter("brent_oil", "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm", "daily", False, "csv_or_json", "Confirm source terms and delayed-data policy."),
     LayerAdapter("ftse100", "https://www.londonstockexchange.com/", "daily", True, "csv_or_json", "Confirm market-data licensing before publication."),
     LayerAdapter("google_trends_official", "https://developers.google.com/", "daily", True, "json", "Official API access and publication terms pending."),
+    LayerAdapter("polling_opinion", None, "on_demand", True, "json_or_csv", "Approve poll question wording, fieldwork metadata, weighting and publication rights before ingestion."),
     LayerAdapter("local_disruption", None, "event_driven", True, "json_or_geojson", "Approve local feed inventory and geography mapping."),
     LayerAdapter("firms_hotspots", "https://firms.modaps.eosdis.nasa.gov/", "daily", True, "csv", "T&E-owned FIRMS key required for durable refresh."),
     LayerAdapter("modis_burned_area", "https://lpdaac.usgs.gov/products/mcd64a1v061/", "monthly", True, "raster_or_zonal_csv", "Earthdata access and processing resources required."),

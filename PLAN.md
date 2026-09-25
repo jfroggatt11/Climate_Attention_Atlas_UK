@@ -78,3 +78,16 @@
   hashes are deterministic, all release configuration inputs are hashed, GDELT and
   Bluesky denominators reconcile to explicit universes, release verification checks
   files/assets/row counts, and the map respects monthly NDVI periods.
+- 2026-09-25: Added the planned polling opinion layer (BES, YouGov, Ipsos and
+  Greenpeace candidates) as an access-pending source with poll metadata and
+  publication-rights requirements. The frontend now uses a shared ordered layer
+  taxonomy and colour legend across timeline, map, data and methods views; pending
+  layers remain visible and are labelled rather than plotted as observed values.
+- 2026-09-25: Reworked the timeline picker to follow category → data source →
+  measure. Available measures are organised in collapsible data categories and can now be
+  assigned to either chart axis with unit-compatible axes, source labels and
+  URL-persisted series selections. Events remain separate x-axis markers.
+
+## Shared data-layer taxonomy
+
+The planning and interface order is **News, Climate, Social, Polling, Search, Political, Economic and Disruption**. Every source is assigned one display label and colour. The same assignment is used in the global legend, line-chart axes, layered and future violin-plot selectors, map controls, tooltips and methods page. **Events** are stored separately as x-axis markers: a single date is a point and a start/end range is a shaded region. Polling observations retain pollster, sponsor, fieldwork dates, exact wording, response options, sample, mode, weighting and rights metadata, and are never silently interpolated to daily values or merged into media denominators.

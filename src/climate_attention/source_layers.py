@@ -135,6 +135,7 @@ def build_layer_fixture(start: date = date(2026, 8, 1), end: date = date(2026, 8
     add("ons_cost_pressures", "food_cpi", "food_price_change", "percent_change_yoy", start, 3.7, revision="initial", metadata={"period": "2026-08"})
     add("modis_burned_area", "uk_burned_area", "burned_area", "hectares", start, 128.0, metadata={"product": "MCD64A1.061", "valid_area_fraction": 0.88})
     add("google_trends_official", "climate_change", "search_interest", "index_0_100", start, None, status=QualityStatus.unsupported, completeness=0.0, metadata={"reason": "official API access pending"})
+    add("polling_opinion", "climate_change_concern", "climate_concern_share", "percent", start, None, status=QualityStatus.unsupported, completeness=0.0, metadata={"reason": "poll source and publication rights pending", "candidate_sources": ["British Election Study", "YouGov", "Ipsos", "Greenpeace"]})
     add("local_disruption", "approved_local_feed", "incident_count", "incidents", start, None, status=QualityStatus.unsupported, completeness=0.0, geography="GB", metadata={"reason": "local feed inventory pending"})
 
     for definition in load_layer_registry(release_id=release_id):

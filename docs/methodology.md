@@ -25,6 +25,31 @@ lead/lag correlations are descriptive; the interface does not report permutation
 p-values or statistical significance verdicts. See the
 [architecture briefing](ARCHITECTURE_BRIEFING_2026-09-15.md) for operational limits.
 
+## Shared data-layer taxonomy
+
+The atlas keeps source identity visible across pages and visualisations. The fixed
+order is **News, Climate, Social, Polling, Search, Political, Economic and
+Disruption**. Each category has one label and colour in the global legend, line
+series, layered and violin plot selectors, map controls, tooltips and source
+registry. A pending category or source is shown with its access status and cannot
+be mistaken for an observed series. The taxonomy is also the insertion order for
+future data layers and axis choices. **Events** are stored separately as x-axis
+markers: single dates render as points and start/end ranges as shaded regions.
+
+### Polling layer
+
+Polling is a survey-based attention and attitude layer. Candidate UK sources are
+the British Election Study, repeated YouGov and Ipsos polls, and Greenpeace-
+commissioned polls where the question and publication rights are documented. A
+poll observation retains pollster, sponsor, fieldwork dates, population, sample
+size, mode, weighting, exact question wording, response options, topline or
+microdata reference, and source rights. Polls are irregular observations with
+their own sampling uncertainty; they are not daily counts and are not merged into
+GDELT article denominators, Bluesky post denominators, or Google Trends indices.
+Question-level crosswalks must flag wording, mode, population, and response-scale
+changes before series are compared. Until this metadata and access review is
+complete, the polling layer remains access-pending in the release registry.
+
 ## Test topics, translation, and verification
 
 Climate change and electric vehicles are the prototype's two test topics. Their

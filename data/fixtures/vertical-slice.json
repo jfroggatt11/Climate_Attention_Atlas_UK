@@ -15277,6 +15277,33 @@
       "geography": "GB",
       "geography_level": "country",
       "metadata": {
+        "candidate_sources": [
+          "British Election Study",
+          "YouGov",
+          "Ipsos",
+          "Greenpeace"
+        ],
+        "reason": "poll source and publication rights pending"
+      },
+      "metric": "climate_concern_share",
+      "observation_id": "polling_opinion_climate_change_concern_2026-08-01",
+      "observed_at": "2026-08-01",
+      "quality_status": "unsupported",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "revision_status": "initial",
+      "schema_version": 1,
+      "series_id": "climate_change_concern",
+      "source": "polling_opinion",
+      "unit": "percent",
+      "value": null
+    },
+    {
+      "collected_at": "2026-08-01T14:00:00Z",
+      "collection_run_id": "layers-fixture-run-2026-08-01-2026-08-30",
+      "completeness": 0.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
         "reason": "local feed inventory pending"
       },
       "metric": "incident_count",
@@ -15492,6 +15519,23 @@
       "status": "access_pending",
       "units": [
         "index_0_100"
+      ]
+    },
+    {
+      "access_requirement": "Approve question wording, fieldwork dates, microdata or toplines, weighting and publication rights for BES, YouGov, Ipsos and Greenpeace polls.",
+      "cadence": "on_demand",
+      "geography": "GB",
+      "independence_note": "Survey responses measure stated public attitudes; poll house, sample, mode, weighting and question wording must remain attached to every observation. Polling is not a behavioural or media-attention measure.",
+      "label": "UK climate opinion polling",
+      "layer_id": "polling_opinion",
+      "provider": "BES / YouGov / Ipsos / Greenpeace",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source_url": null,
+      "status": "access_pending",
+      "units": [
+        "percent",
+        "sample_size"
       ]
     },
     {
@@ -16015,12 +16059,12 @@
       "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "outlet_registry.yaml": "4f91724facb9785439250c022bbd17652899804fdc80c43177433e766a5f7a39",
       "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d",
-      "source_layers.yaml": "cadf8b141ea30b10dc137c4f5879d957f82000218612418529de29c30e7b128b",
+      "source_layers.yaml": "d609f447629ff02d2c4299b69179f596b77873af7c3b7c975147f61c50af7ff2",
       "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f"
     },
-    "configuration_hash": "777b9741d8943a11ac6a7066230dade90a5a176ce6db43a8be7e74f278c655ae",
+    "configuration_hash": "4d09d7306719c9e757835a6e6a73c28654bbafac91ad9c22829c9e6e8b677d45",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "b08d8ca166645cc940c39ac4b388a1f1130d01867263ae0499d04796d3e7a9d6",
+    "content_hash": "4a75a04cef0fe3058e9fbf30466b11ea6b34703a7d29b00e72cf0bf11a9a408e",
     "created_at": "2026-08-31T12:00:00Z",
     "date_end": "2026-08-30",
     "date_start": "2026-08-01",
@@ -16047,6 +16091,7 @@
       "modis_burned_area": "modis_burned_area-fixture-v1",
       "modis_mod13c2": "imported-fixture-v1",
       "ons_cost_pressures": "ons_cost_pressures-fixture-v1",
+      "polling_opinion": "polling_opinion-fixture-v1",
       "rail_disruption": "rail_disruption-fixture-v1"
     },
     "status": "fixture",
@@ -16054,7 +16099,7 @@
       "article_records": 80,
       "daily_attention": 240,
       "events": 2,
-      "layer_observations": 335,
+      "layer_observations": 336,
       "physical_observations": 1
     }
   },
@@ -17334,6 +17379,21 @@
       "schema_version": 1,
       "snapshot_id": "google_trends_official-fixture-v1",
       "source": "google_trends_official",
+      "status": "access_pending"
+    },
+    {
+      "completeness": 0.0,
+      "endpoint": null,
+      "notes": "Approve question wording, fieldwork dates, microdata or toplines, weighting and publication rights for BES, YouGov, Ipsos and Greenpeace polls.",
+      "observed_end": "2026-08-01",
+      "observed_start": "2026-08-01",
+      "rate_limit_note": "Fixture; no provider request made.",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "request_count": 0,
+      "retrieved_at": "2026-08-30T16:00:00Z",
+      "schema_version": 1,
+      "snapshot_id": "polling_opinion-fixture-v1",
+      "source": "polling_opinion",
       "status": "access_pending"
     },
     {

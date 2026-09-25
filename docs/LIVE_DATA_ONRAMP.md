@@ -47,7 +47,7 @@ valid-area fraction and baseline, then writes a source snapshot. This can run af
 the GDELT path is proven because it has a different cadence and optional native
 dependencies.
 
-### 4. Context layers and publication
+### 4. Data categories and publication
 
 Add approved DESNZ/ONS/HadUK-Grid/EA/FIRMS/GDACS sources one at a time. Only after a
 live release validates locally should we connect Supabase writes and Netlify

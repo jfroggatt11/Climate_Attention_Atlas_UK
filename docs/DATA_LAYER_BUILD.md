@@ -29,11 +29,13 @@ rules are reviewed.
 ## Access-pending layers
 
 - Official Google Trends search interest
+- UK climate opinion polling (BES, YouGov, Ipsos and Greenpeace candidates)
 - Local-authority disruption register
 
-Both are represented explicitly with `unsupported`/`access_pending` status rather
+These are represented explicitly with `unsupported`/`access_pending` status rather
 than fabricated zeros. The same prepared observation schema can receive their live
-records once access is approved.
+records once access is approved. Polling additionally requires question wording,
+fieldwork, sample, weighting and publication-rights metadata.
 
 ## Source invariants
 

@@ -148,6 +148,23 @@
       ]
     },
     {
+      "access_requirement": "Approve question wording, fieldwork dates, microdata or toplines, weighting and publication rights for BES, YouGov, Ipsos and Greenpeace polls.",
+      "cadence": "on_demand",
+      "geography": "GB",
+      "independence_note": "Survey responses measure stated public attitudes; poll house, sample, mode, weighting and question wording must remain attached to every observation. Polling is not a behavioural or media-attention measure.",
+      "label": "UK climate opinion polling",
+      "layer_id": "polling_opinion",
+      "provider": "BES / YouGov / Ipsos / Greenpeace",
+      "release_id": "uk-atlas-fixture-2026-09-23",
+      "schema_version": 1,
+      "source_url": null,
+      "status": "access_pending",
+      "units": [
+        "percent",
+        "sample_size"
+      ]
+    },
+    {
       "access_requirement": "T&E-owned API key for durable refresh",
       "cadence": "daily",
       "geography": "GB",
@@ -7294,6 +7311,33 @@
       "geography": "GB",
       "geography_level": "country",
       "metadata": {
+        "candidate_sources": [
+          "British Election Study",
+          "YouGov",
+          "Ipsos",
+          "Greenpeace"
+        ],
+        "reason": "poll source and publication rights pending"
+      },
+      "metric": "climate_concern_share",
+      "observation_id": "polling_opinion_climate_change_concern_2026-08-01",
+      "observed_at": "2026-08-01",
+      "quality_status": "unsupported",
+      "release_id": "uk-atlas-fixture-2026-09-23",
+      "revision_status": "initial",
+      "schema_version": 1,
+      "series_id": "climate_change_concern",
+      "source": "polling_opinion",
+      "unit": "percent",
+      "value": null
+    },
+    {
+      "collected_at": "2026-08-01T14:00:00Z",
+      "collection_run_id": "layers-fixture-run-2026-09-23",
+      "completeness": 0.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
         "reason": "local feed inventory pending"
       },
       "metric": "incident_count",
@@ -7446,6 +7490,21 @@
       "schema_version": 1,
       "snapshot_id": "google_trends_official-fixture-v1",
       "source": "google_trends_official",
+      "status": "access_pending"
+    },
+    {
+      "completeness": 0.0,
+      "endpoint": null,
+      "notes": "Approve question wording, fieldwork dates, microdata or toplines, weighting and publication rights for BES, YouGov, Ipsos and Greenpeace polls.",
+      "observed_end": "2026-08-01",
+      "observed_start": "2026-08-01",
+      "rate_limit_note": "Fixture; no provider request made.",
+      "release_id": "uk-atlas-fixture-2026-09-23",
+      "request_count": 0,
+      "retrieved_at": "2026-08-30T16:00:00Z",
+      "schema_version": 1,
+      "snapshot_id": "polling_opinion-fixture-v1",
+      "source": "polling_opinion",
       "status": "access_pending"
     },
     {
