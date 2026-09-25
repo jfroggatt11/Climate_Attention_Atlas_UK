@@ -13,6 +13,7 @@ from .panel import load_account_panel, load_outlet_registry
 from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, release_content_hash, write_json
 from .source_layers import build_layer_fixture, layer_quality_report, write_layer_parquet
 from .validation import audit_configuration, audit_release
+from .candidate import build_candidate, candidate_quality_report, write_candidate
 from .live import (
     collect_environment_agency_floods,
     collect_firms,
@@ -49,6 +50,13 @@ def main(argv: list[str] | None = None) -> int:
     layers_quality = sub.add_parser("check-layers"); layers_quality.add_argument("--input", default="data/fixtures/data-layers.json")
     parquet = sub.add_parser("export-layer-parquet"); parquet.add_argument("--input", default="data/fixtures/data-layers.json"); parquet.add_argument("--output", default="data/processed/layer_observations.parquet")
     release_audit = sub.add_parser("validate-release"); release_audit.add_argument("--input", default="data/fixtures/vertical-slice.json")
+    candidate = sub.add_parser("build-live-candidate", help="assemble a physical-context candidate from live source bundles")
+    candidate.add_argument("--input-dir", default="data/live")
+    candidate.add_argument("--start", default="2025-01-01")
+    candidate.add_argument("--end", default="2025-12-31")
+    candidate.add_argument("--output", default="frontend/public/data/candidate.json")
+    candidate_audit = sub.add_parser("validate-live-candidate", help="check candidate provenance and release invariants")
+    candidate_audit.add_argument("--input", default="frontend/public/data/candidate.json")
     export = sub.add_parser("export-frontend"); export.add_argument("--input", default="data/fixtures/vertical-slice.json"); export.add_argument("--output", default="frontend/public/data/release.json")
     sub.add_parser("release-verify")
     sync = sub.add_parser("sync-supabase"); sync.add_argument("--input", default="data/fixtures/vertical-slice.json"); sync.add_argument("--apply-migration", action="store_true")
@@ -107,6 +115,16 @@ def main(argv: list[str] | None = None) -> int:
         report = audit_release(json.loads(Path(args.input).read_text()))
         print(json.dumps(report, indent=2))
         return 0 if report["status"] == "pass" else 1
+    if args.command == "build-live-candidate":
+        data = build_candidate(Path(args.input_dir), start=date.fromisoformat(args.start), end=date.fromisoformat(args.end))
+        report = candidate_quality_report(data)
+        if report["status"] != "pass":
+            print(json.dumps(report, indent=2)); return 1
+        path = write_candidate(data, Path(args.output))
+        print(json.dumps({**report, "output": str(path)}, indent=2)); return 0
+    if args.command == "validate-live-candidate":
+        report = candidate_quality_report(json.loads(Path(args.input).read_text()))
+        print(json.dumps(report, indent=2)); return 0 if report["status"] == "pass" else 1
     if args.command == "check-layers":
         report = layer_quality_report(json.loads(Path(args.input).read_text()))
         print(json.dumps(report, indent=2))

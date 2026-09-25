@@ -36,6 +36,15 @@ Live temperature, greenness and public event collectors are documented in
 reviewable, source-separated bundles under `data/live/` and never replace the
 fixture release automatically.
 
+Build and validate the real-data candidate, then open it with
+`http://localhost:5173/?release=candidate`:
+
+```bash
+.venv/bin/uk-atlas build-live-candidate
+.venv/bin/uk-atlas validate-live-candidate
+cd frontend && npm run dev
+```
+
 ```bash
 .venv/bin/uk-atlas collect-haduk-live
 .venv/bin/uk-atlas collect-gdacs-live --start 2025-01-01 --end 2025-12-31

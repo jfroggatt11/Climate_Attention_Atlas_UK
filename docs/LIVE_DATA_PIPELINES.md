@@ -71,3 +71,16 @@ uv run uk-atlas collect-ea-floods-live
 Inspect the bundle and snapshot first, then transform approved records into the
 normal release tables. A successful collector run alone does not make the data
 publishable: country coverage, revisions, and source terms still need review.
+
+## Candidate release
+
+After the source bundles are refreshed, assemble the physical-context candidate:
+
+```bash
+uv run uk-atlas build-live-candidate
+uv run uk-atlas validate-live-candidate
+```
+
+The candidate is available in the frontend at `?release=candidate`. It contains
+real temperature, raw NDVI, FIRMS and GDACS data. News and Bluesky are empty in
+this candidate until their live collection and denominator review is complete.

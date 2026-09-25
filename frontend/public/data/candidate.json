@@ -1,0 +1,1116 @@
+{
+  "articles": [],
+  "daily_attention": [],
+  "data_layers": [
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-01-16",
+      "observed_at": "2025-01-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 3.03309
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-02-16",
+      "observed_at": "2025-02-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 4.63905
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-03-16",
+      "observed_at": "2025-03-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 7.02253
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-04-16",
+      "observed_at": "2025-04-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 9.59026
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-05-16",
+      "observed_at": "2025-05-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 11.98873
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-06-16",
+      "observed_at": "2025-06-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 15.24154
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-07-16",
+      "observed_at": "2025-07-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 16.77769
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-08-16",
+      "observed_at": "2025-08-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 16.30256
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-09-16",
+      "observed_at": "2025-09-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 12.82506
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-10-16",
+      "observed_at": "2025-10-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 10.41775
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-11-16",
+      "observed_at": "2025-11-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 7.20558
+    },
+    {
+      "collected_at": "2026-09-25T08:21:45.075436Z",
+      "collection_run_id": "haduk-country-2026",
+      "completeness": 1.0,
+      "geography": "GB",
+      "geography_level": "country",
+      "metadata": {
+        "licence": "Open Government Licence",
+        "resolution": "country",
+        "source_bundle_sha256": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+        "unit": "degrees_celsius",
+        "variable": "tas"
+      },
+      "metric": "temperature",
+      "observation_id": "haduk_grid_2025-12-16",
+      "observed_at": "2025-12-16",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "revision_status": "final",
+      "schema_version": 1,
+      "series_id": "uk_tas",
+      "source": "haduk_grid_weather",
+      "unit": "degrees_celsius",
+      "value": 5.84259
+    }
+  ],
+  "events": [
+    {
+      "alert_level": "Green",
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-01-08T01:00:00Z",
+      "event_id": "gdacs:FL:1103066",
+      "event_type": "flood",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -1.0,
+          52.6667
+        ],
+        "type": "Point"
+      },
+      "name": "Flood in United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103066&episodeid=3&eventtype=FL",
+      "start_at": "2025-01-01T01:00:00Z"
+    },
+    {
+      "alert_level": "Green",
+      "country_codes": [
+        "GBR",
+        "IRL"
+      ],
+      "end_at": "2025-01-25T01:00:00Z",
+      "event_id": "gdacs:FL:1103096",
+      "event_type": "flood",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -9.0759,
+          53.2594
+        ],
+        "type": "Point"
+      },
+      "name": "Flood in Ireland, United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103096&episodeid=1&eventtype=FL",
+      "start_at": "2025-01-23T01:00:00Z"
+    },
+    {
+      "alert_level": "Green",
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-06-30T00:00:00Z",
+      "event_id": "gdacs:WF:1024149",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -3.5788,
+          57.4581
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024149&episodeid=2&eventtype=WF",
+      "start_at": "2025-06-28T00:00:00Z"
+    },
+    {
+      "alert_level": "Green",
+      "country_codes": [
+        "AIA",
+        "BMU",
+        "CAN",
+        "DOM",
+        "GBR",
+        "IRL",
+        "ISL",
+        "PRI",
+        "USA"
+      ],
+      "end_at": "2025-08-22T21:00:00Z",
+      "event_id": "gdacs:TC:1001196",
+      "event_type": "tropical_cyclone",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -59.7,
+          40.0
+        ],
+        "type": "Point"
+      },
+      "name": "Tropical Cyclone ERIN-25",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1001196&episodeid=46&eventtype=TC",
+      "start_at": "2025-08-11T15:00:00Z"
+    },
+    {
+      "alert_level": "Green",
+      "country_codes": [
+        "GBR",
+        "PRT"
+      ],
+      "end_at": "2025-11-17T13:00:00Z",
+      "event_id": "gdacs:FL:1103612",
+      "event_type": "flood",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -9.1073,
+          38.6422
+        ],
+        "type": "Point"
+      },
+      "name": "Flood in Portugal, United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103612&episodeid=1&eventtype=FL",
+      "start_at": "2025-11-17T13:00:00Z"
+    },
+    {
+      "alert_level": "Green",
+      "country_codes": [
+        "GBR",
+        "IRL"
+      ],
+      "end_at": "2025-12-13T01:00:00Z",
+      "event_id": "gdacs:FL:1103661",
+      "event_type": "flood",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -4.75,
+          50.4167
+        ],
+        "type": "Point"
+      },
+      "name": "Flood in Ireland, United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103661&episodeid=2&eventtype=FL",
+      "start_at": "2025-12-09T01:00:00Z"
+    }
+  ],
+  "layer_definitions": [
+    {
+      "access_requirement": "CEDA archive token",
+      "cadence": "monthly",
+      "geography": "GB",
+      "independence_note": "Country area-average observed temperature; annual archive release.",
+      "label": "UK mean air temperature",
+      "layer_id": "haduk_grid_weather",
+      "provider": "Met Office HadUK-Grid",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source_url": "https://catalogue.ceda.ac.uk/uuid/ca4c331d666f4395b1346db9070094ab/",
+      "status": "adapter_ready",
+      "units": [
+        "degrees_celsius"
+      ]
+    },
+    {
+      "access_requirement": "Earthdata Login",
+      "cadence": "monthly",
+      "geography": "GB",
+      "independence_note": "Raw satellite greenness index; no anomaly or grassland mask in this candidate.",
+      "label": "MODIS monthly NDVI",
+      "layer_id": "modis_mod13c2",
+      "provider": "NASA Earthdata",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/",
+      "status": "adapter_ready",
+      "units": [
+        "index"
+      ]
+    },
+    {
+      "access_requirement": "FIRMS MAP_KEY",
+      "cadence": "daily",
+      "geography": "GB",
+      "independence_note": "Satellite detections are not named fires or burned area.",
+      "label": "NASA FIRMS vegetation hotspots",
+      "layer_id": "firms",
+      "provider": "NASA FIRMS",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source_url": "https://firms.modaps.eosdis.nasa.gov/",
+      "status": "adapter_ready",
+      "units": [
+        "detections"
+      ]
+    },
+    {
+      "access_requirement": "Public API",
+      "cadence": "event_driven",
+      "geography": "GB",
+      "independence_note": "Named event catalogue remains separate from attention and hotspot counts.",
+      "label": "GDACS major events",
+      "layer_id": "gdacs",
+      "provider": "GDACS",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source_url": "https://www.gdacs.org/",
+      "status": "adapter_ready",
+      "units": [
+        "events"
+      ]
+    }
+  ],
+  "metadata": {
+    "article_denominator": "Unavailable",
+    "flood_snapshot_is_current_only": true,
+    "panel_definition": "No live monitored panel collected",
+    "review_status": "candidate; physical and event context only",
+    "source_bundle_sha256": {
+      "environment_agency_alerts": "55fc11a7a60364d5efef757cc770d0be9d6140035dc193bc903803d568b942c3",
+      "firms": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738",
+      "gdacs": "00bda063553153760264f53f60c92216f8e1ece0eef7ffdd12c6986e8c0b42cd",
+      "haduk_grid_weather": "f6c9b19653d136a871fadf32576419ef4247e341eed73dc37691b647c3e9f213",
+      "modis_mod13c2": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614"
+    }
+  },
+  "news_denominators": [],
+  "physical_observations": [
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025001.061.2025035171541",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14763
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:8f922a2c030a3cf3d49f",
+      "observed_at": "2025-01-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9894108973929361,
+      "value": 0.5433992430463968
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025032.061.2025072100143",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14829
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:e1f028b524d400265936",
+      "observed_at": "2025-02-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9938341934186716,
+      "value": 0.5765181463527874
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025060.061.2025098184723",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14845
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:04baca26b940ae41da7b",
+      "observed_at": "2025-03-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9949065076067287,
+      "value": 0.5714624366935651
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025091.061.2025133163506",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14853
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:5f7f30dc2075652443a4",
+      "observed_at": "2025-04-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9954426647007574,
+      "value": 0.62424386651226
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025121.061.2025163044304",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14854
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:52930c4556f14f32998f",
+      "observed_at": "2025-05-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9955096843375109,
+      "value": 0.693086101864249
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025152.061.2025219165905",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14846
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:4de651bac5232798f92c",
+      "observed_at": "2025-06-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9949735272434823,
+      "value": 0.715761856297118
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025182.061.2025227032314",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14851
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:517c4bf550ed5de6fad5",
+      "observed_at": "2025-07-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9953086254272502,
+      "value": 0.6762335816302554
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025213.061.2025259093641",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14842
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:05d55ba5a8f368a3508b",
+      "observed_at": "2025-08-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.994705448696468,
+      "value": 0.6529363992134789
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025244.061.2025290121318",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14828
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:ecb9c14d0d763f8f9bcd",
+      "observed_at": "2025-09-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9937671737819181,
+      "value": 0.6649253533633844
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025274.061.2025306103720",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14752
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:992f753bea719e65742b",
+      "observed_at": "2025-10-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9886736813886469,
+      "value": 0.6761711592468753
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025305.061.2025339133307",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14783
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:81cf4b0c045bb557b5e8",
+      "observed_at": "2025-11-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9907512901280076,
+      "value": 0.6452080190807364
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "aggregation": "latitude-area-weighted 0.05-degree country cells",
+        "granule_id": "MOD13C2.A2025335.061.2026006151829",
+        "note": "Raw NDVI index; no climatological anomaly or grassland mask.",
+        "product": "MOD13C2.061",
+        "source_bundle_sha256": "ae01928bbe2d1bda7e2c2b00c63baa2deddfcae0cc94ebf2441c00ab81bf3614",
+        "total_pixel_count": 14921,
+        "valid_pixel_count": 14762
+      },
+      "metric": "ndvi",
+      "observation_id": "satellite:be7e5fb52e050dcf5b4d",
+      "observed_at": "2025-12-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "modis_mod13c2",
+      "unit": "index",
+      "valid_area_fraction": 0.9893438777561826,
+      "value": 0.574220330053999
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-01:unitedkingdom",
+      "observed_at": "2025-01-01",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 0.0
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-02:unitedkingdom",
+      "observed_at": "2025-01-02",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 0.0
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-03:unitedkingdom",
+      "observed_at": "2025-01-03",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 1.0
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-04:unitedkingdom",
+      "observed_at": "2025-01-04",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 3.0
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-05:unitedkingdom",
+      "observed_at": "2025-01-05",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 0.0
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-06:unitedkingdom",
+      "observed_at": "2025-01-06",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 0.0
+    },
+    {
+      "baseline_end_year": null,
+      "baseline_start_year": null,
+      "geography": "GB",
+      "metadata": {
+        "boundary_supported": true,
+        "note": "VIIRS detections, not distinct wildfires or burned area.",
+        "product": "VIIRS_SNPP_SP",
+        "request_complete": true,
+        "source_bundle_sha256": "bcd0f0222e6e45f1b425a14e68f4bf3b0bae89daf0a1e960c191c4649c6a3738"
+      },
+      "metric": "hotspot_count",
+      "observation_id": "firms:VIIRS_SNPP_SP:wildfire:2025-01-07:unitedkingdom",
+      "observed_at": "2025-01-07",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "schema_version": 1,
+      "source": "firms",
+      "unit": "detections",
+      "valid_area_fraction": null,
+      "value": 0.0
+    }
+  ],
+  "release": {
+    "configuration_files": {
+      "account_panel.yaml": "cd8d895fe32dd5c723259533dacd78ee6ede53cd0f85a6ccdaec9f8ab8cda26e",
+      "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
+      "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
+      "outlet_registry.yaml": "4f91724facb9785439250c022bbd17652899804fdc80c43177433e766a5f7a39",
+      "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d",
+      "source_layers.yaml": "cadf8b141ea30b10dc137c4f5879d957f82000218612418529de29c30e7b128b",
+      "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f"
+    },
+    "configuration_hash": "777b9741d8943a11ac6a7066230dade90a5a176ce6db43a8be7e74f278c655ae",
+    "configuration_version": "uk-pilot-v1",
+    "content_hash": "b5b3e15ec40e804d927815425c3669c5553dcbc487eee9d04f3f14dd691855c1",
+    "created_at": "2026-09-25T10:05:40.413168Z",
+    "date_end": "2025-12-31",
+    "date_start": "2025-01-01",
+    "frontend_assets": [
+      "frontend/public/data/candidate.json"
+    ],
+    "methodology_note": "Physical context only. News and Bluesky attention are unavailable in this candidate. Raw NDVI is not an anomaly; FIRMS detections are not wildfires. Associations do not establish causality.",
+    "parquet_outputs": [],
+    "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+    "schema_version": 1,
+    "source_snapshots": {
+      "environment_agency_alerts": "environment_agency_alerts-55fc11a7a603",
+      "firms": "firms-bcd0f0222e6e",
+      "gdacs": "gdacs-00bda0635531",
+      "haduk_grid_weather": "haduk_grid_weather-f6c9b19653d1",
+      "modis_mod13c2": "modis_mod13c2-ae01928bbe2d"
+    },
+    "status": "candidate",
+    "supabase_rows": {
+      "article_records": 0,
+      "daily_attention": 0,
+      "events": 6,
+      "layer_observations": 12,
+      "physical_observations": 19
+    }
+  },
+  "social_posts": [],
+  "source_snapshots": [
+    {
+      "completeness": 1.0,
+      "endpoint": "https://dap.ceda.ac.uk/badc/ukmo-hadobs/data/insitu/MOHC/HadOBS/HadUK-Grid/v1.3.2.ceda/country/tas/mon/v20260512/tas_hadukgrid_uk_country_mon_188401-202512.nc?download=1",
+      "notes": "Met Office HadUK-Grid country area average; provisional files may be revised.",
+      "observed_end": "2025-12-16",
+      "observed_start": "1884-01-16",
+      "rate_limit_note": null,
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "request_count": 1,
+      "retrieved_at": "2026-09-25T08:21:45.075436Z",
+      "schema_version": 1,
+      "snapshot_id": "haduk_grid_weather-f6c9b19653d1",
+      "source": "haduk_grid_weather",
+      "status": "available"
+    },
+    {
+      "completeness": 1.0,
+      "endpoint": "https://opendap.earthdata.nasa.gov/collections/C2565788914-LPCLOUD/granules",
+      "notes": "NASA MOD13C2 v061 monthly NDVI; country means are latitude-area-weighted over valid 0.05-degree cells.",
+      "observed_end": "2025-12-01",
+      "observed_start": "2025-01-01",
+      "rate_limit_note": null,
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "request_count": 12,
+      "retrieved_at": "2026-09-25T08:26:18.830096Z",
+      "schema_version": 1,
+      "snapshot_id": "modis_mod13c2-ae01928bbe2d",
+      "source": "modis_mod13c2",
+      "status": "available"
+    },
+    {
+      "completeness": 1.0,
+      "endpoint": "https://www.gdacs.org/gdacsapi/api/Events/geteventlist/search",
+      "notes": "Free catalogue of major events. Events are filtered to configured country ISO3 mappings; unmatched countries remain in event metadata.",
+      "observed_end": "2025-12-31",
+      "observed_start": "2025-01-01",
+      "rate_limit_note": null,
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "request_count": 43,
+      "retrieved_at": "2026-09-25T08:17:28.094891Z",
+      "schema_version": 1,
+      "snapshot_id": "gdacs-00bda0635531",
+      "source": "gdacs",
+      "status": "available"
+    },
+    {
+      "completeness": 1.0,
+      "endpoint": "https://firms.modaps.eosdis.nasa.gov/api/area/csv",
+      "notes": "NASA FIRMS VIIRS_SNPP_SP world-area windows; low-confidence and non-vegetation detections are excluded, and detections are aggregated to configured country-days.",
+      "observed_end": "2025-01-07",
+      "observed_start": "2025-01-01",
+      "rate_limit_note": null,
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "request_count": 2,
+      "retrieved_at": "2026-09-25T08:30:25.268091Z",
+      "schema_version": 1,
+      "snapshot_id": "firms-bcd0f0222e6e",
+      "source": "firms",
+      "status": "available"
+    },
+    {
+      "completeness": 1.0,
+      "endpoint": "https://environment.data.gov.uk/flood-monitoring/id/floods",
+      "notes": "Current Environment Agency flood warnings and alerts for England; this endpoint does not provide historical daily backfill.",
+      "observed_end": null,
+      "observed_start": null,
+      "rate_limit_note": null,
+      "release_id": "uk-atlas-candidate-2025-01-01-2025-12-31",
+      "request_count": 1,
+      "retrieved_at": "2026-09-25T08:13:29.037572Z",
+      "schema_version": 1,
+      "snapshot_id": "environment_agency_alerts-55fc11a7a603",
+      "source": "environment_agency_alerts",
+      "status": "partial"
+    }
+  ]
+}
