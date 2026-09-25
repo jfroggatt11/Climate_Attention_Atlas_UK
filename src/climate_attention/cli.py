@@ -13,6 +13,13 @@ from .panel import load_account_panel, load_outlet_registry
 from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, release_content_hash, write_json
 from .source_layers import build_layer_fixture, layer_quality_report, write_layer_parquet
 from .validation import audit_configuration, audit_release
+from .live import (
+    collect_environment_agency_floods,
+    collect_gdacs,
+    collect_haduk_country,
+    collect_modis_ndvi,
+    load_live_countries,
+)
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -45,6 +52,28 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("release-verify")
     sync = sub.add_parser("sync-supabase"); sync.add_argument("--input", default="data/fixtures/vertical-slice.json"); sync.add_argument("--apply-migration", action="store_true")
     sub.add_parser("collect")
+    ea = sub.add_parser("collect-ea-floods-live", help="snapshot the current England Environment Agency flood feed")
+    ea.add_argument("--output", default="data/live/environment_agency_alerts/bundle.json")
+    ea.add_argument("--raw-dir", default="data/live/environment_agency_alerts/raw")
+    gdacs = sub.add_parser("collect-gdacs-live", help="collect free GDACS major-event history")
+    gdacs.add_argument("--start", required=True)
+    gdacs.add_argument("--end", required=True)
+    gdacs.add_argument("--output", default="data/live/gdacs/bundle.json")
+    gdacs.add_argument("--cache-dir", default="data/live/gdacs/raw")
+    gdacs.add_argument("--countries", default="config/countries.uk-pilot.yaml")
+    haduk = sub.add_parser("collect-haduk-live", help="download and normalize one annual HadUK country temperature file")
+    haduk.add_argument("--year", type=int, default=date.today().year, help="target year; defaults to the current year")
+    haduk.add_argument("--output", default="data/live/haduk_grid_weather/bundle.json")
+    haduk.add_argument("--raw-dir", default="data/live/haduk_grid_weather/raw")
+    haduk.add_argument("--url", help="override the documented Met Office URL")
+    haduk.add_argument("--input", help="use an already downloaded NetCDF file")
+    modis = sub.add_parser("collect-modis-ndvi-live", help="fetch NASA MOD13C2 monthly country NDVI")
+    modis.add_argument("--start", required=True)
+    modis.add_argument("--end", required=True)
+    modis.add_argument("--boundary-geojson", default="data/live/boundaries/ne_10m_admin_0_countries.geojson")
+    modis.add_argument("--output", default="data/live/modis_mod13c2/bundle.json")
+    modis.add_argument("--raw-dir", default="data/live/modis_mod13c2/raw")
+    modis.add_argument("--countries", default="config/countries.uk-pilot.yaml")
     runs = sub.add_parser("runs"); runs.add_argument("action", choices=["inspect", "retry"])
     args = parser.parse_args(argv)
     if args.command == "validate-config": return validate_config()
@@ -138,6 +167,17 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == "collect":
         print("Real provider collection is intentionally gated on T&E-owned credentials and access approvals."); return 2
+    if args.command == "collect-ea-floods-live":
+        print(f"wrote {collect_environment_agency_floods(output=Path(args.output), raw_dir=Path(args.raw_dir))}"); return 0
+    if args.command == "collect-gdacs-live":
+        output = collect_gdacs(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), cache_dir=Path(args.cache_dir), countries=load_live_countries(Path(args.countries)))
+        print(f"wrote {output}"); return 0
+    if args.command == "collect-haduk-live":
+        output = collect_haduk_country(year=args.year, output=Path(args.output), raw_dir=Path(args.raw_dir), url=args.url, input_path=Path(args.input) if args.input else None)
+        print(f"wrote {output}"); return 0
+    if args.command == "collect-modis-ndvi-live":
+        output = collect_modis_ndvi(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), output=Path(args.output), raw_dir=Path(args.raw_dir), boundary_geojson=Path(args.boundary_geojson), countries=load_live_countries(Path(args.countries)))
+        print(f"wrote {output}"); return 0
     if args.command == "runs":
         print(f"run action '{args.action}' is available after a provider run manifest is created"); return 0
     return 0

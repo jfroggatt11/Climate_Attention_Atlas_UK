@@ -76,19 +76,19 @@ def plan_firms_windows(start: date, end: date) -> list[FirmsWindow]:
 
 
 def firms_map_key(value: str | None = None) -> str:
-    key = (value or os.environ.get("FIRMS_MAP_KEY", "")).strip()
+    key = (value or os.environ.get("FIRMS_MAP_KEY", "") or os.environ.get("NASA_FIRMS_API_KEY", "")).strip()
     if not key:
         candidates = [Path.cwd() / ".env"]
         development_root = Path(__file__).resolve().parents[3] / ".env"
         if development_root not in candidates:
             candidates.append(development_root)
         for path in candidates:
-            key = _env_value(path, "FIRMS_MAP_KEY")
+            key = _env_value(path, "FIRMS_MAP_KEY") or _env_value(path, "NASA_FIRMS_API_KEY")
             if key:
                 break
     if not key:
         raise ValueError(
-            "missing FIRMS_MAP_KEY; add it to the project .env file or export it "
+            "missing FIRMS_MAP_KEY (or NASA_FIRMS_API_KEY); add it to the project .env file or export it "
             "in the shell before collecting"
         )
     return key

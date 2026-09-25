@@ -31,6 +31,20 @@ The fixture command is capped and non-billable. Real GDELT Web NGrams collection
 through BigQuery is a separate command boundary and is not run by a Netlify build.
 The frontend can also be built with `cd frontend && npm run build`.
 
+Live temperature, greenness and public event collectors are documented in
+[`docs/LIVE_DATA_PIPELINES.md`](docs/LIVE_DATA_PIPELINES.md). They write
+reviewable, source-separated bundles under `data/live/` and never replace the
+fixture release automatically.
+
+```bash
+.venv/bin/uk-atlas collect-haduk-live
+.venv/bin/uk-atlas collect-gdacs-live --start 2025-01-01 --end 2025-12-31
+.venv/bin/uk-atlas collect-ea-floods-live
+# MODIS requires an Earthdata token and a sovereign-country GeoJSON:
+.venv/bin/uk-atlas collect-modis-ndvi-live --start 2025-01-01 --end 2025-12-31 \
+  --boundary-geojson data/live/boundaries/ne_10m_admin_0_countries.geojson
+```
+
 ## Operational command boundaries
 
 ```text
@@ -40,6 +54,10 @@ dry-run               show capped collection plan without provider calls
 collect-fixture       create a deterministic local vertical-slice archive
 collect-layers-fixture create source-separated price/weather/disruption fixtures
 collect               provider collection entry point (credentials required)
+collect-haduk-live    download and normalize Met Office country temperature
+collect-modis-ndvi-live  download monthly NASA country greenness (Earthdata)
+collect-gdacs-live    collect free historical GDACS event context
+collect-ea-floods-live snapshot the current England Environment Agency feed
 aggregate             validate and materialise prepared serving aggregates
 check-quality         check completeness, duplicates, denominators and source status
 check-layers          check source-layer duplicates and snapshot coverage
