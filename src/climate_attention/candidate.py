@@ -160,18 +160,18 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
         ).model_dump(mode="json"))
 
     definitions = [
-        {"layer_id": "haduk_grid_weather", "label": "UK mean air temperature", "provider": "Met Office HadUK-Grid", "cadence": "monthly", "geography": "GB", "units": ["degrees_celsius"], "status": "adapter_ready", "source_url": "https://catalogue.ceda.ac.uk/uuid/ca4c331d666f4395b1346db9070094ab/", "access_requirement": "CEDA archive token", "independence_note": "Country area-average observed temperature; annual archive release.", "release_id": release_id},
-        {"layer_id": "modis_mod13c2", "label": "MODIS monthly NDVI and greenness anomaly", "provider": "NASA Earthdata", "cadence": "monthly", "geography": "GB", "units": ["index", "index_anomaly"], "status": "adapter_ready", "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/", "access_requirement": "Earthdata Login", "independence_note": "Raw satellite greenness index plus anomaly against the UK calendar-month 2001–2020 baseline carried forward from the old Wildfire-Trends pipeline.", "release_id": release_id},
-        {"layer_id": "firms", "label": "NASA FIRMS vegetation hotspots", "provider": "NASA FIRMS", "cadence": "daily", "geography": "GB", "units": ["detections"], "status": "adapter_ready", "source_url": "https://firms.modaps.eosdis.nasa.gov/", "access_requirement": "FIRMS MAP_KEY", "independence_note": "Satellite detections are not named fires or burned area.", "release_id": release_id},
+        {"layer_id": "haduk_grid_weather", "label": "HadUK-Grid UK weather", "provider": "Met Office HadUK-Grid", "cadence": "monthly", "geography": "GB", "units": ["degrees_celsius"], "status": "adapter_ready", "source_url": "https://catalogue.ceda.ac.uk/uuid/ca4c331d666f4395b1346db9070094ab/", "access_requirement": "CEDA archive token", "independence_note": "Country area-average observed temperature; annual archive release.", "release_id": release_id},
+        {"layer_id": "modis_mod13c2", "label": "MODIS greenness (NDVI)", "provider": "NASA Earthdata", "cadence": "monthly", "geography": "GB", "units": ["index", "index_anomaly"], "status": "adapter_ready", "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/", "access_requirement": "Earthdata Login", "independence_note": "One monthly satellite greenness source with two measures: raw NDVI and difference from the UK calendar-month 2001–2020 baseline.", "release_id": release_id},
+        {"layer_id": "firms", "label": "NASA FIRMS active-fire detections", "provider": "NASA FIRMS", "cadence": "daily", "geography": "GB", "units": ["detections"], "status": "adapter_ready", "source_url": "https://firms.modaps.eosdis.nasa.gov/", "access_requirement": "FIRMS MAP_KEY", "independence_note": "Satellite detections are not named fires or burned area.", "release_id": release_id},
         {"layer_id": "gdacs", "label": "GDACS major events", "provider": "GDACS", "cadence": "event_driven", "geography": "GB", "units": ["events"], "status": "adapter_ready", "source_url": "https://www.gdacs.org/", "access_requirement": "Public API", "independence_note": "Named event catalogue remains separate from attention and hotspot counts.", "release_id": release_id},
     ]
     optional_definitions = {
         "environment_agency_alerts": ("Environment Agency flood alerts", "Environment Agency", "event_driven", "alerts"),
-        "modis_burned_area": ("MODIS burned area", "NASA Earthdata AppEEARS", "monthly", "hectares"),
-        "desnz_fuel_prices": ("DESNZ road fuel prices", "Department for Energy Security and Net Zero", "weekly", "pence_per_litre"),
-        "ons_cost_pressures": ("ONS consumer prices", "Office for National Statistics", "monthly", "index_2015_100"),
+        "modis_burned_area": ("MODIS burned area", "NASA Earthdata AppEEARS", "daily", "hectares"),
+        "desnz_fuel_prices": ("UK road fuel prices · DESNZ", "Department for Energy Security and Net Zero", "weekly", "pence_per_litre"),
+        "ons_cost_pressures": ("ONS consumer prices · CPI", "Office for National Statistics", "monthly", "index_2015_100"),
         "brent_oil": ("Brent crude spot price", "FRED / U.S. EIA", "daily", "usd_per_barrel"),
-        "market_prices": ("Company share prices", "Yahoo Finance chart endpoint", "daily", "local_currency_per_share"),
+        "market_prices": ("Company closing share prices", "Yahoo Finance chart endpoint", "daily", "local_currency_per_share"),
     }
     for source, (label, provider, cadence, unit) in optional_definitions.items():
         if source in bundles:
