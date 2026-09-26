@@ -19,7 +19,10 @@ type LayerSourceId='news'|'social'|'polling'|'political'|'search'
 type DataCategory='news'|'climate'|'social'|'polling'|'search'|'political'|'economic'|'disruption'
 type LayerKey=DataCategory|'events'
 type LayerCategory=DataCategory
-type TimelineSeries={id:string;source:string;sourceLabel:string;description:string;layer:LayerKey;label:string;unit:string;available:boolean;kind:'daily'|'observation';topicId?:string;seriesId?:string;metric?:string}
+type TransformKind='baseline_difference'|'standardized_anomaly'|'rolling_mean'|'change'|'percent_change'
+type TransformStep={kind:TransformKind;window?:number}
+type DerivedSpec={id:string;baseId:string;steps:TransformStep[]}
+type TimelineSeries={id:string;source:string;sourceLabel:string;description:string;layer:LayerKey;label:string;unit:string;available:boolean;kind:'daily'|'observation';topicId?:string;seriesId?:string;metric?:string;derivedSpec?:DerivedSpec}
 const TOPICS:Topic[]=[{id:'climate_change',label:'Climate change',color:'#1d7458'},{id:'clean_transport',label:'Clean transport',color:'#4d84b7'},{id:'cost_of_living',label:'Cost of living',color:'#d9904b'},{id:'electric_vehicles',label:'Electric vehicles',color:'#7b6ab0'}]
 const topicMap=Object.fromEntries(TOPICS.map(topic=>[topic.id,topic])) as Record<string,Topic>
 type LayerTaxonomyItem={id:DataCategory;label:string;color:string;source:string;description:string;status:'available'|'pending'}
@@ -42,7 +45,8 @@ const layerLabel=(id:LayerKey)=>layerMap[id].label
 const sourceLayer=(source:string):LayerKey=>source==='gdelt_ngrams'?'news':source==='bluesky'?'social':source==='polling_opinion'?'polling':source.includes('google_trends')?'search':source.includes('political')?'political':source==='economic_context'||source.includes('fuel')||source.includes('cost_pressures')||source==='brent_oil'||source==='ftse100'||source==='market_prices'?'economic':source.includes('disruption')||source==='rail_disruption'?'disruption':source==='gdacs'||source==='gdacs_firms_events'||source==='firms_hotspots'||source==='firms'?'events':'climate'
 const fmtDate=(value:string)=>new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric'}).format(new Date(`${value.slice(0,10)}T00:00:00Z`))
 const pct=(value:number|null|undefined)=>value==null?'—':`${(value*100).toFixed(2)}%`
-function readState(){const p=new URLSearchParams(location.search);const selected=p.get('topics')?.split(',').filter(id=>topicMap[id]);const selectedLayers=(p.get('layers')?.split(',').filter(id=>LAYER_OPTIONS.some(option=>option.id===id))||[]) as LayerSourceId[];return{topics:selected?.length?selected:['climate_change','clean_transport'],layerSources:selectedLayers.length?selectedLayers:['news'] as LayerSourceId[],channel:p.get('channel')||'gdelt_ngrams',leftSeries:p.has('left')?(p.get('left')||'').split(',').filter(Boolean):['daily:gdelt_ngrams:climate_change','daily:gdelt_ngrams:clean_transport'],rightSeries:p.has('right')?(p.get('right')||'').split(',').filter(Boolean):['obs:desnz_fuel_prices:uk_petrol'],start:p.get('start')||'2026-08-01',end:p.get('end')||'2026-08-30',geography:p.get('geography')||'GB',granularity:p.get('granularity')||'daily',measure:p.get('measure')||'share',events:p.get('events')||'all',smooth:p.get('smooth')!=='0',plot:(p.get('plot')==='layers'?'layers':'lines') as PlotType}}
+const parseDerived=(value:string|null):DerivedSpec[]=>{if(!value)return[];try{const parsed=JSON.parse(value);const kinds=new Set<TransformKind>(['baseline_difference','standardized_anomaly','rolling_mean','change','percent_change']);return Array.isArray(parsed)?parsed.map(item=>item&&typeof item.id==='string'&&typeof item.baseId==='string'&&Array.isArray(item.steps)?{...item,steps:item.steps.filter((step:TransformStep)=>step&&kinds.has(step.kind))}:null).filter((item):item is DerivedSpec=>Boolean(item&&item.steps.length)):[]}catch{return[]}}
+function readState(){const p=new URLSearchParams(location.search);const selected=p.get('topics')?.split(',').filter(id=>topicMap[id]);const selectedLayers=(p.get('layers')?.split(',').filter(id=>LAYER_OPTIONS.some(option=>option.id===id))||[]) as LayerSourceId[];return{topics:selected?.length?selected:['climate_change','clean_transport'],layerSources:selectedLayers.length?selectedLayers:['news'] as LayerSourceId[],channel:p.get('channel')||'gdelt_ngrams',leftSeries:p.has('left')?(p.get('left')||'').split(',').filter(Boolean):['daily:gdelt_ngrams:climate_change','daily:gdelt_ngrams:clean_transport'],rightSeries:p.has('right')?(p.get('right')||'').split(',').filter(Boolean):['obs:desnz_fuel_prices:uk_petrol'],derived:parseDerived(p.get('derived')),start:p.get('start')||'2026-08-01',end:p.get('end')||'2026-08-30',geography:p.get('geography')||'GB',granularity:p.get('granularity')||'daily',measure:p.get('measure')||'share',events:p.get('events')||'all',smooth:p.get('smooth')!=='0',plot:(p.get('plot')==='layers'?'layers':'lines') as PlotType}}
 const routeFor=(view:View)=>view==='saved'?'/views':`/${view}`
 const viewFromPath=():View=>{const path=location.pathname.split('/')[1];return path==='map'||path==='data'||path==='methods'||path==='views'?(path==='views'?'saved':path):'timeline'}
 function App(){
@@ -53,7 +57,7 @@ function App(){
   const [article,setArticle]=useState<Article|null>(null)
   useEffect(()=>{const requested=new URLSearchParams(location.search).get('release')||'candidate';const path=requested==='fixture'?'/data/release.json':'/data/candidate.json';fetch(path).then(response=>{if(!response.ok)throw new Error(`Release unavailable: ${response.status}`);return response.json()}).then((next:Release)=>{setRelease(next);setLoadError(null);if(next.release.status==='candidate'){setState(current=>({...current,start:next.release.date_start,end:next.release.date_end,leftSeries:next.daily_attention.length?current.leftSeries:current.leftSeries.every(id=>id.startsWith('daily:gdelt_ngrams:'))?['obs:haduk_grid_weather:uk_tas']:current.leftSeries,rightSeries:current.rightSeries[0]==='obs:desnz_fuel_prices:uk_petrol'?['physical:modis_mod13c2:ndvi']:current.rightSeries}))}}).catch(error=>{console.error(error);setLoadError(error instanceof Error?error.message:'Release unavailable')})},[])
   useEffect(()=>{const back=()=>{setView(viewFromPath());setState(readState())};window.addEventListener('popstate',back);return()=>window.removeEventListener('popstate',back)},[])
-  useEffect(()=>{const params=new URLSearchParams(location.search);params.set('topics',state.topics.join(','));params.set('layers',state.layerSources.join(','));params.set('channel',state.channel);params.set('left',state.leftSeries.join(','));params.set('right',state.rightSeries.join(','));params.set('start',state.start);params.set('end',state.end);params.set('geography',state.geography);params.set('granularity',state.granularity);params.set('measure',state.measure);params.set('events',state.events);params.set('smooth',state.smooth?'1':'0');params.set('plot',state.plot);history.replaceState(null,'',`${routeFor(view)}?${params}`)},[state,view])
+  useEffect(()=>{const params=new URLSearchParams(location.search);params.set('topics',state.topics.join(','));params.set('layers',state.layerSources.join(','));params.set('channel',state.channel);params.set('left',state.leftSeries.join(','));params.set('right',state.rightSeries.join(','));if(state.derived.length)params.set('derived',JSON.stringify(state.derived));else params.delete('derived');params.set('start',state.start);params.set('end',state.end);params.set('geography',state.geography);params.set('granularity',state.granularity);params.set('measure',state.measure);params.set('events',state.events);params.set('smooth',state.smooth?'1':'0');params.set('plot',state.plot);history.replaceState(null,'',`${routeFor(view)}?${params}`)},[state,view])
   const update=(partial:Partial<typeof state>)=>setState(current=>({...current,...partial}))
   const navigate=(next:View)=>{history.pushState(null,'',`${routeFor(next)}${location.search}`);setView(next)}
   if(loadError)return <div className="atlas-app"><main className="atlas-content"><div className="atlas-evidence-card"><strong>Could not load the requested release.</strong><p>{loadError}. Try the candidate release again or choose the fixture explicitly with <code>?release=fixture</code>.</p></div></main></div>
@@ -159,6 +163,21 @@ const seriesDetails=(source:string,key:string,unit:string,metadata?:Record<strin
     'local_disruption:fixture_local_incidents':'Local disruption incidents',
   } as Record<string,string>)[`${source}:${key}`]||humanize(key),description:detail}: {label:humanize(key),description:`${sourceNames[source]||humanize(source)} measure (${unitLabel(unit)}).`}
 }
+const transformLabels:Record<TransformKind,string>={baseline_difference:'Difference from baseline',standardized_anomaly:'Standardised anomaly',rolling_mean:'Rolling average',change:'Change from previous observation',percent_change:'Percentage change'}
+const transformDescription=(step:TransformStep)=>step.kind==='rolling_mean'?`${transformLabels[step.kind]} over ${step.window||3} observations.`:transformLabels[step.kind]
+const transformUnit=(base:TimelineSeries,step:TransformStep)=>step.kind==='baseline_difference'?'index_anomaly':step.kind==='standardized_anomaly'?'standard_deviations':step.kind==='percent_change'?'percent_change':base.unit
+const derivedLabel=(base:TimelineSeries,steps:TransformStep[])=>steps.reduce((label,step)=>`${transformLabels[step.kind]}${step.kind==='rolling_mean'?` (${step.window||3})`:''} · ${label}`,base.label)
+const derivedDescription=(base:TimelineSeries,steps:TransformStep[])=>`Derived from ${base.sourceLabel} · ${base.label}. ${steps.map(transformDescription).join(' Then ')} Formula and missing-date handling are shown in the chart definition.`
+const derivedUnit=(base:TimelineSeries,steps:TransformStep[])=>steps.reduce((unit,step)=>transformUnit({...base,unit},step),base.unit)
+const availableTransforms=(base:TimelineSeries):TransformKind[]=>{
+  const options:TransformKind[]=['rolling_mean','change','percent_change']
+  if(base.source==='modis_mod13c2'&&base.metric==='ndvi')options.unshift('baseline_difference','standardized_anomaly')
+  return options
+}
+const createDerivedSeries=(base:TimelineSeries,spec:DerivedSpec):TimelineSeries=>({
+  id:spec.id,source:base.source,sourceLabel:base.sourceLabel,description:derivedDescription(base,spec.steps),layer:base.layer,
+  label:derivedLabel(base,spec.steps),unit:derivedUnit(base,spec.steps),available:base.available,kind:'observation',seriesId:spec.id,derivedSpec:spec,
+})
 function timelineCatalog(release:Release,state:ReturnType<typeof readState>):TimelineSeries[]{
   const catalog:TimelineSeries[]=[]
   for(const source of ['gdelt_ngrams','bluesky'])for(const topic of TOPICS){
@@ -197,20 +216,66 @@ function timelineCatalog(release:Release,state:ReturnType<typeof readState>):Tim
   for(const layer of LAYER_TAXONOMY)if(layer.status==='pending'&&!catalog.some(item=>item.layer===layer.id))catalog.push({id:`pending:${layer.id}`,source:layer.source,sourceLabel:layer.label,description:layer.description,layer:layer.id,label:'Awaiting source',unit:'',available:false,kind:'observation'})
   return catalog.sort((a,b)=>LAYER_TAXONOMY.findIndex(layer=>layer.id===a.layer)-LAYER_TAXONOMY.findIndex(layer=>layer.id===b.layer)||a.sourceLabel.localeCompare(b.sourceLabel)||a.label.localeCompare(b.label))
 }
-function timelineRows(release:Release,state:ReturnType<typeof readState>,series:TimelineSeries[]){
-  const map=new Map<string,Record<string,number|string>>()
-  const selected=new Set(series.map(item=>item.id))
-  const put=(date:string,id:string,value:number|null|undefined)=>{if(!selected.has(id)||value==null||date<state.start||date>state.end)return;const row=map.get(date)||{date};row[id]=value;map.set(date,row)}
-  for(const row of release.daily_attention)put(row.date,`daily:${row.source}:${row.topic_id}`,state.measure==='count'?Number(row.metadata?.[row.source==='bluesky'?'raw_post_count':'raw_article_count']??NaN):row.value)
-  for(const row of release.data_layers||[])if(row.series_id&&row.observed_at)put(row.observed_at.slice(0,10),`obs:${row.source}:${row.series_id}`,row.value)
-  for(const row of release.physical_observations)put(row.observed_at.slice(0,10),`physical:${row.source}:${String(row.metadata?.series_id||row.metric)}`,row.value)
-  for(const event of release.events){const date=event.start_at.slice(0,10),id=`event:${event.source}`;if(selected.has(id)&&date>=state.start&&date<=state.end){const row=map.get(date)||{date};row[id]=Number(row[id]||0)+1;map.set(date,row)}}
-  return [...map.values()].sort((a,b)=>String(a.date).localeCompare(String(b.date)))
+function timelineRows(release:Release,state:ReturnType<typeof readState>,series:TimelineSeries[],selectedIds?:Set<string>){
+  const selected=selectedIds||new Set(series.map(item=>item.id))
+  const values=new Map<string,Map<string,number>>()
+  const metadataValues=new Map<string,Map<string,number>>()
+  const put=(id:string,date:string,value:number|null|undefined)=>{if(value==null||!Number.isFinite(Number(value))||date<state.start||date>state.end)return;const item=values.get(id)||new Map<string,number>();item.set(date,Number(value));values.set(id,item)}
+  const putMetadata=(id:string,date:string,value:number|null|undefined)=>{if(value==null||!Number.isFinite(Number(value))||date<state.start||date>state.end)return;const item=metadataValues.get(id)||new Map<string,number>();item.set(date,Number(value));metadataValues.set(id,item)}
+  for(const row of release.daily_attention)put(`daily:${row.source}:${row.topic_id}`,row.date,state.measure==='count'?Number(row.metadata?.[row.source==='bluesky'?'raw_post_count':'raw_article_count']??NaN):row.value)
+  for(const row of release.data_layers||[])if(row.series_id&&row.observed_at)put(`obs:${row.source}:${row.series_id}`,row.observed_at.slice(0,10),row.value)
+  for(const row of release.physical_observations){
+    const id=`physical:${row.source}:${String(row.metadata?.series_id||row.metric)}`
+    put(id,row.observed_at.slice(0,10),row.value)
+    if(row.metric==='ndvi'){
+      putMetadata(id,row.observed_at.slice(0,10),Number(row.metadata?.anomaly))
+      putMetadata(`${id}:standardized`,row.observed_at.slice(0,10),Number(row.metadata?.standardized_anomaly))
+    }
+  }
+  const seriesById=new Map(series.map(item=>[item.id,item]))
+  const derivedCache=new Map<string,Map<string,number>>()
+  const derive=(item:TimelineSeries):Map<string,number>=>{
+    if(!item.derivedSpec)return values.get(item.id)||new Map<string,number>()
+    const cached=derivedCache.get(item.id);if(cached)return cached
+    const base=seriesById.get(item.derivedSpec.baseId)
+    if(!base)return new Map<string,number>()
+    const initial=derive(base)
+    let current=new Map(initial)
+    for(const step of item.derivedSpec.steps){
+      const next=new Map<string,number>();const dates=[...current.keys()].sort()
+      if(step.kind==='baseline_difference'||step.kind==='standardized_anomaly'){
+        const special=step.kind==='baseline_difference'?metadataValues.get(base.id):metadataValues.get(`${base.id}:standardized`)
+        if(special)for(const [date,value] of special)next.set(date,value)
+        current=next;continue
+      }
+      if(step.kind==='rolling_mean'){
+        const window=step.window||3
+        dates.forEach((date,index)=>{if(index<window-1)return;const slice=dates.slice(index-window+1,index+1).map(itemDate=>current.get(itemDate));if(slice.every(value=>value!=null))next.set(date,slice.reduce((sum,value)=>sum+Number(value),0)/window)})
+      }else if(step.kind==='change'||step.kind==='percent_change'){
+        dates.forEach((date,index)=>{if(index===0)return;const previous=current.get(dates[index-1]);const value=current.get(date);if(previous==null||value==null||step.kind==='percent_change'&&previous===0)return;next.set(date,step.kind==='change'?value-previous:(value/previous-1)*100)})
+      }
+      current=next
+    }
+    derivedCache.set(item.id,current);return current
+  }
+  const rowsByDate=new Map<string,Record<string,number|string>>()
+  for(const item of series){
+    const itemValues=derive(item)
+    if(!selected.has(item.id))continue
+    for(const [date,value] of itemValues){const row=rowsByDate.get(date)||{date};row[item.id]=value;rowsByDate.set(date,row)}
+  }
+  return [...rowsByDate.values()].sort((a,b)=>String(a.date).localeCompare(String(b.date)))
 }
 const unitLabel=(unit:string)=>({share:'share (%)',percent:'%',pence_per_litre:'pence/litre',degrees_celsius:'°C',index:'NDVI index',index_anomaly:'NDVI difference',index_0_100:'index 0–100',index_points:'index points',usd_per_barrel:'USD/barrel',percent_change_yoy:'year-on-year %',hectares:'hectares',detections:'detections',alerts:'alerts',events:'events',minutes:'minutes',incidents:'incidents',millimetres:'millimetres',local_currency_per_share:'share-price currency'} as Record<string,string>)[unit]||humanize(unit)
 const displayValue=(value:number,unit:string)=>unit==='share'?`${(value*100).toFixed(2)}%`:unit==='percent'||unit==='percent_change_yoy'?`${value.toFixed(1)}%`:Number.isInteger(value)?`${value} ${unitLabel(unit)}`:`${value.toFixed(2)} ${unitLabel(unit)}`
 function Timeline({release,state,update,onArticle}:{release:Release;state:ReturnType<typeof readState>;update:(partial:Partial<ReturnType<typeof readState>>)=>void;onArticle:(article:Article)=>void}){
-  const catalog=useMemo(()=>timelineCatalog(release,state),[release,state.measure])
+  const [builder,setBuilder]=useState<{baseId:string;spec?:DerivedSpec}|null>(null)
+  const baseCatalog=useMemo(()=>timelineCatalog(release,state),[release,state.measure])
+  const catalog=useMemo(()=>{
+    const items=[...baseCatalog]
+    for(const spec of state.derived){const base=items.find(item=>item.id===spec.baseId);if(base)items.push(createDerivedSeries(base,spec))}
+    return items
+  },[baseCatalog,state.derived])
   const byId=useMemo(()=>new Map(catalog.map(series=>[series.id,series])),[catalog])
   const defaultLeft=catalog.filter(series=>series.available&&series.kind==='daily'&&series.source==='gdelt_ngrams').slice(0,2).map(series=>series.id)
   const fallbackLeft=defaultLeft.length?defaultLeft:catalog.filter(series=>series.available).slice(0,1).map(series=>series.id)
@@ -220,7 +285,7 @@ function Timeline({release,state,update,onArticle}:{release:Release;state:Return
   const left=leftIds.map(id=>byId.get(id)!)
   const right=rightIds.map(id=>byId.get(id)!)
   const selected=[...left,...right.filter(series=>!leftIds.includes(series.id))]
-  const rows=useMemo(()=>timelineRows(release,state,selected),[release,state,selected.map(series=>series.id).join(',')])
+  const rows=useMemo(()=>timelineRows(release,state,catalog,new Set(selected.map(series=>series.id))),[release,state,catalog,selected.map(series=>series.id).join(',')])
   const eventList=state.events==='none'?[]:state.events==='all'?release.events:release.events.filter(event=>state.events.split(',').includes(event.event_id))
   const periodDays=(new Date(state.end).getTime()-new Date(state.start).getTime())/86400000+1
   const assign=(axis:'left'|'right',candidate:TimelineSeries)=>{
@@ -246,11 +311,12 @@ function Timeline({release,state,update,onArticle}:{release:Release;state:Return
     <section className="atlas-visualisation-picker" aria-label="Visualisation picker"><div><span className="atlas-eyebrow">Visualisation</span><strong>{state.plot==='lines'?'Multi-series lines':'Layered relative intensity'}</strong></div><div className="atlas-plot-switch" role="group" aria-label="Plot type"><button type="button" className={state.plot==='lines'?'active':''} aria-pressed={state.plot==='lines'} onClick={()=>update({plot:'lines'})}>Lines</button><button type="button" className={state.plot==='layers'?'active':''} aria-pressed={state.plot==='layers'} onClick={()=>update({plot:'layers'})}>Layered bands</button></div></section>
     <section className="atlas-controls" aria-label="Timeline source picker">
       <div className="atlas-picker-heading"><span className="atlas-eyebrow">Add a measure</span><strong>Choose a category, source and measure for either Y axis</strong></div>
-      <div className="atlas-category-list" aria-label="Data categories">{LAYER_TAXONOMY.map(category=><details key={category.id} open={category.id==='news'}><summary><i style={{background:category.color}}/><span>{category.label}</span><small>{categorySources(category.id).length} source{categorySources(category.id).length===1?'':'s'}</small></summary><div className="atlas-category-sources">{categorySources(category.id).map(source=>{const measures=catalog.filter(item=>item.layer===category.id&&item.source===source.source);return <div className="atlas-category-source" key={source.source}><div className="atlas-category-source-head" title={source.description}><strong>{source.sourceLabel}</strong><span title={`Internal source key: ${source.source}`}>{sourceMeta(source.source,release)}</span></div>{measures.map(measure=><div className="atlas-category-measure" key={measure.id} title={measure.description}><span><b>{measure.label}</b><small>{unitLabel(measure.unit)}{measure.available?'':' · pending'}</small></span><div className="atlas-picker-actions"><button className="atlas-action atlas-primary" type="button" disabled={!measure.available} onClick={()=>assign('left',measure)}>Add to left axis</button><button className="atlas-action" type="button" disabled={!measure.available} onClick={()=>assign('right',measure)}>Add to right axis</button></div></div>)}</div>})}</div></details>)}</div>
+      <div className="atlas-category-list" aria-label="Data categories">{LAYER_TAXONOMY.map(category=><details key={category.id} open={category.id==='news'}><summary><i style={{background:category.color}}/><span>{category.label}</span><small>{categorySources(category.id).length} source{categorySources(category.id).length===1?'':'s'}</small></summary><div className="atlas-category-sources">{categorySources(category.id).map(source=>{const measures=catalog.filter(item=>item.layer===category.id&&item.source===source.source);return <div className="atlas-category-source" key={source.source}><div className="atlas-category-source-head" title={source.description}><strong>{source.sourceLabel}</strong><span title={`Internal source key: ${source.source}`}>{sourceMeta(source.source,release)}</span></div>{measures.map(measure=><div className="atlas-category-measure" key={measure.id} title={measure.description}><span><b>{measure.label}</b><small>{unitLabel(measure.unit)}{measure.available?'':' · pending'}</small></span><div className="atlas-picker-actions"><button className="atlas-action atlas-primary" type="button" disabled={!measure.available} onClick={()=>assign('left',measure)}>Add to left axis</button><button className="atlas-action" type="button" disabled={!measure.available} onClick={()=>assign('right',measure)}>Add to right axis</button>{!measure.derivedSpec&&measure.available&&<button className="atlas-action" type="button" onClick={()=>setBuilder({baseId:measure.id})}>Derive</button>}</div></div>)}</div>})}</div></details>)}</div>
+      {builder&&<DerivedMetricBuilder key={builder.spec?.id||builder.baseId} catalog={catalog} initial={builder.spec} baseId={builder.baseId} onCancel={()=>setBuilder(null)} onSave={spec=>{update({derived:state.derived.some(item=>item.id===spec.id)?state.derived.map(item=>item.id===spec.id?spec:item):[...state.derived,spec]});setBuilder(null);if(!leftIds.includes(spec.id)&&!rightIds.includes(spec.id))update({leftSeries:[...leftIds,spec.id]})}}/>}
       <p className="atlas-picker-note"><span>Each axis keeps one unit; adding a measure with another unit replaces that axis.</span></p>
       <div className="atlas-control-row atlas-picker-filters"><span className="atlas-control-label">View</span><select className="atlas-select" aria-label="Geography" value={state.geography} onChange={event=>update({geography:event.target.value})}><option value="GB">United Kingdom</option><option value="ENG" disabled>England · unavailable</option><option value="LON" disabled>Greater London · unavailable</option></select><select className="atlas-select" aria-label="Granularity" value={state.granularity} onChange={event=>update({granularity:event.target.value})}><option value="daily">Source dates</option><option value="weekly" disabled>Weekly · planned</option><option value="monthly" disabled>Monthly · planned</option></select><label className="atlas-date-label">From <input className="atlas-select" type="date" value={state.start} min={release.release.date_start} max={state.end} onChange={event=>update({start:event.target.value})}/></label><label className="atlas-date-label">To <input className="atlas-select" type="date" value={state.end} min={state.start} max={release.release.date_end} onChange={event=>update({end:event.target.value})}/></label><select className="atlas-select" aria-label="Attention measure" value={state.measure} onChange={event=>update({measure:event.target.value})}><option value="share">Attention share</option><option value="count">Raw count</option></select></div>
     </section>
-    {state.plot==='lines'&&<section className="atlas-builder" aria-label="Chart series builder"><AxisSeries side="left" series={left} onRemove={id=>remove('left',id)}/><AxisSeries side="right" series={right} onRemove={id=>remove('right',id)}/></section>}
+    {state.plot==='lines'&&<section className="atlas-builder" aria-label="Chart series builder"><AxisSeries side="left" series={left} onRemove={id=>remove('left',id)} onEdit={item=>item.derivedSpec&&setBuilder({baseId:item.derivedSpec.baseId,spec:item.derivedSpec})}/><AxisSeries side="right" series={right} onRemove={id=>remove('right',id)} onEdit={item=>item.derivedSpec&&setBuilder({baseId:item.derivedSpec.baseId,spec:item.derivedSpec})}/></section>}
     <div className="atlas-events"><span className="atlas-events-label" style={{color:layerColor('events')}}>X-axis events</span>{release.events.map(event=>{const active=eventList.some(item=>item.event_id===event.event_id);return <button key={event.event_id} type="button" className={`atlas-event-chip ${active?'active':''}`} onClick={()=>toggleEvent(event.event_id)} title={event.end_at?`${fmtDate(event.start_at)} – ${fmtDate(event.end_at)}`:fmtDate(event.start_at)}>{event.name}{event.end_at?` · ${fmtDate(event.start_at)}–${fmtDate(event.end_at)}`:` · ${fmtDate(event.start_at)}`}</button>})}<button className="atlas-event-chip" type="button" onClick={()=>update({events:eventList.length===release.events.length?'none':'all'})}>{eventList.length===release.events.length?'Hide events':'Show all events'}</button></div>
     {state.plot==='layers'&&<p className="atlas-layer-help">Bands use the selected source measures above. Each measure is scaled within its own observed range; gaps remain missing.</p>}
     <div className="atlas-measures"><Measure label="Chart title" value="Selected source measures" color="green"/><Measure label="Appearance" value="Customize" color="blue"/><Measure label="Selected" value={`${selected.length} measures`} color="purple"/><Measure label="Coverage" value={`${rows.length} of ${periodDays} dates`} color="orange"/></div>
@@ -296,7 +362,16 @@ function LayeredPlot({rows,series:selectedSeries,events}:{rows:Record<string,num
     })}
     <line className="atlas-layered-axis" x1={left} x2={width-right} y1={height-bottom+3} y2={height-bottom+3}/>{[0,.5,1].map((position,index)=>{const x=left+plotWidth*position;const row=rows[Math.min(rows.length-1,Math.round((rows.length-1)*position))];return <g key={position}><line className="atlas-layered-tick" x1={x} x2={x} y1={height-bottom+3} y2={height-bottom+9}/><text className="atlas-layered-date" x={x} y={height-9} textAnchor={index===0?'start':index===2?'end':'middle'}>{row?fmtDate(String(row.date)):''}</text></g>})}</svg>
 }
-function AxisSeries({side,series,onRemove}:{side:'left'|'right';series:TimelineSeries[];onRemove:(id:string)=>void}){return <div className={`atlas-axis ${side==='right'?'right':''}`} style={{borderLeftColor:series[0]?layerColor(series[0].layer):undefined}}><div className="atlas-axis-head"><span>{side} Y axis · {series[0]?unitLabel(series[0].unit):'empty'}</span></div>{series.map(item=><div className="atlas-series" key={item.id} title={item.description}><i style={{background:layerColor(item.layer)}}/><span>{layerLabel(item.layer)} · {item.sourceLabel} · {item.label}</span><button type="button" aria-label={`Remove ${item.sourceLabel} ${item.label} from ${side} axis`} onClick={()=>onRemove(item.id)}>×</button></div>)}{!series.length&&<p className="atlas-axis-empty">Choose a category, source and measure above.</p>}</div>}
+function DerivedMetricBuilder({catalog,baseId,initial,onCancel,onSave}:{catalog:TimelineSeries[];baseId:string;initial?:DerivedSpec;onCancel:()=>void;onSave:(spec:DerivedSpec)=>void}){
+  const [selectedBase,setSelectedBase]=useState(initial?.baseId||baseId)
+  const [steps,setSteps]=useState<TransformStep[]>(initial?.steps||[{kind:'rolling_mean',window:3}])
+  const base=catalog.find(item=>item.id===selectedBase)
+  const options=base?availableTransforms(base):[]
+  const validSteps=steps.filter(step=>options.includes(step.kind))
+  const preview=base&&validSteps.length?createDerivedSeries(base,{id:initial?.id||'preview',baseId:selectedBase,steps:validSteps}):null
+  return <section className="atlas-derived-builder" aria-label="Derived measure builder"><div className="atlas-derived-builder-head"><div><span className="atlas-eyebrow">Derived measure</span><h2>Build a calculated series</h2><p>Calculations stay linked to the selected source and retain the source cadence. Missing observations remain gaps.</p></div><button className="atlas-action" type="button" onClick={onCancel}>Close</button></div><label className="atlas-derived-field">Base measure<select className="atlas-select" value={selectedBase} onChange={event=>{setSelectedBase(event.target.value);setSteps([{kind:'rolling_mean',window:3}])}}>{catalog.filter(item=>item.available&&item.id!==initial?.id).map(item=><option key={item.id} value={item.id}>{item.sourceLabel} · {item.label}</option>)}</select></label><div className="atlas-derived-steps"><strong>Calculations, in order</strong>{steps.map((step,index)=><div className="atlas-derived-step" key={`${index}-${step.kind}`}><span>{index+1}</span><select className="atlas-select" value={step.kind} onChange={event=>setSteps(current=>current.map((item,itemIndex)=>itemIndex===index?{...item,kind:event.target.value as TransformKind}:item))}>{options.map(option=><option key={option} value={option}>{transformLabels[option]}</option>)}</select>{step.kind==='rolling_mean'&&<select className="atlas-select" aria-label="Rolling window" value={step.window||3} onChange={event=>setSteps(current=>current.map((item,itemIndex)=>itemIndex===index?{...item,window:Number(event.target.value)}:item))}><option value="3">3 observations</option><option value="7">7 observations</option><option value="12">12 observations</option><option value="30">30 observations</option></select>}<button className="atlas-action" type="button" aria-label={`Remove calculation ${index+1}`} onClick={()=>setSteps(current=>current.filter((_,itemIndex)=>itemIndex!==index))}>Remove</button></div>)}<button className="atlas-action" type="button" disabled={!options.length} onClick={()=>setSteps(current=>[...current,{kind:'rolling_mean',window:3}])}>Add calculation</button></div>{preview&&<div className="atlas-derived-preview"><span className="atlas-eyebrow">Preview</span><strong>{preview.label}</strong><small>{preview.sourceLabel} · {unitLabel(preview.unit)}</small><p>{preview.description}</p><code>{preview.sourceLabel} · {base?.label} → {validSteps.map(transformDescription).join(' → ')}</code></div>}<div className="atlas-derived-actions"><button className="atlas-action" type="button" onClick={onCancel}>Cancel</button><button className="atlas-action atlas-primary" type="button" disabled={!preview||!validSteps.length} onClick={()=>preview&&onSave({id:initial?.id||`derived:${Date.now()}`,baseId:selectedBase,steps:validSteps})}>{initial?'Update derived measure':'Add derived measure'}</button></div></section>
+}
+function AxisSeries({side,series,onRemove,onEdit}:{side:'left'|'right';series:TimelineSeries[];onRemove:(id:string)=>void;onEdit:(item:TimelineSeries)=>void}){return <div className={`atlas-axis ${side==='right'?'right':''}`} style={{borderLeftColor:series[0]?layerColor(series[0].layer):undefined}}><div className="atlas-axis-head"><span>{side} Y axis · {series[0]?unitLabel(series[0].unit):'empty'}</span></div>{series.map(item=><div className="atlas-series" key={item.id} title={item.description}><i style={{background:layerColor(item.layer)}}/><span>{layerLabel(item.layer)} · {item.sourceLabel} · {item.label}</span>{item.derivedSpec&&<button type="button" aria-label={`Edit ${item.label}`} onClick={()=>onEdit(item)}>Edit</button>}<button type="button" aria-label={`Remove ${item.sourceLabel} ${item.label} from ${side} axis`} onClick={()=>onRemove(item.id)}>×</button></div>)}{!series.length&&<p className="atlas-axis-empty">Choose a category, source and measure above.</p>}</div>}
 function Measure({label,value,color}:{label:string;value:string;color:string}){return <button className="atlas-measure" type="button"><span><b style={{background:`var(--atlas-${color})`}}/>{label}</span><strong>{value}</strong></button>}
 function MapView({release,state,update,onTimeline}:{release:Release;state:ReturnType<typeof readState>;update:(partial:Partial<ReturnType<typeof readState>>)=>void;onTimeline:()=>void}){
   const [geo,setGeo]=useState<GeoJson|null>(null)
