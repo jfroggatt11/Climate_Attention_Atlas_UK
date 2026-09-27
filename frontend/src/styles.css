@@ -586,3 +586,27 @@ html,body,#root{margin:0;min-width:320px;min-height:100%;background:#eef3ef}
 .atlas-category-measure>span{display:grid;gap:2px;min-width:0}.atlas-category-measure b{font-size:10px}.atlas-category-measure small{color:var(--atlas-muted);font-size:9px}
 .atlas-category-measure .atlas-picker-actions{flex:0 0 auto}.atlas-category-measure .atlas-action{padding:5px 7px;font-size:9px}
 @media(max-width:760px){.atlas-category-measure{align-items:stretch;flex-direction:column}.atlas-category-measure .atlas-picker-actions{width:100%}.atlas-category-measure .atlas-action{flex:1}.atlas-category-source-head{align-items:flex-start;flex-direction:column;gap:2px}}
+.atlas-family-list{display:grid;gap:8px;margin-top:10px}
+.atlas-family{border:1px solid var(--atlas-line);border-radius:9px;background:#f5faf7;overflow:hidden}
+.atlas-family>summary{display:flex;align-items:baseline;gap:10px;padding:11px 12px;cursor:pointer;list-style:none}
+.atlas-family>summary::-webkit-details-marker{display:none}
+.atlas-family>summary::after{content:'+';margin-left:auto;color:var(--atlas-muted);font-size:16px;font-weight:400}
+.atlas-family[open]>summary::after{content:'−'}
+.atlas-family>summary span{font-size:13px;font-weight:800;color:var(--atlas-ink)}
+.atlas-family>summary small{color:var(--atlas-muted);font-size:10px}
+.atlas-family-categories{display:grid;gap:6px;padding:0 8px 8px}
+.atlas-family-categories .atlas-category{background:#fff}
+.atlas-family-categories .atlas-category>summary{padding:8px 10px}
+.atlas-layer-family-group{display:grid;gap:5px;padding:8px 0;border-top:1px solid var(--atlas-line)}
+.atlas-layer-family-group>strong{font-size:10px;color:var(--atlas-muted);line-height:1.25}
+.atlas-layer-family-group>div{display:grid;gap:4px}
+.atlas-layer-family-group .atlas-layer-group{padding:5px 0 0}
+.atlas-taxonomy-families{display:grid;gap:14px;margin-top:14px}
+.atlas-taxonomy-family{padding-top:12px;border-top:1px solid var(--atlas-line)}
+.atlas-taxonomy-family h3{margin:0;font-size:14px}.atlas-taxonomy-family p{margin:3px 0 8px;color:var(--atlas-muted);font-size:10px}
+.atlas-taxonomy-family .atlas-taxonomy-grid{margin-top:0}
+.atlas-taxonomy-families{display:grid;gap:14px;margin-top:14px}
+.atlas-taxonomy-family{padding-top:12px;border-top:1px solid var(--atlas-line)}
+.atlas-taxonomy-family h3{margin:0;font-size:14px}.atlas-taxonomy-family p{margin:3px 0 8px;color:var(--atlas-muted);font-size:10px}
+.atlas-taxonomy-family .atlas-taxonomy-grid{margin-top:0}
+.atlas-method-family-list{display:grid;gap:14px;margin-top:14px}.atlas-method-family{padding-top:12px;border-top:1px solid var(--atlas-line)}.atlas-method-family h3{margin:0;font-size:14px}.atlas-method-family>p{margin:3px 0 8px;color:var(--atlas-muted);font-size:10px}.atlas-method-family .atlas-method-layer-list{margin-top:0}

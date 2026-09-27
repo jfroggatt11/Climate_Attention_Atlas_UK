@@ -16054,17 +16054,17 @@
   ],
   "release": {
     "configuration_files": {
+      "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f",
       "account_panel.yaml": "cd8d895fe32dd5c723259533dacd78ee6ede53cd0f85a6ccdaec9f8ab8cda26e",
-      "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
-      "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "outlet_registry.yaml": "4f91724facb9785439250c022bbd17652899804fdc80c43177433e766a5f7a39",
-      "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d",
-      "source_layers.yaml": "d609f447629ff02d2c4299b69179f596b77873af7c3b7c975147f61c50af7ff2",
-      "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f"
+      "source_layers.yaml": "5b8383e211f7e69ebe4c4e19019f7c416ccf6016dc925e20ac679b014ebb2b28",
+      "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
+      "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
+      "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d"
     },
-    "configuration_hash": "4d09d7306719c9e757835a6e6a73c28654bbafac91ad9c22829c9e6e8b677d45",
+    "configuration_hash": "ef593b69ead19ce7a57c27641ebe20bca2b3d0fbdfa1028edc86689872d8319d",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "4a75a04cef0fe3058e9fbf30466b11ea6b34703a7d29b00e72cf0bf11a9a408e",
+    "content_hash": "3a0ea858ef1006f03fab0a8202b7c3f0a897a197b105ea2a054edf9f6bf46965",
     "created_at": "2026-08-31T12:00:00Z",
     "date_end": "2026-08-30",
     "date_start": "2026-08-01",

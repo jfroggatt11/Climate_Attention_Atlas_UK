@@ -5,6 +5,12 @@ attention moves alongside events and physical conditions. The pilot keeps news,
 monitored-account social posts, polling, search interest and MODIS vegetation
 observations as separate layers with explicit units and denominators.
 
+The published layer hierarchy has three top-level groups: **External events and
+conditions** (Climate, Energy markets and Events), **Attention and public attitudes**
+(News, Search, Social and Polling), and **Secondary impacts and responses**
+(Economic, Political and Disruption). Events remain X-axis markers; observed series
+from the other categories can be assigned to chart axes when available.
+
 The checked-in fixture remains a local, reproducible **synthetic fixture / engineering
 demonstration** for interface tests. The browser defaults to a separate candidate
 release assembled from real temperature, MODIS raw NDVI and greenness anomalies,

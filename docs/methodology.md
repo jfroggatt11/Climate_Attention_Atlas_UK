@@ -27,14 +27,9 @@ p-values or statistical significance verdicts. See the
 
 ## Shared data-layer taxonomy
 
-The atlas keeps source identity visible across pages and visualisations. The fixed
-order is **News, Climate, Social, Polling, Search, Political, Economic and
-Disruption**. Each category has one label and colour in the global legend, line
-series, layered and violin plot selectors, map controls, tooltips and source
-registry. A pending category or source is shown with its access status and cannot
-be mistaken for an observed series. The taxonomy is also the insertion order for
-future data layers and axis choices. **Events** are stored separately as x-axis
-markers: single dates render as points and start/end ranges as shaded regions.
+The atlas uses three top-level groups across every page and visualisation: **External events and conditions** (dated hazards and geopolitical events, plus environmental measures, energy-market shocks and other external conditions), **Attention and public attitudes** (News, Search, Social and Polling), and **Secondary impacts and responses** (Economic, Political and Disruption). Each category has one label and colour in the picker, axes, map controls, methods page and source registry. A source's group describes its analytical role, not a causal claim: temperature, rainfall, greenness and burned area are observations, while events are dated markers.
+
+Events are stored separately from time-series measures: single dates render as points and start/end ranges as shaded regions on the X axis. External conditions and secondary impacts can be added to either Y axis when an observed measure is available. Pending categories and sources remain visible with their access status.
 
 ### Polling layer
 

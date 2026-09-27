@@ -81,13 +81,16 @@
 - 2026-09-25: Added the planned polling opinion layer (BES, YouGov, Ipsos and
   Greenpeace candidates) as an access-pending source with poll metadata and
   publication-rights requirements. The frontend now uses a shared ordered layer
-  taxonomy and colour legend across timeline, map, data and methods views; pending
+  taxonomy and colour system across timeline, map, data and methods views; pending
   layers remain visible and are labelled rather than plotted as observed values.
 - 2026-09-25: Reworked the timeline picker to follow category → data source →
   measure. Available measures are organised in collapsible data categories and can now be
   assigned to either chart axis with unit-compatible axes, source labels and
   URL-persisted series selections. Events remain separate x-axis markers.
+- 2026-09-27: Published the three-level layer hierarchy: External events and conditions, Attention and public attitudes, and Secondary impacts and responses. Energy markets are kept with external conditions for Brent shocks; household prices, shares, policy and disruption remain secondary impacts.
 
 ## Shared data-layer taxonomy
 
-The planning and interface order is **News, Climate, Social, Polling, Search, Political, Economic and Disruption**. Every source is assigned one display label and colour. The same assignment is used in the global legend, line-chart axes, layered and future violin-plot selectors, map controls, tooltips and methods page. **Events** are stored separately as x-axis markers: a single date is a point and a start/end range is a shaded region. Polling observations retain pollster, sponsor, fieldwork dates, exact wording, response options, sample, mode, weighting and rights metadata, and are never silently interpolated to daily values or merged into media denominators.
+The atlas uses three top-level groups across every page and visualisation: **External events and conditions** (dated hazards and geopolitical events, plus environmental measures, energy-market shocks and other external conditions), **Attention and public attitudes** (News, Search, Social and Polling), and **Secondary impacts and responses** (Economic, Political and Disruption). Each category has one label and colour in the picker, axes, map controls, methods page and source registry. A source's group describes its analytical role, not a causal claim: temperature, rainfall, greenness and burned area are observations, while events are dated markers.
+
+Events are stored separately from time-series measures: single dates render as points and start/end ranges as shaded regions on the X axis. External conditions and secondary impacts can be added to either Y axis when an observed measure is available. Pending categories and sources remain visible with their access status.
