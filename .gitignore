@@ -18,6 +18,7 @@ data/processed/
 data/manifests/
 data/api_responses/
 data/runs/
+data/gdelt_article_runs/
 data/test_runs/
 data/audits/
 data/hazards/

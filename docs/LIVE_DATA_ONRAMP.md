@@ -16,21 +16,19 @@ the same validation gates.
 
 ### 1. GDELT Web NGrams (first live source)
 
-The existing `GDELTNGramsProvider` already has parameterized SQL, non-billable dry
-runs, per-window byte caps, response sinks, request logs and resumable windows. The
-remaining work is the live orchestration bridge:
+The existing `GDELTNGramsProvider` has parameterized SQL, non-billable dry runs,
+per-window byte caps, response sinks, request logs and resumable windows. The
+article-level orchestration bridge is implemented by `collect-gdelt-articles` and
+`estimate-gdelt-articles`:
 
-1. Add a `collect-gdelt-live` command that loads the topic, political and geography
-   configuration, creates a bounded `CollectionRequest`, and writes raw responses,
-   run state and a manifest under `data/`.
-2. Add a normalizer from `DailyTrend` to the release contract, retaining the exact
-   GDELT denominator scope and source job metadata.
-3. Extend the denominator query to emit a reproducible URL-universe digest (the
-   current query emits the denominator count; it does not retain the universe
-   digest needed by the release contract).
-4. Run a seven-day UK-only pilot with all four seed topics, a dry-run byte cap, and
-   a small article validation sample. Do not publish it until T&E reviews phrase
-   matches and outlet attribution.
+1. Run `estimate-gdelt-articles` to inspect inventory and NGrams byte estimates.
+2. Run `collect-gdelt-articles` with a per-query cap and optional cumulative cap.
+   It loads topic, political, outlet, event and geography configuration, writes
+   raw responses, stage checkpoints and a capture manifest under `data/`, then
+   emits a candidate article release.
+3. Run `sample-gdelt-validation` on the candidate bundle for a reproducible human
+   review sample. Do not publish it until T&E reviews phrase matches and outlet
+   attribution.
 
 ### 2. Bluesky monitored panel
 
@@ -104,4 +102,3 @@ A first live run is ready for T&E review when it has:
 - a release content hash and configuration hashes;
 - a passing `validate-release` and `release-verify` result; and
 - no automatic public publication.
-

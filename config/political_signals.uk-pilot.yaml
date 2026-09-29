@@ -36,3 +36,32 @@ official_domains:
     - libdems.org.uk
     - greenparty.org.uk
     - reformparty.uk
+
+# Identity seeds are candidates for review, not evidence that an article names
+# the entity.  Validity dates support historical attribution when aliases change.
+entities:
+  - entity_id: uk_government
+    entity_type: actor
+    canonical_name: UK Government
+    aliases: [government, ministers, Westminster]
+    roles: [executive]
+    valid_from: '2010-01-01'
+    source_urls: [https://www.gov.uk/]
+  - entity_id: labour_party
+    entity_type: party
+    canonical_name: Labour Party
+    aliases: [Labour, Labour Party]
+    valid_from: '1900-01-01'
+    source_urls: [https://labour.org.uk/]
+  - entity_id: conservative_party
+    entity_type: party
+    canonical_name: Conservative Party
+    aliases: [Conservative, Conservatives, Tory, Tories]
+    valid_from: '1900-01-01'
+    source_urls: [https://conservatives.com/]
+  - entity_id: net_zero_policy
+    entity_type: policy
+    canonical_name: Net zero target
+    aliases: [net zero, net-zero target, net zero target]
+    valid_from: '2019-01-01'
+    source_urls: [https://www.gov.uk/government/news/uk-becomes-first-major-economy-to-pass-net-zero-emissions-law]

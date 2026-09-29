@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from hashlib import sha256
 import json
+from datetime import date
 from pathlib import Path
 from typing import Any, Literal
 
@@ -229,10 +230,31 @@ class PoliticalSignal(StrictModel):
     description: str | None = None
 
 
+class PoliticalEntity(StrictModel):
+    """Stable identity seed; aliases are dated so historical names remain auditable."""
+
+    entity_id: str = Field(pattern=ID_PATTERN)
+    entity_type: Literal["actor", "party", "policy"]
+    canonical_name: str = Field(min_length=1)
+    aliases: list[str] = Field(default_factory=list)
+    roles: list[str] = Field(default_factory=list)
+    party_affiliations: list[str] = Field(default_factory=list)
+    valid_from: date | None = None
+    valid_to: date | None = None
+    source_urls: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def valid_date_range(self) -> "PoliticalEntity":
+        if self.valid_from and self.valid_to and self.valid_to < self.valid_from:
+            raise ValueError("political entity valid_to must not precede valid_from")
+        return self
+
+
 class PoliticalConfig(StrictModel):
     schema_version: Literal[1] = 1
     signals: list[PoliticalSignal]
     official_domains: dict[str, list[str]] = Field(default_factory=dict)
+    entities: list[PoliticalEntity] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def political_dimensions_are_valid(self) -> "PoliticalConfig":
@@ -255,6 +277,9 @@ class PoliticalConfig(StrictModel):
             if len(cleaned) != len(set(cleaned)):
                 raise ValueError(f"duplicate official domain for {country_id!r}")
             self.official_domains[country_id] = cleaned
+        entity_ids = [entity.entity_id for entity in self.entities]
+        if len(entity_ids) != len(set(entity_ids)):
+            raise ValueError("political entity ids must be unique")
         return self
 
     def phrase_mapping(self) -> dict[str, list[dict[str, Any]]]:
@@ -297,6 +322,7 @@ def load_political_config(path: str | Path) -> PoliticalConfig:
                 "schema_version": document.get("schema_version", 1),
                 "signals": signals,
                 "official_domains": document.get("official_domains", {}),
+                "entities": document.get("entities", []),
             }
         )
     except ValidationError as exc:

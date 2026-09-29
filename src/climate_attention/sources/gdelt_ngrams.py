@@ -23,6 +23,12 @@ from ..models import (
 from ..source_coverage import available_date_segments
 from .base import ProviderCollectionError, ProviderUnavailableError
 from .gdelt import GDELTWindow
+from ..gdelt_pipeline import build_gal_inventory_sql, build_gkg_enrichment_sql
+
+__all__ = [
+    "build_gal_inventory_sql",
+    "build_gkg_enrichment_sql",
+]
 
 
 LOGGER = logging.getLogger(__name__)

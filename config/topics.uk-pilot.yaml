@@ -31,9 +31,6 @@ topics:
       - '"household bills"'
       - '"energy bills"'
       - '"food prices"'
-      - '"fuel prices"'
-      - '"petrol prices"'
-      - '"diesel prices"'
       - '"grocery prices"'
       - '"rent increases"'
       - '"mortgage rates"'
@@ -47,12 +44,29 @@ topics:
           - household bills
           - energy bills
           - food prices
-          - fuel prices
-          - petrol prices
-          - diesel prices
           - grocery prices
           - rent increases
           - mortgage rates
+
+  fuel_prices:
+    label: Fuel prices
+    enabled: true
+    description: Road fuel prices, petrol and diesel costs, and pump-price changes.
+    queries:
+      - '"fuel prices"'
+      - '"petrol prices"'
+      - '"diesel prices"'
+      - '"pump prices"'
+      - '"forecourt prices"'
+    ngram_phrases:
+      en:
+        translation_status: draft
+        phrases:
+          - fuel prices
+          - petrol prices
+          - diesel prices
+          - pump prices
+          - forecourt prices
 
   clean_transport:
     label: Clean transport

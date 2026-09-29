@@ -33,6 +33,25 @@ python3 -m venv .venv
 cd frontend && npm install && npm run dev
 ```
 
+The article-level GDELT pilot is run separately from the frontend fixture:
+
+```bash
+.venv/bin/uk-atlas estimate-gdelt-articles --start 2026-08-01 --end 2026-08-07 \
+  --billing-project "$GCP_PROJECT" --max-bytes 100000000000
+.venv/bin/uk-atlas collect-gdelt-articles --start 2026-08-01 --end 2026-08-07 \
+  --billing-project "$GCP_PROJECT" --max-bytes 100000000000 \
+  --max-total-bytes 500000000000 --run-id gdelt-2026-08-01
+.venv/bin/uk-atlas validate-gdelt-article-release \
+  --input data/processed/gdelt-article-release-gdelt-2026-08-01.json
+.venv/bin/uk-atlas prepare-gdelt-article-serving \
+  --input data/processed/gdelt-article-release-gdelt-2026-08-01.json \
+  --output data/processed/gdelt-article-serving.json
+```
+
+Collection requires Google Application Default Credentials and a reviewed outlet
+registry. It writes a candidate bundle and never publishes automatically. Use
+`sample-gdelt-validation` to create the human review template before release.
+
 The fixture command is capped and non-billable. Real GDELT Web NGrams collection
 through BigQuery is a separate command boundary and is not run by a Netlify build.
 The frontend can also be built with `cd frontend && npm run build`.
@@ -72,6 +91,12 @@ cd frontend && npm run dev
 validate-config       validate topics, outlet registry, account panel and geographies
 audit-panels          report seed/review status and language coverage warnings
 dry-run               show capped collection plan without provider calls
+estimate-gdelt-articles  dry-run GAL, Web NGrams and GKG article query shapes
+collect-gdelt-articles   collect resumable article inventory and tagging bundle
+validate-gdelt-article-release validate article-level provenance and arithmetic
+prepare-gdelt-article-serving prepare validated read-only article payload
+sample-gdelt-validation   create a reproducible human-review sample
+inspect-gdelt-article-run inspect article-pipeline stage checkpoints
 collect-fixture       create a deterministic local vertical-slice archive
 collect-layers-fixture create source-separated price/weather/disruption fixtures
 collect               provider collection entry point (credentials required)

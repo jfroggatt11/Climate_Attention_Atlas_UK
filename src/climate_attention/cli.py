@@ -12,7 +12,7 @@ from .config import load_config, load_country_config, load_political_config, rel
 from .panel import load_account_panel, load_outlet_registry
 from .pipeline import CONFIG, build_fixture, export_frontend, quality_report, release_content_hash, write_json
 from .source_layers import build_layer_fixture, layer_quality_report, write_layer_parquet
-from .validation import audit_configuration, audit_release
+from .validation import audit_configuration, audit_release, build_article_validation_sample, score_article_validation
 from .candidate import build_candidate, candidate_quality_report, write_candidate
 from .live import (
     collect_environment_agency_floods,
@@ -24,6 +24,15 @@ from .live import (
     load_live_countries,
 )
 from .economic import collect_brent, collect_desnz_fuel_prices, collect_market_prices, collect_ons_cpi
+from .gdelt_pipeline import build_gal_gkg_join_sql, build_gal_inventory_sql, build_gkg_enrichment_sql
+from .article_pipeline import (
+    AtomicPipelineStore,
+    estimate_article_pipeline,
+    run_article_pipeline,
+    validate_article_release,
+    build_article_serving_payload,
+)
+from .registries import load_event_registry
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -35,7 +44,8 @@ def validate_config() -> int:
     countries = load_country_config(CONFIG / "countries.uk-pilot.yaml")
     outlets = load_outlet_registry(CONFIG / "outlet_registry.yaml")
     accounts = load_account_panel(CONFIG / "account_panel.yaml")
-    print(json.dumps({"status": "pass", "topics": [topic.id for topic in topics.topics], "political_signals": len(political.signals), "outlets": len(outlets), "accounts": len(accounts), "countries": [country.id for country in countries.countries], "configuration_version": "uk-pilot-v1", "configuration_hash": release_config_hash(CONFIG), "configuration_files": release_config_hashes(CONFIG)}, indent=2))
+    event_registry_version, events = load_event_registry(CONFIG / "events.uk-pilot.yaml")
+    print(json.dumps({"status": "pass", "topics": [topic.id for topic in topics.topics], "political_signals": len(political.signals), "outlets": len(outlets), "accounts": len(accounts), "countries": [country.id for country in countries.countries], "tracked_events": len(events), "event_registry_version": event_registry_version, "configuration_version": "uk-pilot-v1", "configuration_hash": release_config_hash(CONFIG), "configuration_files": release_config_hashes(CONFIG)}, indent=2))
     return 0
 
 
@@ -45,6 +55,30 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("validate-config")
     sub.add_parser("audit-panels")
     dry = sub.add_parser("dry-run"); dry.add_argument("--start", default="2026-08-01"); dry.add_argument("--end", default="2026-08-30"); dry.add_argument("--max-bytes", type=int, default=0)
+    gdelt_sql = sub.add_parser("gdelt-sql", help="emit bounded GAL/GKG SQL without making a provider request")
+    gdelt_sql.add_argument("--mode", choices=["inventory", "gkg", "joined"], default="joined")
+    gdelt_sql.add_argument("--gal-table", default="gdelt-bq.gdeltv2.gal")
+    gdelt_sql.add_argument("--gkg-table", default="gdelt-bq.gdeltv2.gkg_partitioned")
+    article_estimate = sub.add_parser("estimate-gdelt-articles", help="dry-run all article-pipeline query shapes")
+    article_estimate.add_argument("--start", required=True); article_estimate.add_argument("--end", required=True)
+    article_estimate.add_argument("--billing-project", required=True); article_estimate.add_argument("--max-bytes", type=int, required=True)
+    article_estimate.add_argument("--window-days", type=int, default=3)
+    article_collect = sub.add_parser("collect-gdelt-articles", help="collect and release the article-level GDELT pilot")
+    article_collect.add_argument("--start", required=True); article_collect.add_argument("--end", required=True)
+    article_collect.add_argument("--billing-project", required=True); article_collect.add_argument("--max-bytes", type=int, required=True)
+    article_collect.add_argument("--max-total-bytes", type=int)
+    article_collect.add_argument("--run-id", required=True); article_collect.add_argument("--data-root", default="data")
+    article_collect.add_argument("--window-days", type=int, default=3); article_collect.add_argument("--skip-gkg", action="store_true")
+    article_validate = sub.add_parser("validate-gdelt-article-release", help="validate an article-level release bundle")
+    article_validate.add_argument("--input", required=True)
+    article_serve = sub.add_parser("prepare-gdelt-article-serving", help="prepare a validated read-only article payload")
+    article_serve.add_argument("--input", required=True); article_serve.add_argument("--output", required=True)
+    article_run = sub.add_parser("inspect-gdelt-article-run", help="inspect an article pipeline checkpoint")
+    article_run.add_argument("--run-id", required=True); article_run.add_argument("--data-root", default="data")
+    article_sample = sub.add_parser("sample-gdelt-validation", help="create a reproducible human-review template")
+    article_sample.add_argument("--input", required=True); article_sample.add_argument("--output", required=True); article_sample.add_argument("--sample-size", type=int, default=1000); article_sample.add_argument("--tags", nargs="+", required=True)
+    article_score = sub.add_parser("score-gdelt-validation", help="score adjudicated mention labels")
+    article_score.add_argument("--input", required=True); article_score.add_argument("--tags", nargs="+", required=True)
     fixture = sub.add_parser("collect-fixture"); fixture.add_argument("--output", default="data/fixtures/vertical-slice.json")
     layers_fixture = sub.add_parser("collect-layers-fixture"); layers_fixture.add_argument("--output", default="data/fixtures/data-layers.json")
     aggregate = sub.add_parser("aggregate"); aggregate.add_argument("--input", default="data/fixtures/vertical-slice.json"); aggregate.add_argument("--output", default="data/processed/quality-report.json")
@@ -129,7 +163,42 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "dry-run":
         start, end = date.fromisoformat(args.start), date.fromisoformat(args.end)
         days = (end - start).days + 1
-        print(json.dumps({"status": "planned", "source": "gdelt_ngrams", "days": days, "topics": 4, "estimated_bytes_cap": args.max_bytes, "billable": False, "message": "No provider request made; use BigQuery credentials explicitly for a real capped run."}, indent=2)); return 0
+        topic_count = len(load_config(CONFIG / "topics.uk-pilot.yaml").enabled_topics())
+        print(json.dumps({"status": "planned", "source": "gdelt_ngrams", "days": days, "topics": topic_count, "estimated_bytes_cap": args.max_bytes, "billable": False, "message": "No provider request made; use BigQuery credentials explicitly for a real capped run."}, indent=2)); return 0
+    if args.command == "gdelt-sql":
+        if args.mode == "inventory": sql = build_gal_inventory_sql(gal_table=args.gal_table)
+        elif args.mode == "gkg": sql = build_gkg_enrichment_sql(gkg_table=args.gkg_table)
+        else: sql = build_gal_gkg_join_sql(gal_table=args.gal_table, gkg_table=args.gkg_table)
+        print(sql)
+        return 0
+    if args.command == "estimate-gdelt-articles":
+        result = estimate_article_pipeline(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), billing_project=args.billing_project, maximum_bytes_billed=args.max_bytes, window_days=args.window_days)
+        print(json.dumps(result, indent=2, default=str)); return 0
+    if args.command == "collect-gdelt-articles":
+        path = run_article_pipeline(start=date.fromisoformat(args.start), end=date.fromisoformat(args.end), billing_project=args.billing_project, maximum_bytes_billed=args.max_bytes, run_id=args.run_id, data_root=args.data_root, window_days=args.window_days, gkg_enabled=not args.skip_gkg, max_total_bytes=args.max_total_bytes)
+        print(json.dumps({"status": "success", "output": str(path)}, indent=2)); return 0
+    if args.command == "validate-gdelt-article-release":
+        payload = json.loads(Path(args.input).read_text(encoding="utf-8")); errors = validate_article_release(payload)
+        print(json.dumps({"status": "pass" if not errors else "fail", "errors": errors}, indent=2)); return 0 if not errors else 1
+    if args.command == "prepare-gdelt-article-serving":
+        payload = json.loads(Path(args.input).read_text(encoding="utf-8")); serving = build_article_serving_payload(payload)
+        Path(args.output).parent.mkdir(parents=True, exist_ok=True); Path(args.output).write_text(json.dumps(serving, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps({"status": "success", "output": args.output, "release_id": serving["release_id"]}, indent=2)); return 0
+    if args.command == "inspect-gdelt-article-run":
+        state = AtomicPipelineStore(args.data_root).load(args.run_id)
+        print(json.dumps(state.model_dump(mode="json"), indent=2)); return 0
+    if args.command == "sample-gdelt-validation":
+        payload = json.loads(Path(args.input).read_text(encoding="utf-8"))
+        candidates: dict[str, list[str]] = {}
+        for assertion in payload.get("article_tag_assertions", []):
+            candidates.setdefault(str(assertion.get("article_id")), []).append(str(assertion.get("tag_id")))
+        articles = [{**row, "candidate_tag_ids": candidates.get(str(row.get("article_id")), [])} for row in payload.get("articles", [])]
+        rows = build_article_validation_sample(articles, tag_ids=args.tags, sample_size=args.sample_size)
+        Path(args.output).parent.mkdir(parents=True, exist_ok=True); Path(args.output).write_text(json.dumps({"sample_version": 1, "sample_size": len(rows), "rows": rows}, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps({"status": "success", "rows": len(rows), "output": args.output}, indent=2)); return 0
+    if args.command == "score-gdelt-validation":
+        payload = json.loads(Path(args.input).read_text(encoding="utf-8")); rows = payload.get("rows", payload if isinstance(payload, list) else [])
+        print(json.dumps(score_article_validation(rows, tag_ids=args.tags), indent=2)); return 0
     if args.command == "collect-fixture":
         path = write_json(build_fixture(), args.output); print(f"wrote {path}"); return 0
     if args.command == "collect-layers-fixture":

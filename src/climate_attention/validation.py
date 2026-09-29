@@ -4,14 +4,110 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 import hashlib
+import random
+import math
 from pathlib import Path
 from typing import Any
 
 from .config import load_config, load_country_config, load_political_config
 from .panel import load_account_panel, load_outlet_registry
+from .registries import load_event_registry
 
 
 REQUIRED_TOPICS = {"climate_change", "cost_of_living", "clean_transport", "electric_vehicles"}
+
+
+def build_article_validation_sample(
+    articles: list[dict[str, Any]],
+    *,
+    tag_ids: list[str],
+    sample_size: int = 1000,
+    seed: int = 20260929,
+) -> list[dict[str, Any]]:
+    """Create a reproducible review template that includes unmatched articles.
+
+    Rows are sampled from the full captured inventory, then enriched with rare
+    tag candidates so matched-only sampling cannot masquerade as recall review.
+    Human label columns are intentionally null until adjudication.
+    """
+    if sample_size < 1:
+        raise ValueError("sample_size must be positive")
+    by_id = {str(row.get("article_id")): row for row in articles if row.get("article_id")}
+    if not by_id:
+        return []
+    tag_rows = {tag_id: [] for tag_id in tag_ids}
+    for row in articles:
+        for tag_id in row.get("candidate_tag_ids", []):
+            if tag_id in tag_rows:
+                tag_rows[tag_id].append(row)
+    selected: dict[str, dict[str, Any]] = {}
+    for tag_id, rows in tag_rows.items():
+        if rows:
+            candidate = min(rows, key=lambda row: hashlib.sha256(f"{seed}:{tag_id}:{row['article_id']}".encode()).hexdigest())
+            selected[str(candidate["article_id"])] = candidate
+    remaining = [row for row in by_id.values() if str(row["article_id"]) not in selected]
+    rng = random.Random(seed)
+    rng.shuffle(remaining)
+    for row in remaining[: max(0, sample_size - len(selected))]:
+        selected[str(row["article_id"])] = row
+    output: list[dict[str, Any]] = []
+    for article_id, row in sorted(selected.items()):
+        output.append({
+            "article_id": article_id,
+            "url": row.get("canonical_url") or row.get("url"),
+            "outlet_id": row.get("outlet_id"),
+            "language": row.get("language"),
+            "candidate_tag_ids": list(row.get("candidate_tag_ids", [])),
+            "labels": {tag_id: None for tag_id in tag_ids},
+            "substantive_labels": {tag_id: None for tag_id in tag_ids},
+            "event_identity": None,
+            "political_entities": None,
+            "location_roles": None,
+            "review_status": "unreviewed",
+        })
+    return output
+
+
+def score_article_validation(
+    rows: list[dict[str, Any]], *, tag_ids: list[str], label_key: str = "labels",
+) -> dict[str, Any]:
+    """Score reviewed mention labels against deterministic candidate positives.
+
+    Unknown/unreviewed labels are excluded.  The returned Wilson intervals make
+    small rare-tag samples visible instead of presenting unstable percentages.
+    """
+    report: dict[str, Any] = {}
+    for tag_id in tag_ids:
+        tp = fp = fn = reviewed = 0
+        for row in rows:
+            label = (row.get(label_key) or {}).get(tag_id)
+            if label not in {True, False, "yes", "no", "positive", "negative"}:
+                continue
+            reviewed += 1
+            actual = label is True or label in {"yes", "positive"}
+            predicted = tag_id in set(row.get("candidate_tag_ids", []))
+            tp += int(actual and predicted)
+            fp += int(not actual and predicted)
+            fn += int(actual and not predicted)
+        precision = tp / (tp + fp) if tp + fp else None
+        recall = tp / (tp + fn) if tp + fn else None
+        report[tag_id] = {
+            "reviewed": reviewed, "true_positive": tp, "false_positive": fp,
+            "false_negative": fn, "precision": precision, "recall": recall,
+            "precision_wilson_95": _wilson(tp, tp + fp),
+            "recall_wilson_95": _wilson(tp, tp + fn),
+        }
+    return report
+
+
+def _wilson(successes: int, trials: int, z: float = 1.96) -> list[float] | None:
+    if trials == 0:
+        return None
+    p = successes / trials
+    denominator = 1 + z * z / trials
+    centre = (p + z * z / (2 * trials)) / denominator
+    margin = z * math.sqrt((p * (1 - p) + z * z / (4 * trials)) / trials) / denominator
+    return [max(0.0, centre - margin), min(1.0, centre + margin)]
 
 
 def audit_configuration(config_dir: str | Path) -> dict[str, Any]:
@@ -21,6 +117,7 @@ def audit_configuration(config_dir: str | Path) -> dict[str, Any]:
     countries = load_country_config(config_path / "countries.uk-pilot.yaml")
     outlets = load_outlet_registry(config_path / "outlet_registry.yaml")
     accounts = load_account_panel(config_path / "account_panel.yaml")
+    event_registry_version, events = load_event_registry(config_path / "events.uk-pilot.yaml") if (config_path / "events.uk-pilot.yaml").exists() else ("events-v1", [])
     topic_ids = {item.id for item in topics.topics}
     warnings: list[str] = []
     errors: list[str] = []
@@ -42,12 +139,18 @@ def audit_configuration(config_dir: str | Path) -> dict[str, Any]:
         "status": "fail" if errors else "pass",
         "errors": errors,
         "warnings": warnings,
-        "topics": sorted(topic_ids),
+        # ``topics`` preserves the original four-topic audit field for
+        # downstream consumers; the expanded catalogue is available explicitly
+        # so adding a selectable tag does not break older release tooling.
+        "topics": sorted(topic_ids & REQUIRED_TOPICS),
+        "selectable_topics": sorted(topic_ids),
         "political_signals": len(political.signals),
         "outlets": len(outlets),
         "accounts": len(accounts),
         "countries": len(countries.countries),
         "panel_reviewed_accounts": sum(item.review_status == "reviewed" for item in accounts),
+        "event_registry_version": event_registry_version,
+        "tracked_events": len(events),
     }
 
 

@@ -1,0 +1,7 @@
+schema_version: 1
+registry_version: uk-events-v1
+
+# Canonical tracked events are added only from sourced review.  An empty
+# registry is valid: broad event-category candidates remain available and
+# unresolved links are retained for later adjudication.
+events: []
