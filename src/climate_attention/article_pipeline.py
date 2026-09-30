@@ -68,7 +68,7 @@ GKG_THEME_TAGS = {
     "ENV_CLIMATECHANGE_IMPACT": "climate_change",
     "TRANSPORTATION": "clean_transport",
     "TRANSPORT_ELECTRIC": "electric_vehicles",
-    "ECON_PRICES": "cost_of_living",
+    "ECON_PRICES": "fuel_prices",
 }
 
 

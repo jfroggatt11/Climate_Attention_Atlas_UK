@@ -1,4 +1,4 @@
-"""Assemble a reviewable physical-context candidate from live source bundles."""
+"""Assemble a reviewable candidate from live source bundles."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import release_config_hash, release_config_hashes
-from .contracts import DatasetRelease, EventRecord, ObservationRecord, PhysicalObservation, SourceSnapshot
+from .contracts import DailyAttention, DatasetRelease, EventRecord, ObservationRecord, PhysicalObservation, SourceSnapshot
 from .pipeline import CONFIG, release_content_hash, write_json
 from .source_layers import layer_quality_report
 from .validation import audit_release
@@ -18,7 +18,7 @@ from .validation import audit_release
 REQUIRED = ("haduk_grid_weather", "modis_mod13c2", "gdacs", "firms")
 OPTIONAL = (
     "environment_agency_alerts", "modis_burned_area", "desnz_fuel_prices",
-    "ons_cost_pressures", "brent_oil", "market_prices",
+    "ons_cost_pressures", "brent_oil", "market_prices", "junkipedia_mp",
 )
 
 
@@ -64,6 +64,15 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
                 "revision_status": "final",
                 "metadata": {**row.get("metadata", {}), "source_bundle_sha256": source_hashes["haduk_grid_weather"]},
             }).model_dump(mode="json"))
+
+    daily_attention: list[dict[str, Any]] = []
+    if "junkipedia_mp" in bundles:
+        bundle = bundles["junkipedia_mp"][0]
+        for raw in bundle.get("daily_attention", bundle.get("records", [])):
+            row = DailyAttention.model_validate({**raw, "release_id": release_id,
+                                                  "metadata": {**raw.get("metadata", {}), "source_bundle_sha256": source_hashes["junkipedia_mp"]}})
+            if start <= row.date <= end:
+                daily_attention.append(row.model_dump(mode="json"))
 
     physical = []
     for row in bundles["modis_mod13c2"][0]["records"]:
@@ -122,7 +131,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
     # shape. Promote them into the same source-specific physical table without
     # flattening their units or cadences into the attention series.
     for source in OPTIONAL:
-        if source not in bundles:
+        if source not in bundles or source == "junkipedia_mp":
             continue
         for row in bundles[source][0]["records"]:
             observed_text = row.get("date") or row.get("observed_at")
@@ -172,6 +181,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
         "ons_cost_pressures": ("ONS consumer prices · CPI", "Office for National Statistics", "monthly", "index_2015_100"),
         "brent_oil": ("Brent crude spot price", "FRED / U.S. EIA", "daily", "usd_per_barrel"),
         "market_prices": ("Company closing share prices", "Yahoo Finance chart endpoint", "daily", "local_currency_per_share"),
+        "junkipedia_mp": ("UK MP social posts", "Junkipedia", "daily", "posts"),
     }
     for source, (label, provider, cadence, unit) in optional_definitions.items():
         if source in bundles:
@@ -185,15 +195,15 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
             configuration_version="uk-pilot-v1", configuration_hash=release_config_hash(CONFIG),
             configuration_files=release_config_hashes(CONFIG), source_snapshots=snapshots_by_source,
             parquet_outputs=[],
-            supabase_rows={"daily_attention": 0, "article_records": 0, "events": len(events),
+            supabase_rows={"daily_attention": len(daily_attention), "article_records": 0, "events": len(events),
                            "physical_observations": len(physical), "layer_observations": len(weather)},
             frontend_assets=["frontend/public/data/candidate.json"], status="candidate",
-            methodology_note="Physical and economic context only. News and Bluesky attention are unavailable in this candidate. MODIS raw NDVI and greenness anomalies use a UK calendar-month 2001–2020 baseline; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
+            methodology_note="This candidate contains physical and economic context plus classified UK MP post counts when the Junkipedia bundle is present. News and Bluesky attention remain unavailable. MP counts measure communication volume, not enacted policy, and do not include engagement counters. MODIS raw NDVI and greenness anomalies use a UK calendar-month 2001–2020 baseline; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
         ).model_dump(mode="json"),
-        "daily_attention": [], "news_denominators": [], "articles": [], "social_posts": [],
+        "daily_attention": daily_attention, "news_denominators": [], "articles": [], "social_posts": [],
         "physical_observations": physical, "events": events, "data_layers": weather,
         "source_snapshots": snapshots, "layer_definitions": definitions,
-        "metadata": {"panel_definition": "No live monitored panel collected", "article_denominator": "Unavailable",
+        "metadata": {"panel_definition": "Junkipedia classified UK MP channels when available; no Bluesky panel collected", "article_denominator": "Unavailable",
                      "source_bundle_sha256": source_hashes,
                      "review_status": "candidate; physical and event context only",
                      "flood_snapshot_is_current_only": "environment_agency_alerts" in bundles},
@@ -209,8 +219,9 @@ def candidate_quality_report(data: dict[str, Any]) -> dict[str, Any]:
         errors.append("release must be a candidate")
     if release.get("content_hash") != release_content_hash(data):
         errors.append("candidate content hash is invalid")
-    if data.get("daily_attention") or data.get("news_denominators") or data.get("social_posts") or data.get("articles"):
-        errors.append("candidate must not contain synthetic or uncollected attention")
+    unsupported_attention = [row.get("source") for row in data.get("daily_attention", []) if row.get("source") != "junkipedia_mp"]
+    if data.get("news_denominators") or data.get("social_posts") or data.get("articles") or unsupported_attention:
+        errors.append("candidate contains attention sources that are not approved for this candidate")
     if not any(item.get("metric") == "ndvi" for item in data.get("physical_observations", [])):
         errors.append("candidate has no real NDVI observation")
     if not data.get("data_layers"):

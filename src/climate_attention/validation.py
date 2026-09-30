@@ -14,7 +14,7 @@ from .panel import load_account_panel, load_outlet_registry
 from .registries import load_event_registry
 
 
-REQUIRED_TOPICS = {"climate_change", "cost_of_living", "clean_transport", "electric_vehicles"}
+REQUIRED_TOPICS = {"climate_change", "fuel_prices", "clean_transport", "electric_vehicles", "extreme_weather"}
 
 
 def build_article_validation_sample(

@@ -1,6 +1,6 @@
 # UK Attention Atlas — pilot plan
 
-Purpose and scope. Build a UK research and monitoring tool connecting news, search and social attention with weather, economic conditions and everyday disruption. Start with climate change, cost of living, and clean transport, keeping EVs as a separately selectable subtopic. Target history from 2022 where available, plus scheduled updates; audit coverage before committing to a common period. Begin with English-language coverage and explicitly assess Welsh-language gaps. Prioritise reproducible publication graphics and descriptive comparisons; causal attribution and predictive modelling follow validation.
+Purpose and scope. Build a UK research and monitoring tool connecting news, search and social attention with weather, economic conditions and everyday disruption. Start with climate change, fuel prices, and clean transport, keeping EVs as a separately selectable subtopic. Target history from 2022 where available, plus scheduled updates; audit coverage before committing to a common period. Begin with English-language coverage and explicitly assess Welsh-language gaps. Prioritise reproducible publication graphics and descriptive comparisons; causal attribution and predictive modelling follow validation.
 
 Datasets and measurement
 

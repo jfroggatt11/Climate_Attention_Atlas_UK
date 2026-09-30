@@ -25,8 +25,8 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_a402840ce3ee"
     },
     {
-      "article_id": "art_770738b2b38f",
-      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_770738b2b38f",
+      "article_id": "art_029f3090f562",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_029f3090f562",
       "collected_at": "2026-08-02T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -35,7 +35,7 @@
       "outlet_classification": "national",
       "outlet_domain": "reuters.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-02T09:00:00Z",
       "publishing_geography": "GB",
@@ -44,9 +44,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://reuters.com/uk-atlas-fixture/art_770738b2b38f"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://reuters.com/uk-atlas-fixture/art_029f3090f562"
     },
     {
       "article_id": "art_49d21807edda",
@@ -97,6 +97,30 @@
       "url": "https://independent.co.uk/uk-atlas-fixture/art_555e1ea362eb"
     },
     {
+      "article_id": "art_c4dc68dcbb40",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_c4dc68dcbb40",
+      "collected_at": "2026-08-02T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-02T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "itv.com",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-02T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://itv.com/uk-atlas-fixture/art_c4dc68dcbb40"
+    },
+    {
       "article_id": "art_627ccf82e1bc",
       "canonical_url": "https://reuters.com/uk-atlas-fixture/art_627ccf82e1bc",
       "collected_at": "2026-08-03T13:00:00Z",
@@ -121,8 +145,8 @@
       "url": "https://reuters.com/uk-atlas-fixture/art_627ccf82e1bc"
     },
     {
-      "article_id": "art_2004d925b5a6",
-      "canonical_url": "https://ft.com/uk-atlas-fixture/art_2004d925b5a6",
+      "article_id": "art_c1fd3caae212",
+      "canonical_url": "https://ft.com/uk-atlas-fixture/art_c1fd3caae212",
       "collected_at": "2026-08-03T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -131,7 +155,7 @@
       "outlet_classification": "national",
       "outlet_domain": "ft.com",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-03T09:00:00Z",
       "publishing_geography": "GB",
@@ -140,9 +164,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://ft.com/uk-atlas-fixture/art_2004d925b5a6"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://ft.com/uk-atlas-fixture/art_c1fd3caae212"
     },
     {
       "article_id": "art_d4834bd4c542",
@@ -193,6 +217,30 @@
       "url": "https://itv.com/uk-atlas-fixture/art_82d013ecd457"
     },
     {
+      "article_id": "art_d5a6bfa3fadd",
+      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_d5a6bfa3fadd",
+      "collected_at": "2026-08-03T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-03T12:00:00Z",
+      "outlet_classification": "regional",
+      "outlet_domain": "birminghammail.co.uk",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-03T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_d5a6bfa3fadd"
+    },
+    {
       "article_id": "art_eef11215d4b5",
       "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_eef11215d4b5",
       "collected_at": "2026-08-05T13:00:00Z",
@@ -217,8 +265,8 @@
       "url": "https://independent.co.uk/uk-atlas-fixture/art_eef11215d4b5"
     },
     {
-      "article_id": "art_c09145a89ecd",
-      "canonical_url": "https://itv.com/uk-atlas-fixture/art_c09145a89ecd",
+      "article_id": "art_9558d6bd04e8",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_9558d6bd04e8",
       "collected_at": "2026-08-05T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -227,7 +275,7 @@
       "outlet_classification": "national",
       "outlet_domain": "itv.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-05T09:00:00Z",
       "publishing_geography": "GB",
@@ -236,9 +284,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://itv.com/uk-atlas-fixture/art_c09145a89ecd"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://itv.com/uk-atlas-fixture/art_9558d6bd04e8"
     },
     {
       "article_id": "art_8b106a89c771",
@@ -289,6 +337,30 @@
       "url": "https://bbc.co.uk/uk-atlas-fixture/art_cfb4759e1b20"
     },
     {
+      "article_id": "art_7bac354110f7",
+      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_7bac354110f7",
+      "collected_at": "2026-08-05T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-05T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "theguardian.com",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-05T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://theguardian.com/uk-atlas-fixture/art_7bac354110f7"
+    },
+    {
       "article_id": "art_77d4cc4207db",
       "canonical_url": "https://itv.com/uk-atlas-fixture/art_77d4cc4207db",
       "collected_at": "2026-08-06T13:00:00Z",
@@ -313,8 +385,8 @@
       "url": "https://itv.com/uk-atlas-fixture/art_77d4cc4207db"
     },
     {
-      "article_id": "art_6e15e4068d2c",
-      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_6e15e4068d2c",
+      "article_id": "art_91e145e6634d",
+      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_91e145e6634d",
       "collected_at": "2026-08-06T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -323,7 +395,7 @@
       "outlet_classification": "regional",
       "outlet_domain": "birminghammail.co.uk",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-06T09:00:00Z",
       "publishing_geography": "GB",
@@ -332,9 +404,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_6e15e4068d2c"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_91e145e6634d"
     },
     {
       "article_id": "art_68df7304754a",
@@ -385,6 +457,30 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_6a3f512d8412"
     },
     {
+      "article_id": "art_1a71839b833d",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_1a71839b833d",
+      "collected_at": "2026-08-06T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-06T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "reuters.com",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-06T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://reuters.com/uk-atlas-fixture/art_1a71839b833d"
+    },
+    {
       "article_id": "art_e753697e28d2",
       "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_e753697e28d2",
       "collected_at": "2026-08-08T13:00:00Z",
@@ -409,8 +505,8 @@
       "url": "https://bbc.co.uk/uk-atlas-fixture/art_e753697e28d2"
     },
     {
-      "article_id": "art_4b788a2d2579",
-      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_4b788a2d2579",
+      "article_id": "art_879ac59386de",
+      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_879ac59386de",
       "collected_at": "2026-08-08T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -419,7 +515,7 @@
       "outlet_classification": "national",
       "outlet_domain": "theguardian.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-08T09:00:00Z",
       "publishing_geography": "GB",
@@ -428,9 +524,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://theguardian.com/uk-atlas-fixture/art_4b788a2d2579"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://theguardian.com/uk-atlas-fixture/art_879ac59386de"
     },
     {
       "article_id": "art_062e1160a1b6",
@@ -481,6 +577,30 @@
       "url": "https://ft.com/uk-atlas-fixture/art_239d8654824c"
     },
     {
+      "article_id": "art_d929bce4ae96",
+      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_d929bce4ae96",
+      "collected_at": "2026-08-08T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-08T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "independent.co.uk",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-08T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://independent.co.uk/uk-atlas-fixture/art_d929bce4ae96"
+    },
+    {
       "article_id": "art_c52c5b84b377",
       "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_c52c5b84b377",
       "collected_at": "2026-08-09T13:00:00Z",
@@ -505,8 +625,8 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_c52c5b84b377"
     },
     {
-      "article_id": "art_7c868d88b010",
-      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_7c868d88b010",
+      "article_id": "art_dc4ac910ab38",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_dc4ac910ab38",
       "collected_at": "2026-08-09T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -515,7 +635,7 @@
       "outlet_classification": "national",
       "outlet_domain": "reuters.com",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-09T09:00:00Z",
       "publishing_geography": "GB",
@@ -524,9 +644,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://reuters.com/uk-atlas-fixture/art_7c868d88b010"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://reuters.com/uk-atlas-fixture/art_dc4ac910ab38"
     },
     {
       "article_id": "art_881dd727ff4b",
@@ -577,6 +697,30 @@
       "url": "https://independent.co.uk/uk-atlas-fixture/art_454061eced23"
     },
     {
+      "article_id": "art_e1ca7d7c1f13",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_e1ca7d7c1f13",
+      "collected_at": "2026-08-09T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-09T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "itv.com",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-09T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://itv.com/uk-atlas-fixture/art_e1ca7d7c1f13"
+    },
+    {
       "article_id": "art_e2247489311f",
       "canonical_url": "https://ft.com/uk-atlas-fixture/art_e2247489311f",
       "collected_at": "2026-08-11T13:00:00Z",
@@ -601,8 +745,8 @@
       "url": "https://ft.com/uk-atlas-fixture/art_e2247489311f"
     },
     {
-      "article_id": "art_5903eb73b1f5",
-      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_5903eb73b1f5",
+      "article_id": "art_21b33b599c2f",
+      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_21b33b599c2f",
       "collected_at": "2026-08-11T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -611,7 +755,7 @@
       "outlet_classification": "national",
       "outlet_domain": "independent.co.uk",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-11T09:00:00Z",
       "publishing_geography": "GB",
@@ -620,9 +764,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://independent.co.uk/uk-atlas-fixture/art_5903eb73b1f5"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://independent.co.uk/uk-atlas-fixture/art_21b33b599c2f"
     },
     {
       "article_id": "art_d73c7e7fa8e9",
@@ -673,6 +817,30 @@
       "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_408322bb2d37"
     },
     {
+      "article_id": "art_453f30facb9a",
+      "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_453f30facb9a",
+      "collected_at": "2026-08-11T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-11T12:00:00Z",
+      "outlet_classification": "public_service",
+      "outlet_domain": "bbc.co.uk",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-11T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://bbc.co.uk/uk-atlas-fixture/art_453f30facb9a"
+    },
+    {
       "article_id": "art_ede9fe212d2e",
       "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_ede9fe212d2e",
       "collected_at": "2026-08-12T13:00:00Z",
@@ -697,8 +865,8 @@
       "url": "https://independent.co.uk/uk-atlas-fixture/art_ede9fe212d2e"
     },
     {
-      "article_id": "art_c7dad1d5439a",
-      "canonical_url": "https://itv.com/uk-atlas-fixture/art_c7dad1d5439a",
+      "article_id": "art_c715983940d9",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_c715983940d9",
       "collected_at": "2026-08-12T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -707,7 +875,7 @@
       "outlet_classification": "national",
       "outlet_domain": "itv.com",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-12T09:00:00Z",
       "publishing_geography": "GB",
@@ -716,9 +884,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://itv.com/uk-atlas-fixture/art_c7dad1d5439a"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://itv.com/uk-atlas-fixture/art_c715983940d9"
     },
     {
       "article_id": "art_6c900f6514e1",
@@ -769,6 +937,30 @@
       "url": "https://bbc.co.uk/uk-atlas-fixture/art_2a4b8e38f891"
     },
     {
+      "article_id": "art_408f4d2f0286",
+      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_408f4d2f0286",
+      "collected_at": "2026-08-12T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-12T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "theguardian.com",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-12T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://theguardian.com/uk-atlas-fixture/art_408f4d2f0286"
+    },
+    {
       "article_id": "art_90c48c3638e0",
       "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_90c48c3638e0",
       "collected_at": "2026-08-14T13:00:00Z",
@@ -793,8 +985,8 @@
       "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_90c48c3638e0"
     },
     {
-      "article_id": "art_7bae31ae5760",
-      "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_7bae31ae5760",
+      "article_id": "art_89a86d692ea7",
+      "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_89a86d692ea7",
       "collected_at": "2026-08-14T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -803,7 +995,7 @@
       "outlet_classification": "public_service",
       "outlet_domain": "bbc.co.uk",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-14T09:00:00Z",
       "publishing_geography": "GB",
@@ -812,9 +1004,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://bbc.co.uk/uk-atlas-fixture/art_7bae31ae5760"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://bbc.co.uk/uk-atlas-fixture/art_89a86d692ea7"
     },
     {
       "article_id": "art_f69adc30e7bc",
@@ -865,6 +1057,30 @@
       "url": "https://reuters.com/uk-atlas-fixture/art_54a0275951fc"
     },
     {
+      "article_id": "art_91d2d46f5be3",
+      "canonical_url": "https://ft.com/uk-atlas-fixture/art_91d2d46f5be3",
+      "collected_at": "2026-08-14T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-14T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "ft.com",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-14T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://ft.com/uk-atlas-fixture/art_91d2d46f5be3"
+    },
+    {
       "article_id": "art_14c3bc54edc6",
       "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_14c3bc54edc6",
       "collected_at": "2026-08-15T13:00:00Z",
@@ -889,8 +1105,8 @@
       "url": "https://bbc.co.uk/uk-atlas-fixture/art_14c3bc54edc6"
     },
     {
-      "article_id": "art_5e764ce6548f",
-      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_5e764ce6548f",
+      "article_id": "art_2bec96ae298d",
+      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_2bec96ae298d",
       "collected_at": "2026-08-15T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -899,7 +1115,7 @@
       "outlet_classification": "national",
       "outlet_domain": "theguardian.com",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-15T09:00:00Z",
       "publishing_geography": "GB",
@@ -908,9 +1124,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://theguardian.com/uk-atlas-fixture/art_5e764ce6548f"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://theguardian.com/uk-atlas-fixture/art_2bec96ae298d"
     },
     {
       "article_id": "art_71235991fa85",
@@ -961,6 +1177,30 @@
       "url": "https://ft.com/uk-atlas-fixture/art_b433c1c6aaa3"
     },
     {
+      "article_id": "art_98d7a5d8739a",
+      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_98d7a5d8739a",
+      "collected_at": "2026-08-15T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-15T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "independent.co.uk",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-15T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://independent.co.uk/uk-atlas-fixture/art_98d7a5d8739a"
+    },
+    {
       "article_id": "art_f309655ba761",
       "canonical_url": "https://reuters.com/uk-atlas-fixture/art_f309655ba761",
       "collected_at": "2026-08-17T13:00:00Z",
@@ -985,8 +1225,8 @@
       "url": "https://reuters.com/uk-atlas-fixture/art_f309655ba761"
     },
     {
-      "article_id": "art_edeb1aeef7df",
-      "canonical_url": "https://ft.com/uk-atlas-fixture/art_edeb1aeef7df",
+      "article_id": "art_a555327045d5",
+      "canonical_url": "https://ft.com/uk-atlas-fixture/art_a555327045d5",
       "collected_at": "2026-08-17T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -995,7 +1235,7 @@
       "outlet_classification": "national",
       "outlet_domain": "ft.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-17T09:00:00Z",
       "publishing_geography": "GB",
@@ -1004,9 +1244,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://ft.com/uk-atlas-fixture/art_edeb1aeef7df"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://ft.com/uk-atlas-fixture/art_a555327045d5"
     },
     {
       "article_id": "art_76d3ac09a7ac",
@@ -1057,6 +1297,30 @@
       "url": "https://itv.com/uk-atlas-fixture/art_19b204639485"
     },
     {
+      "article_id": "art_a08fc13db536",
+      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_a08fc13db536",
+      "collected_at": "2026-08-17T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-17T12:00:00Z",
+      "outlet_classification": "regional",
+      "outlet_domain": "birminghammail.co.uk",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-17T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_a08fc13db536"
+    },
+    {
       "article_id": "art_548679a3b54c",
       "canonical_url": "https://ft.com/uk-atlas-fixture/art_548679a3b54c",
       "collected_at": "2026-08-18T13:00:00Z",
@@ -1081,8 +1345,8 @@
       "url": "https://ft.com/uk-atlas-fixture/art_548679a3b54c"
     },
     {
-      "article_id": "art_9d1c8b4f96e2",
-      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_9d1c8b4f96e2",
+      "article_id": "art_39e90fa194ed",
+      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_39e90fa194ed",
       "collected_at": "2026-08-18T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1091,7 +1355,7 @@
       "outlet_classification": "national",
       "outlet_domain": "independent.co.uk",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-18T09:00:00Z",
       "publishing_geography": "GB",
@@ -1100,9 +1364,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://independent.co.uk/uk-atlas-fixture/art_9d1c8b4f96e2"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://independent.co.uk/uk-atlas-fixture/art_39e90fa194ed"
     },
     {
       "article_id": "art_705d8d4af53c",
@@ -1153,6 +1417,30 @@
       "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_4a10e23bd2d9"
     },
     {
+      "article_id": "art_922baf1c8217",
+      "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_922baf1c8217",
+      "collected_at": "2026-08-18T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-18T12:00:00Z",
+      "outlet_classification": "public_service",
+      "outlet_domain": "bbc.co.uk",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-18T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://bbc.co.uk/uk-atlas-fixture/art_922baf1c8217"
+    },
+    {
       "article_id": "art_c5e05389eade",
       "canonical_url": "https://itv.com/uk-atlas-fixture/art_c5e05389eade",
       "collected_at": "2026-08-20T13:00:00Z",
@@ -1177,8 +1465,8 @@
       "url": "https://itv.com/uk-atlas-fixture/art_c5e05389eade"
     },
     {
-      "article_id": "art_544dc56f56fc",
-      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_544dc56f56fc",
+      "article_id": "art_2c09b3d67c9a",
+      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_2c09b3d67c9a",
       "collected_at": "2026-08-20T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1187,7 +1475,7 @@
       "outlet_classification": "regional",
       "outlet_domain": "birminghammail.co.uk",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-20T09:00:00Z",
       "publishing_geography": "GB",
@@ -1196,9 +1484,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_544dc56f56fc"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_2c09b3d67c9a"
     },
     {
       "article_id": "art_504d00796992",
@@ -1249,6 +1537,30 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_9c5099dbcabc"
     },
     {
+      "article_id": "art_2ab3d5ffb26c",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_2ab3d5ffb26c",
+      "collected_at": "2026-08-20T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-20T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "reuters.com",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-20T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://reuters.com/uk-atlas-fixture/art_2ab3d5ffb26c"
+    },
+    {
       "article_id": "art_47d223c7e3f2",
       "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_47d223c7e3f2",
       "collected_at": "2026-08-21T13:00:00Z",
@@ -1273,8 +1585,8 @@
       "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_47d223c7e3f2"
     },
     {
-      "article_id": "art_42b701ed222b",
-      "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_42b701ed222b",
+      "article_id": "art_cb842879ad44",
+      "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_cb842879ad44",
       "collected_at": "2026-08-21T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1283,7 +1595,7 @@
       "outlet_classification": "public_service",
       "outlet_domain": "bbc.co.uk",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-21T09:00:00Z",
       "publishing_geography": "GB",
@@ -1292,9 +1604,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://bbc.co.uk/uk-atlas-fixture/art_42b701ed222b"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://bbc.co.uk/uk-atlas-fixture/art_cb842879ad44"
     },
     {
       "article_id": "art_fd1d757c9946",
@@ -1345,6 +1657,30 @@
       "url": "https://reuters.com/uk-atlas-fixture/art_694cd5da8052"
     },
     {
+      "article_id": "art_dc92cf3e714d",
+      "canonical_url": "https://ft.com/uk-atlas-fixture/art_dc92cf3e714d",
+      "collected_at": "2026-08-21T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-21T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "ft.com",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-21T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://ft.com/uk-atlas-fixture/art_dc92cf3e714d"
+    },
+    {
       "article_id": "art_b6975efd1482",
       "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_b6975efd1482",
       "collected_at": "2026-08-23T13:00:00Z",
@@ -1369,8 +1705,8 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_b6975efd1482"
     },
     {
-      "article_id": "art_d74aaffef85f",
-      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_d74aaffef85f",
+      "article_id": "art_682f39eb3838",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_682f39eb3838",
       "collected_at": "2026-08-23T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1379,7 +1715,7 @@
       "outlet_classification": "national",
       "outlet_domain": "reuters.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-23T09:00:00Z",
       "publishing_geography": "GB",
@@ -1388,9 +1724,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://reuters.com/uk-atlas-fixture/art_d74aaffef85f"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://reuters.com/uk-atlas-fixture/art_682f39eb3838"
     },
     {
       "article_id": "art_50ba9345df30",
@@ -1441,6 +1777,30 @@
       "url": "https://independent.co.uk/uk-atlas-fixture/art_c1c0abe172ae"
     },
     {
+      "article_id": "art_872bce9a44a3",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_872bce9a44a3",
+      "collected_at": "2026-08-23T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-23T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "itv.com",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-23T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://itv.com/uk-atlas-fixture/art_872bce9a44a3"
+    },
+    {
       "article_id": "art_402a69b36187",
       "canonical_url": "https://reuters.com/uk-atlas-fixture/art_402a69b36187",
       "collected_at": "2026-08-24T13:00:00Z",
@@ -1465,8 +1825,8 @@
       "url": "https://reuters.com/uk-atlas-fixture/art_402a69b36187"
     },
     {
-      "article_id": "art_64c2759c04a7",
-      "canonical_url": "https://ft.com/uk-atlas-fixture/art_64c2759c04a7",
+      "article_id": "art_b4084e1c0694",
+      "canonical_url": "https://ft.com/uk-atlas-fixture/art_b4084e1c0694",
       "collected_at": "2026-08-24T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1475,7 +1835,7 @@
       "outlet_classification": "national",
       "outlet_domain": "ft.com",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-24T09:00:00Z",
       "publishing_geography": "GB",
@@ -1484,9 +1844,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://ft.com/uk-atlas-fixture/art_64c2759c04a7"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://ft.com/uk-atlas-fixture/art_b4084e1c0694"
     },
     {
       "article_id": "art_2dddced42885",
@@ -1537,6 +1897,30 @@
       "url": "https://itv.com/uk-atlas-fixture/art_2e7941075d97"
     },
     {
+      "article_id": "art_e27bc28d14fd",
+      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_e27bc28d14fd",
+      "collected_at": "2026-08-24T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-24T12:00:00Z",
+      "outlet_classification": "regional",
+      "outlet_domain": "birminghammail.co.uk",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-24T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_e27bc28d14fd"
+    },
+    {
       "article_id": "art_64a76293bacb",
       "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_64a76293bacb",
       "collected_at": "2026-08-26T13:00:00Z",
@@ -1561,8 +1945,8 @@
       "url": "https://independent.co.uk/uk-atlas-fixture/art_64a76293bacb"
     },
     {
-      "article_id": "art_3d273adcde57",
-      "canonical_url": "https://itv.com/uk-atlas-fixture/art_3d273adcde57",
+      "article_id": "art_fc374ac78bf3",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_fc374ac78bf3",
       "collected_at": "2026-08-26T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1571,7 +1955,7 @@
       "outlet_classification": "national",
       "outlet_domain": "itv.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-26T09:00:00Z",
       "publishing_geography": "GB",
@@ -1580,9 +1964,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://itv.com/uk-atlas-fixture/art_3d273adcde57"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://itv.com/uk-atlas-fixture/art_fc374ac78bf3"
     },
     {
       "article_id": "art_c2d6b88b386e",
@@ -1633,6 +2017,30 @@
       "url": "https://bbc.co.uk/uk-atlas-fixture/art_4d2effec995b"
     },
     {
+      "article_id": "art_fd51fcfa50a4",
+      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_fd51fcfa50a4",
+      "collected_at": "2026-08-26T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-26T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "theguardian.com",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-26T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://theguardian.com/uk-atlas-fixture/art_fd51fcfa50a4"
+    },
+    {
       "article_id": "art_bf7d69bbf3e7",
       "canonical_url": "https://itv.com/uk-atlas-fixture/art_bf7d69bbf3e7",
       "collected_at": "2026-08-27T13:00:00Z",
@@ -1657,8 +2065,8 @@
       "url": "https://itv.com/uk-atlas-fixture/art_bf7d69bbf3e7"
     },
     {
-      "article_id": "art_456932f7ea09",
-      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_456932f7ea09",
+      "article_id": "art_18b216fc0016",
+      "canonical_url": "https://birminghammail.co.uk/uk-atlas-fixture/art_18b216fc0016",
       "collected_at": "2026-08-27T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1667,7 +2075,7 @@
       "outlet_classification": "regional",
       "outlet_domain": "birminghammail.co.uk",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-27T09:00:00Z",
       "publishing_geography": "GB",
@@ -1676,9 +2084,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_456932f7ea09"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://birminghammail.co.uk/uk-atlas-fixture/art_18b216fc0016"
     },
     {
       "article_id": "art_4a1b6d17c22b",
@@ -1729,6 +2137,30 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_41e40ccd71fa"
     },
     {
+      "article_id": "art_a29a5278027d",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_a29a5278027d",
+      "collected_at": "2026-08-27T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-27T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "reuters.com",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-27T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://reuters.com/uk-atlas-fixture/art_a29a5278027d"
+    },
+    {
       "article_id": "art_225927ed94d9",
       "canonical_url": "https://bbc.co.uk/uk-atlas-fixture/art_225927ed94d9",
       "collected_at": "2026-08-29T13:00:00Z",
@@ -1753,8 +2185,8 @@
       "url": "https://bbc.co.uk/uk-atlas-fixture/art_225927ed94d9"
     },
     {
-      "article_id": "art_4ae2930fd65b",
-      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_4ae2930fd65b",
+      "article_id": "art_fc0bddaf8238",
+      "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_fc0bddaf8238",
       "collected_at": "2026-08-29T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1763,7 +2195,7 @@
       "outlet_classification": "national",
       "outlet_domain": "theguardian.com",
       "phrase_evidence": [
-        "cost-of-living crisis"
+        "petrol prices"
       ],
       "published_at": "2026-08-29T09:00:00Z",
       "publishing_geography": "GB",
@@ -1772,9 +2204,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://theguardian.com/uk-atlas-fixture/art_4ae2930fd65b"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://theguardian.com/uk-atlas-fixture/art_fc0bddaf8238"
     },
     {
       "article_id": "art_cfc5bdd54a4e",
@@ -1825,6 +2257,30 @@
       "url": "https://ft.com/uk-atlas-fixture/art_28a01aed9110"
     },
     {
+      "article_id": "art_700fa9452ee3",
+      "canonical_url": "https://independent.co.uk/uk-atlas-fixture/art_700fa9452ee3",
+      "collected_at": "2026-08-29T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-29T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "independent.co.uk",
+      "phrase_evidence": [
+        "flooding"
+      ],
+      "published_at": "2026-08-29T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://independent.co.uk/uk-atlas-fixture/art_700fa9452ee3"
+    },
+    {
       "article_id": "art_8ca8484f6449",
       "canonical_url": "https://theguardian.com/uk-atlas-fixture/art_8ca8484f6449",
       "collected_at": "2026-08-30T13:00:00Z",
@@ -1849,8 +2305,8 @@
       "url": "https://theguardian.com/uk-atlas-fixture/art_8ca8484f6449"
     },
     {
-      "article_id": "art_efd8d19b6cc7",
-      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_efd8d19b6cc7",
+      "article_id": "art_df7314390a05",
+      "canonical_url": "https://reuters.com/uk-atlas-fixture/art_df7314390a05",
       "collected_at": "2026-08-30T13:00:00Z",
       "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
       "configuration_version": "uk-pilot-v1",
@@ -1859,7 +2315,7 @@
       "outlet_classification": "national",
       "outlet_domain": "reuters.com",
       "phrase_evidence": [
-        "living costs"
+        "diesel prices"
       ],
       "published_at": "2026-08-30T09:00:00Z",
       "publishing_geography": "GB",
@@ -1868,9 +2324,9 @@
       "retrieval_status": "metadata_only",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "title": "Cost of living: monitored fixture article",
-      "topic_id": "cost_of_living",
-      "url": "https://reuters.com/uk-atlas-fixture/art_efd8d19b6cc7"
+      "title": "Fuel prices: monitored fixture article",
+      "topic_id": "fuel_prices",
+      "url": "https://reuters.com/uk-atlas-fixture/art_df7314390a05"
     },
     {
       "article_id": "art_eb5a577ccc4d",
@@ -1919,6 +2375,30 @@
       "title": "Electric vehicles: monitored fixture article",
       "topic_id": "electric_vehicles",
       "url": "https://independent.co.uk/uk-atlas-fixture/art_9f97e4f22768"
+    },
+    {
+      "article_id": "art_1a809bda080e",
+      "canonical_url": "https://itv.com/uk-atlas-fixture/art_1a809bda080e",
+      "collected_at": "2026-08-30T13:00:00Z",
+      "collection_run_id": "fixture-run-2026-08-01-2026-08-30",
+      "configuration_version": "uk-pilot-v1",
+      "mentioned_geography": null,
+      "observed_at": "2026-08-30T12:00:00Z",
+      "outlet_classification": "national",
+      "outlet_domain": "itv.com",
+      "phrase_evidence": [
+        "wildfire"
+      ],
+      "published_at": "2026-08-30T12:00:00Z",
+      "publishing_geography": "GB",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "retrieval_status": "metadata_only",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "title": "Extreme weather: monitored fixture article",
+      "topic_id": "extreme_weather",
+      "url": "https://itv.com/uk-atlas-fixture/art_1a809bda080e"
     }
   ],
   "daily_attention": [
@@ -1970,7 +2450,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.03977
     },
@@ -2027,6 +2507,32 @@
       "value": 0.06477
     },
     {
+      "collected_at": "2026-08-01T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-01",
+      "denominator": 880.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "e05f02508047f536e4ea27711807b8c5221b6664955a34a969ff7f64ad77365e",
+        "matched_url_range": {
+          "count": 68,
+          "start": 388
+        },
+        "raw_article_count": 68,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-01T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07727
+    },
+    {
       "collected_at": "2026-08-01T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-01",
@@ -2074,7 +2580,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -2131,6 +2637,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-01T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-01",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_494232cffee6",
+          "post_ccb22c5c0e1c"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-01T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
       "collected_at": "2026-08-02T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-02",
@@ -2178,7 +2710,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04348
     },
@@ -2235,30 +2767,30 @@
       "value": 0.07023
     },
     {
-      "collected_at": "2026-08-02T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-02T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-02",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 897.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_21c776d03cff",
-          "post_9a33b00b3fa9"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "82cc5398603aa182d8d905fab1159e4aa1a413171eaaea307a076dc7c2f7eccf",
+        "matched_url_range": {
+          "count": 75,
+          "start": 388
+        },
+        "raw_article_count": 75,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-02T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08361
     },
     {
       "collected_at": "2026-08-02T14:00:00Z",
@@ -2282,7 +2814,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-02T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-02",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_21c776d03cff",
+          "post_9a33b00b3fa9"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-02T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -2339,6 +2897,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-02T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-02",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_21c776d03cff",
+          "post_9a33b00b3fa9"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-02T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
       "collected_at": "2026-08-03T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-03",
@@ -2386,7 +2970,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04705
     },
@@ -2443,30 +3027,30 @@
       "value": 0.07549
     },
     {
-      "collected_at": "2026-08-03T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-03T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-03",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 914.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_e19255bea930",
-          "post_59ea6046d882"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "7d88d72633cc669e8eabf8bb45c0f1cdee74e7830c1bfe1bebf35960511acf76",
+        "matched_url_range": {
+          "count": 82,
+          "start": 388
+        },
+        "raw_article_count": 82,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-03T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08972
     },
     {
       "collected_at": "2026-08-03T14:00:00Z",
@@ -2490,7 +3074,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-03T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-03",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e19255bea930",
+          "post_59ea6046d882"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-03T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -2547,6 +3157,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-03T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-03",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e19255bea930",
+          "post_59ea6046d882"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-03T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
       "collected_at": "2026-08-04T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-04",
@@ -2594,7 +3230,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05048
     },
@@ -2651,30 +3287,30 @@
       "value": 0.08056
     },
     {
-      "collected_at": "2026-08-04T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-04T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-04",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 931.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_1ee823b62b88",
-          "post_5b81b7770121"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "a583d731e29313a8afb7a70c92aa40ec74a2a547338fb629ef765bd3086ce668",
+        "matched_url_range": {
+          "count": 89,
+          "start": 388
+        },
+        "raw_article_count": 89,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-04T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.0956
     },
     {
       "collected_at": "2026-08-04T14:00:00Z",
@@ -2698,7 +3334,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -2724,9 +3360,35 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-04T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-04",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_1ee823b62b88",
+          "post_5b81b7770121"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-04T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
     },
     {
       "collected_at": "2026-08-04T14:00:00Z",
@@ -2753,6 +3415,32 @@
       "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-04T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-04",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_1ee823b62b88",
+          "post_5b81b7770121"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-04T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
     },
     {
       "collected_at": "2026-08-05T13:00:00Z",
@@ -2802,7 +3490,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.0538
     },
@@ -2859,30 +3547,30 @@
       "value": 0.06224
     },
     {
-      "collected_at": "2026-08-05T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-05T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-05",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 948.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_e4d66336a75b",
-          "post_a03ee38bc20d"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "80c52a21c9703d5c497a56a756db2b6b3745fe3a68e261152dee9aa5018393a9",
+        "matched_url_range": {
+          "count": 74,
+          "start": 388
+        },
+        "raw_article_count": 74,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-05T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07806
     },
     {
       "collected_at": "2026-08-05T14:00:00Z",
@@ -2906,7 +3594,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -2932,9 +3620,35 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-05T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-05",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e4d66336a75b",
+          "post_a03ee38bc20d"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-05T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
     },
     {
       "collected_at": "2026-08-05T14:00:00Z",
@@ -2961,6 +3675,32 @@
       "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-05T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-05",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e4d66336a75b",
+          "post_a03ee38bc20d"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-05T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
     },
     {
       "collected_at": "2026-08-06T13:00:00Z",
@@ -3010,7 +3750,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05699
     },
@@ -3067,30 +3807,30 @@
       "value": 0.06736
     },
     {
-      "collected_at": "2026-08-06T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-06T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-06",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 965.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_cfd18c07aac4",
-          "post_45ae445c521a"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "4b1f19dfc90651f8c6205a0c484664f79eb8ed550fb77b6d861e3f2721575b7b",
+        "matched_url_range": {
+          "count": 81,
+          "start": 388
+        },
+        "raw_article_count": 81,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-06T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08394
     },
     {
       "collected_at": "2026-08-06T14:00:00Z",
@@ -3114,7 +3854,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3140,7 +3880,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -3166,7 +3906,59 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-06T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-06",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_cfd18c07aac4",
+          "post_45ae445c521a"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-06T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-06T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-06",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_cfd18c07aac4",
+          "post_45ae445c521a"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-06T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3218,7 +4010,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.03768
     },
@@ -3275,30 +4067,30 @@
       "value": 0.0723
     },
     {
-      "collected_at": "2026-08-07T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-07T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-07",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 982.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_6f3aed5bf92e",
-          "post_8cb282be7799"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "9173059edeb9a6d2b982e91cbd803368c420ef5ff39ed1b3141737c9018b3ab4",
+        "matched_url_range": {
+          "count": 88,
+          "start": 388
+        },
+        "raw_article_count": 88,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-07T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08961
     },
     {
       "collected_at": "2026-08-07T14:00:00Z",
@@ -3322,7 +4114,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3348,7 +4140,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -3374,7 +4166,59 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-07T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-07",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_6f3aed5bf92e",
+          "post_8cb282be7799"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-07T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-07T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-07",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_6f3aed5bf92e",
+          "post_8cb282be7799"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-07T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3426,7 +4270,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04104
     },
@@ -3483,6 +4327,32 @@
       "value": 0.07708
     },
     {
+      "collected_at": "2026-08-08T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-08",
+      "denominator": 999.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "1165aaa3fa28e6ebc2b9a2d82c6cac96c0a3c59be2238d4602d3e33bc34f1b9f",
+        "matched_url_range": {
+          "count": 73,
+          "start": 388
+        },
+        "raw_article_count": 73,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-08T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07307
+    },
+    {
       "collected_at": "2026-08-08T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-08",
@@ -3530,7 +4400,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-08T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-08",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_ba1336f62460",
+          "post_dc5e231ac761"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-08T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3556,7 +4452,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -3582,7 +4478,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "electric_vehicles",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3634,7 +4530,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04429
     },
@@ -3691,6 +4587,32 @@
       "value": 0.06004
     },
     {
+      "collected_at": "2026-08-09T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-09",
+      "denominator": 1016.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "c86960ea67768ae51bd0f14961f1d32ec449cfed240100d9386b670d3bb92276",
+        "matched_url_range": {
+          "count": 80,
+          "start": 388
+        },
+        "raw_article_count": 80,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-09T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07874
+    },
+    {
       "collected_at": "2026-08-09T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-09",
@@ -3738,7 +4660,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-09T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-09",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_18887acdfb8c",
+          "post_dc4ccaf71fb1"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-09T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3764,7 +4712,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -3790,7 +4738,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "electric_vehicles",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -3842,7 +4790,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05487
     },
@@ -3899,6 +4847,32 @@
       "value": 0.07503
     },
     {
+      "collected_at": "2026-08-10T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-10",
+      "denominator": 893.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "2cdac4b73adf5d489d52990aa0c3f7a379dc6ab503c157c2036c565120a0bbe7",
+        "matched_url_range": {
+          "count": 87,
+          "start": 388
+        },
+        "raw_article_count": 87,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-10T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.09742
+    },
+    {
       "collected_at": "2026-08-10T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-10",
@@ -3946,7 +4920,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -4003,6 +4977,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-10T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-10",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_37856bbb1786",
+          "post_8d009f59623f"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-10T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
       "collected_at": "2026-08-11T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-11",
@@ -4050,7 +5050,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05824
     },
@@ -4107,6 +5107,32 @@
       "value": 0.08022
     },
     {
+      "collected_at": "2026-08-11T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-11",
+      "denominator": 910.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "e420e65a73448ca509690c2f9ad38f353b4c0e7f19bb98c24f2b0335de87940f",
+        "matched_url_range": {
+          "count": 72,
+          "start": 388
+        },
+        "raw_article_count": 72,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-11T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07912
+    },
+    {
       "collected_at": "2026-08-11T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-11",
@@ -4154,7 +5180,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -4211,6 +5237,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-11T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-11",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_335a74fc291b",
+          "post_c6b8482528a5"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-11T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
       "collected_at": "2026-08-12T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-12",
@@ -4258,7 +5310,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.03776
     },
@@ -4315,30 +5367,30 @@
       "value": 0.06149
     },
     {
-      "collected_at": "2026-08-12T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-12T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-12",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 927.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_672a43eecb74",
-          "post_ddb459ef8ded"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "62e6edeedf0ee6a2f456c461d167542b88fdf04fa0a4c6a296ab54e5f76d184f",
+        "matched_url_range": {
+          "count": 79,
+          "start": 388
+        },
+        "raw_article_count": 79,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-12T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08522
     },
     {
       "collected_at": "2026-08-12T14:00:00Z",
@@ -4362,7 +5414,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-12T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-12",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_672a43eecb74",
+          "post_ddb459ef8ded"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-12T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -4419,6 +5497,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-12T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-12",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_672a43eecb74",
+          "post_ddb459ef8ded"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-12T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
       "collected_at": "2026-08-13T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-13",
@@ -4466,7 +5570,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04131
     },
@@ -4523,30 +5627,30 @@
       "value": 0.06674
     },
     {
-      "collected_at": "2026-08-13T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-13T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-13",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 944.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_e3b7bdf20102",
-          "post_e46884fb4fc5"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "905e2e5fd859569aa2830abcf53194af4b1c2f80b38dd12e75a4d5dad31f4f3b",
+        "matched_url_range": {
+          "count": 86,
+          "start": 388
+        },
+        "raw_article_count": 86,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-13T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.0911
     },
     {
       "collected_at": "2026-08-13T14:00:00Z",
@@ -4570,7 +5674,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-13T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-13",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e3b7bdf20102",
+          "post_e46884fb4fc5"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-13T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -4627,6 +5757,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-13T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-13",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e3b7bdf20102",
+          "post_e46884fb4fc5"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-13T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
       "collected_at": "2026-08-14T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-14",
@@ -4674,7 +5830,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04475
     },
@@ -4731,30 +5887,30 @@
       "value": 0.0718
     },
     {
-      "collected_at": "2026-08-14T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-14T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-14",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 961.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_1521e99d833c",
-          "post_7db52b2f6382"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "cba14b6d4ce0ea7305d7fdca125a0248aaff89f6e0f7c17807877c4419394a69",
+        "matched_url_range": {
+          "count": 71,
+          "start": 388
+        },
+        "raw_article_count": 71,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-14T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07388
     },
     {
       "collected_at": "2026-08-14T14:00:00Z",
@@ -4778,7 +5934,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -4804,9 +5960,35 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-14T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-14",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_1521e99d833c",
+          "post_7db52b2f6382"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-14T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
     },
     {
       "collected_at": "2026-08-14T14:00:00Z",
@@ -4833,6 +6015,32 @@
       "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-14T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-14",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_1521e99d833c",
+          "post_7db52b2f6382"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-14T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
     },
     {
       "collected_at": "2026-08-15T13:00:00Z",
@@ -4882,7 +6090,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04806
     },
@@ -4939,30 +6147,30 @@
       "value": 0.07669
     },
     {
-      "collected_at": "2026-08-15T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-15T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-15",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 978.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_f75333481c9d",
-          "post_86d56a6b1f84"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "7b3111849bcca06c00813a863a7e69c9452c088c92443212d681c077c49a33e8",
+        "matched_url_range": {
+          "count": 78,
+          "start": 388
+        },
+        "raw_article_count": 78,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-15T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07975
     },
     {
       "collected_at": "2026-08-15T14:00:00Z",
@@ -4986,7 +6194,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5012,9 +6220,35 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-15T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-15",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_f75333481c9d",
+          "post_86d56a6b1f84"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-15T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
     },
     {
       "collected_at": "2026-08-15T14:00:00Z",
@@ -5041,6 +6275,32 @@
       "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-15T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-15",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_f75333481c9d",
+          "post_86d56a6b1f84"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-15T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
     },
     {
       "collected_at": "2026-08-16T13:00:00Z",
@@ -5090,7 +6350,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05126
     },
@@ -5147,30 +6407,30 @@
       "value": 0.0593
     },
     {
-      "collected_at": "2026-08-16T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-16T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-16",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 995.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_8e1fb38348a9",
-          "post_0f6d33eeb382"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "653672cebcff7ea95881cd478a9145744fc828bd886f7549d94c59c6a1e7861c",
+        "matched_url_range": {
+          "count": 85,
+          "start": 388
+        },
+        "raw_article_count": 85,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-16T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08543
     },
     {
       "collected_at": "2026-08-16T14:00:00Z",
@@ -5194,7 +6454,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5220,7 +6480,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -5246,7 +6506,59 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-16T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-16",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8e1fb38348a9",
+          "post_0f6d33eeb382"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-16T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-16T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-16",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8e1fb38348a9",
+          "post_0f6d33eeb382"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-16T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5298,7 +6610,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05435
     },
@@ -5355,30 +6667,30 @@
       "value": 0.06423
     },
     {
-      "collected_at": "2026-08-17T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-17T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-17",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 1012.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_e008e4c7318e",
-          "post_e39dd1f0fa7d"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "abe54d46feb32321e6f0f0d1a8b449881514966dc3088133301e25a23ea804a2",
+        "matched_url_range": {
+          "count": 70,
+          "start": 388
+        },
+        "raw_article_count": 70,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-17T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.06917
     },
     {
       "collected_at": "2026-08-17T14:00:00Z",
@@ -5402,7 +6714,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5428,7 +6740,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -5454,7 +6766,59 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-17T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-17",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e008e4c7318e",
+          "post_e39dd1f0fa7d"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-17T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-17T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-17",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_e008e4c7318e",
+          "post_e39dd1f0fa7d"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-17T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5506,7 +6870,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04162
     },
@@ -5563,6 +6927,32 @@
       "value": 0.07987
     },
     {
+      "collected_at": "2026-08-18T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-18",
+      "denominator": 889.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "432249a09ab9527f11c83c1d776d8c105dc7789360bcd6ef2e85bc6e4fd55e45",
+        "matched_url_range": {
+          "count": 77,
+          "start": 388
+        },
+        "raw_article_count": 77,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-18T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08661
+    },
+    {
       "collected_at": "2026-08-18T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-18",
@@ -5610,7 +7000,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-18T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-18",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_2b9f8ac2b5fc",
+          "post_a6c0a9eae5cc"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-18T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5636,7 +7052,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -5662,7 +7078,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "electric_vehicles",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5714,7 +7130,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04525
     },
@@ -5771,6 +7187,32 @@
       "value": 0.08499
     },
     {
+      "collected_at": "2026-08-19T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-19",
+      "denominator": 906.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "6f79b021fbf6412750e6c4da71cd879a487554451d87f4be74a07f993ab52c21",
+        "matched_url_range": {
+          "count": 84,
+          "start": 388
+        },
+        "raw_article_count": 84,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-19T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.09272
+    },
+    {
       "collected_at": "2026-08-19T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-19",
@@ -5818,7 +7260,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-19T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-19",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_5ae5f21ea0fc",
+          "post_5388bd140c24"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-19T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5844,7 +7312,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -5870,7 +7338,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "electric_vehicles",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -5922,7 +7390,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04875
     },
@@ -5979,6 +7447,32 @@
       "value": 0.06609
     },
     {
+      "collected_at": "2026-08-20T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-20",
+      "denominator": 923.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "fe5b693db79f278c11392186f8c60367189ef4e1b495f9d764aa09717896afbe",
+        "matched_url_range": {
+          "count": 69,
+          "start": 388
+        },
+        "raw_article_count": 69,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-20T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07476
+    },
+    {
       "collected_at": "2026-08-20T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-20",
@@ -6026,7 +7520,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -6083,6 +7577,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-20T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-20",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_db1bd796fd9a",
+          "post_17f7a003a211"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-20T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
       "collected_at": "2026-08-21T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-21",
@@ -6130,7 +7650,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05213
     },
@@ -6187,6 +7707,32 @@
       "value": 0.07128
     },
     {
+      "collected_at": "2026-08-21T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-21",
+      "denominator": 940.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "60eb1c271538a08b25b37cdfa584207ffa0377d529800ab399f79220b07a99e8",
+        "matched_url_range": {
+          "count": 76,
+          "start": 388
+        },
+        "raw_article_count": 76,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-21T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08085
+    },
+    {
       "collected_at": "2026-08-21T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-21",
@@ -6234,7 +7780,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -6291,6 +7837,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-21T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-21",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_d42772073ba4",
+          "post_02c6719c518a"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-21T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
       "collected_at": "2026-08-22T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-22",
@@ -6338,7 +7910,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05538
     },
@@ -6395,30 +7967,30 @@
       "value": 0.07628
     },
     {
-      "collected_at": "2026-08-22T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-22T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-22",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 957.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_88a87303b32c",
-          "post_b8ceccab7f45"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "1a751e6ad23b6ae4ec3e8ad1cf6ef81a335add69abb9bea556741978f332db89",
+        "matched_url_range": {
+          "count": 83,
+          "start": 388
+        },
+        "raw_article_count": 83,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-22T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08673
     },
     {
       "collected_at": "2026-08-22T14:00:00Z",
@@ -6442,7 +8014,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-22T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-22",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_88a87303b32c",
+          "post_b8ceccab7f45"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-22T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -6499,6 +8097,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-22T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-22",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_88a87303b32c",
+          "post_b8ceccab7f45"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-22T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
       "collected_at": "2026-08-23T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-23",
@@ -6546,7 +8170,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.03593
     },
@@ -6603,30 +8227,30 @@
       "value": 0.05852
     },
     {
-      "collected_at": "2026-08-23T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-23T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-23",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 974.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_8afc07a19f47",
-          "post_728dd1d4e21f"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "d20cfbb2d82f95a1d8db31f417a785863c5f1e664ce6e00f1ede117bfa7fca22",
+        "matched_url_range": {
+          "count": 68,
+          "start": 388
+        },
+        "raw_article_count": 68,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-23T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.06982
     },
     {
       "collected_at": "2026-08-23T14:00:00Z",
@@ -6650,7 +8274,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-23T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-23",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8afc07a19f47",
+          "post_728dd1d4e21f"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-23T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -6707,6 +8357,32 @@
       "value": 0.0
     },
     {
+      "collected_at": "2026-08-23T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-23",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8afc07a19f47",
+          "post_728dd1d4e21f"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-23T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
       "collected_at": "2026-08-24T13:00:00Z",
       "completeness": 1.0,
       "date": "2026-08-24",
@@ -6754,7 +8430,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.03935
     },
@@ -6811,30 +8487,30 @@
       "value": 0.06357
     },
     {
-      "collected_at": "2026-08-24T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-24T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-24",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 991.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_8f9818dc8f2c",
-          "post_751bfc84a97e"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "f7b0fecd5897f5d41b1c44ca1824aa051a2a206c6d938b9ca7c1d3195e76338f",
+        "matched_url_range": {
+          "count": 75,
+          "start": 388
+        },
+        "raw_article_count": 75,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-24T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.07568
     },
     {
       "collected_at": "2026-08-24T14:00:00Z",
@@ -6858,7 +8534,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -6884,9 +8560,35 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-24T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-24",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8f9818dc8f2c",
+          "post_751bfc84a97e"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-24T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
     },
     {
       "collected_at": "2026-08-24T14:00:00Z",
@@ -6913,6 +8615,32 @@
       "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-24T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-24",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8f9818dc8f2c",
+          "post_751bfc84a97e"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-24T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
     },
     {
       "collected_at": "2026-08-25T13:00:00Z",
@@ -6962,7 +8690,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04266
     },
@@ -7019,30 +8747,30 @@
       "value": 0.06845
     },
     {
-      "collected_at": "2026-08-25T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-25T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-25",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 1008.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_8d54044c63a2",
-          "post_9ee8a9dd6e0e"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "3edd08870922a8f07c48b417197953ce64263716d5aba3e6f0ef19f3fd87fb77",
+        "matched_url_range": {
+          "count": 82,
+          "start": 388
+        },
+        "raw_article_count": 82,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-25T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08135
     },
     {
       "collected_at": "2026-08-25T14:00:00Z",
@@ -7066,7 +8794,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7092,9 +8820,35 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-25T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-25",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8d54044c63a2",
+          "post_9ee8a9dd6e0e"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-25T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
     },
     {
       "collected_at": "2026-08-25T14:00:00Z",
@@ -7121,6 +8875,32 @@
       "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-25T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-25",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_8d54044c63a2",
+          "post_9ee8a9dd6e0e"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-25T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
     },
     {
       "collected_at": "2026-08-26T13:00:00Z",
@@ -7170,7 +8950,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05311
     },
@@ -7227,30 +9007,30 @@
       "value": 0.08475
     },
     {
-      "collected_at": "2026-08-26T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-26T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-26",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 885.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_57b77ccc39bb",
-          "post_dd0b5d0862ae"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "2d41764422c9f11078869144ee0f6f5776e5947926287b58b631d0d934ad9735",
+        "matched_url_range": {
+          "count": 89,
+          "start": 388
+        },
+        "raw_article_count": 89,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-26T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.10056
     },
     {
       "collected_at": "2026-08-26T14:00:00Z",
@@ -7274,7 +9054,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7300,7 +9080,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -7326,7 +9106,59 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-26T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-26",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_57b77ccc39bb",
+          "post_dd0b5d0862ae"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-26T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-26T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-26",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_57b77ccc39bb",
+          "post_dd0b5d0862ae"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-26T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7378,7 +9210,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05654
     },
@@ -7435,30 +9267,30 @@
       "value": 0.06541
     },
     {
-      "collected_at": "2026-08-27T14:00:00Z",
-      "completeness": 0.85,
+      "collected_at": "2026-08-27T13:00:00Z",
+      "completeness": 1.0,
       "date": "2026-08-27",
-      "denominator": 2.0,
-      "denominator_definition": "posts from monitored Bluesky accounts",
+      "denominator": 902.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
       "geography": "GB",
       "measure": "share",
       "metadata": {
-        "observed_panel_post_ids": [
-          "post_c169b4a34ffb",
-          "post_9273323f7dc4"
-        ],
-        "panel_accounts": 4,
-        "panel_status": "seed",
-        "raw_post_count": 1
+        "capture_universe_hash": "61dc15de7ba1ee347f7f779b42494ed737a4dd1aaa4329909d12c8acb46ccf9a",
+        "matched_url_range": {
+          "count": 74,
+          "start": 388
+        },
+        "raw_article_count": 74,
+        "source_scope": "UK publishing geography"
       },
       "observed_at": "2026-08-27T12:00:00Z",
       "quality_status": "observed",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source": "bluesky",
-      "topic_id": "climate_change",
-      "unit": "share_of_monitored_panel_posts",
-      "value": 0.5
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08204
     },
     {
       "collected_at": "2026-08-27T14:00:00Z",
@@ -7482,7 +9314,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "climate_change",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7508,7 +9340,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -7534,7 +9366,59 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
+      "topic_id": "clean_transport",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-27T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-27",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_c169b4a34ffb",
+          "post_9273323f7dc4"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 1
+      },
+      "observed_at": "2026-08-27T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.5
+    },
+    {
+      "collected_at": "2026-08-27T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-27",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_c169b4a34ffb",
+          "post_9273323f7dc4"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-27T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7586,7 +9470,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.05985
     },
@@ -7643,6 +9527,32 @@
       "value": 0.07073
     },
     {
+      "collected_at": "2026-08-28T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-28",
+      "denominator": 919.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "20c73ed59e11e0bba55c33e2b97dc2d5546563862da5c97067d33103a9a2fc20",
+        "matched_url_range": {
+          "count": 81,
+          "start": 388
+        },
+        "raw_article_count": 81,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-28T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.08814
+    },
+    {
       "collected_at": "2026-08-28T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-28",
@@ -7690,7 +9600,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-28T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-28",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_17e0cf7be925",
+          "post_2b6fd6a26cd7"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-28T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7716,7 +9652,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -7742,7 +9678,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "electric_vehicles",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7794,7 +9730,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.03953
     },
@@ -7851,6 +9787,32 @@
       "value": 0.07585
     },
     {
+      "collected_at": "2026-08-29T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-29",
+      "denominator": 936.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "eacca771290c7726fd5c6d4aef9908524cca0d264c23674913aceb90d68459dc",
+        "matched_url_range": {
+          "count": 88,
+          "start": 388
+        },
+        "raw_article_count": 88,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-29T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.09402
+    },
+    {
       "collected_at": "2026-08-29T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-29",
@@ -7898,7 +9860,33 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-29T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-29",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_7407a63de8f2",
+          "post_acfb71866016"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-29T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "clean_transport",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -7924,7 +9912,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "clean_transport",
+      "topic_id": "electric_vehicles",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.5
     },
@@ -7950,7 +9938,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "electric_vehicles",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -8002,7 +9990,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "gdelt_ngrams",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_captured_gdelt_news",
       "value": 0.04302
     },
@@ -8059,6 +10047,32 @@
       "value": 0.0808
     },
     {
+      "collected_at": "2026-08-30T13:00:00Z",
+      "completeness": 1.0,
+      "date": "2026-08-30",
+      "denominator": 953.0,
+      "denominator_definition": "distinct captured GDELT UK news URLs",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "capture_universe_hash": "dcac8f0d5e0013255135ba6adfb9fac812926b0cf75be228ac54bd1f95ee6399",
+        "matched_url_range": {
+          "count": 73,
+          "start": 388
+        },
+        "raw_article_count": 73,
+        "source_scope": "UK publishing geography"
+      },
+      "observed_at": "2026-08-30T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "gdelt_ngrams",
+      "topic_id": "extreme_weather",
+      "unit": "share_of_captured_gdelt_news",
+      "value": 0.0766
+    },
+    {
       "collected_at": "2026-08-30T14:00:00Z",
       "completeness": 0.85,
       "date": "2026-08-30",
@@ -8106,7 +10120,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky",
-      "topic_id": "cost_of_living",
+      "topic_id": "fuel_prices",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     },
@@ -8159,6 +10173,32 @@
       "schema_version": 1,
       "source": "bluesky",
       "topic_id": "electric_vehicles",
+      "unit": "share_of_monitored_panel_posts",
+      "value": 0.0
+    },
+    {
+      "collected_at": "2026-08-30T14:00:00Z",
+      "completeness": 0.85,
+      "date": "2026-08-30",
+      "denominator": 2.0,
+      "denominator_definition": "posts from monitored Bluesky accounts",
+      "geography": "GB",
+      "measure": "share",
+      "metadata": {
+        "observed_panel_post_ids": [
+          "post_84d06527a5b8",
+          "post_196c543d022e"
+        ],
+        "panel_accounts": 4,
+        "panel_status": "seed",
+        "raw_post_count": 0
+      },
+      "observed_at": "2026-08-30T12:00:00Z",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source": "bluesky",
+      "topic_id": "extreme_weather",
       "unit": "share_of_monitored_panel_posts",
       "value": 0.0
     }
@@ -15375,17 +17415,33 @@
   ],
   "layer_definitions": [
     {
+      "access_requirement": "approved Google Sheet export or API access",
+      "cadence": "daily",
+      "geography": "GB",
+      "independence_note": "Classified MP communication volume; engagement counters are excluded and counts are not policy actions.",
+      "label": "UK MP social posts \u00b7 Junkipedia",
+      "layer_id": "junkipedia_mp",
+      "provider": "Junkipedia",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source_url": null,
+      "status": "adapter_ready",
+      "units": [
+        "posts"
+      ]
+    },
+    {
       "access_requirement": "public release; confirm revision and licence terms",
       "cadence": "weekly",
       "geography": "GB",
       "independence_note": "Price series is an external economic context and does not measure attention.",
-      "label": "DESNZ road fuel prices",
+      "label": "UK road fuel prices \u00b7 DESNZ",
       "layer_id": "desnz_fuel_prices",
       "provider": "DESNZ",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source_url": "https://www.gov.uk/government/collections/road-fuel-prices",
-      "status": "fixture_ready",
+      "status": "adapter_ready",
       "units": [
         "pence_per_litre"
       ]
@@ -15395,13 +17451,13 @@
       "cadence": "monthly",
       "geography": "GB",
       "independence_note": "Official price index; revisions and basket definitions must be retained.",
-      "label": "ONS consumer prices",
+      "label": "ONS consumer prices \u00b7 CPI",
       "layer_id": "ons_cost_pressures",
       "provider": "ONS",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices",
-      "status": "fixture_ready",
+      "status": "adapter_ready",
       "units": [
         "index_2015_100",
         "percent_change"
@@ -15412,13 +17468,13 @@
       "cadence": "monthly",
       "geography": "GB",
       "independence_note": "Gridded physical conditions are separate from event catalogues and media.",
-      "label": "HadUK-Grid weather anomalies",
+      "label": "HadUK-Grid UK weather",
       "layer_id": "haduk_grid_weather",
       "provider": "Met Office",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source_url": "https://www.metoffice.gov.uk/research/climate/maps-and-data",
-      "status": "fixture_ready",
+      "status": "adapter_ready",
       "units": [
         "degrees_celsius",
         "millimetres"
@@ -15427,7 +17483,7 @@
     {
       "access_requirement": "public feed; confirm geography and update semantics",
       "cadence": "event_driven",
-      "geography": "GB",
+      "geography": "ENG",
       "independence_note": "Operational alert feed can overlap with media reporting.",
       "label": "Environment Agency flood alerts",
       "layer_id": "environment_agency_alerts",
@@ -15435,7 +17491,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source_url": "https://environment.data.gov.uk/",
-      "status": "fixture_ready",
+      "status": "adapter_ready",
       "units": [
         "alert_count"
       ]
@@ -15462,13 +17518,13 @@
       "cadence": "daily",
       "geography": "market",
       "independence_note": "Market series is not a direct UK household price measure.",
-      "label": "Brent crude oil price",
+      "label": "Brent crude spot price",
       "layer_id": "brent_oil",
-      "provider": "public market feed",
+      "provider": "FRED / U.S. EIA",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
-      "source_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
-      "status": "fixture_ready",
+      "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+      "status": "adapter_ready",
       "units": [
         "usd_per_barrel"
       ]
@@ -15484,7 +17540,7 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source_url": "https://www.londonstockexchange.com/",
-      "status": "fixture_ready",
+      "status": "adapter_ready",
       "units": [
         "index_points"
       ]
@@ -15510,7 +17566,7 @@
       "cadence": "daily",
       "geography": "GB",
       "independence_note": "Search interest remains separate from news and social measures.",
-      "label": "Official Google Trends search interest",
+      "label": "Google search interest",
       "layer_id": "google_trends_official",
       "provider": "Google",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
@@ -15543,7 +17599,7 @@
       "cadence": "daily",
       "geography": "GB",
       "independence_note": "Hotspots are detections, not named events or burned area.",
-      "label": "NASA FIRMS active fires",
+      "label": "NASA FIRMS active-fire detections",
       "layer_id": "firms_hotspots",
       "provider": "NASA",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
@@ -15555,11 +17611,28 @@
       ]
     },
     {
-      "access_requirement": "Earthdata access and processing resources",
+      "access_requirement": "Earthdata Login",
       "cadence": "monthly",
       "geography": "GB",
-      "independence_note": "Burned area is separate from FIRMS hotspots and GDACS events.",
-      "label": "NASA MODIS MCD64 burned area",
+      "independence_note": "One monthly satellite greenness source with two measures: raw NDVI and difference from the UK calendar-month 2001\u20132020 baseline.",
+      "label": "MODIS greenness (NDVI)",
+      "layer_id": "modis_mod13c2",
+      "provider": "NASA Earthdata",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source_url": "https://lpdaac.usgs.gov/products/mod13c2v061/",
+      "status": "adapter_ready",
+      "units": [
+        "index",
+        "index_anomaly"
+      ]
+    },
+    {
+      "access_requirement": "Earthdata access and processing resources",
+      "cadence": "daily",
+      "geography": "GB",
+      "independence_note": "Daily hectares are derived from monthly MODIS composites; burned area is separate from FIRMS hotspots and GDACS events.",
+      "label": "MODIS burned area",
       "layer_id": "modis_burned_area",
       "provider": "NASA",
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
@@ -15569,13 +17642,29 @@
       "units": [
         "hectares"
       ]
+    },
+    {
+      "access_requirement": "Confirm redistribution terms before publication",
+      "cadence": "daily",
+      "geography": "market",
+      "independence_note": "Exploratory market context; does not measure public attention or household costs.",
+      "label": "Company closing share prices",
+      "layer_id": "market_prices",
+      "provider": "Yahoo Finance chart endpoint",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source_url": "https://finance.yahoo.com/",
+      "status": "adapter_ready",
+      "units": [
+        "local_currency_per_share"
+      ]
     }
   ],
   "metadata": {
     "article_denominator": "distinct captured GDELT UK news URLs",
     "panel_accounts": 4,
     "panel_definition": "seed monitored accounts; not UK social attention",
-    "topic_count": 4
+    "topic_count": 5
   },
   "news_denominators": [
     {
@@ -16054,17 +18143,17 @@
   ],
   "release": {
     "configuration_files": {
-      "topics.uk-pilot.yaml": "a7d41e35989501fb3e046cb54d897fd883c74420e91bb19c574f13c81987f96f",
       "account_panel.yaml": "cd8d895fe32dd5c723259533dacd78ee6ede53cd0f85a6ccdaec9f8ab8cda26e",
-      "outlet_registry.yaml": "4f91724facb9785439250c022bbd17652899804fdc80c43177433e766a5f7a39",
-      "source_layers.yaml": "5b8383e211f7e69ebe4c4e19019f7c416ccf6016dc925e20ac679b014ebb2b28",
-      "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
-      "political_signals.uk-pilot.yaml": "13dbc76e2a12c96390947af2c0da870577dbadce5c50460a646d960d3fd7037d"
+      "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
+      "outlet_registry.yaml": "7d768008877bb8f822f09c29275d8a8d88366f965f491a47bb610766e23ce64a",
+      "political_signals.uk-pilot.yaml": "f83c6becb1f86d366938f9aef134369dbcc9d178f3d02a91bdf5de5b69f5909c",
+      "source_layers.yaml": "c439ff42cac608c31b4261637f8dc027ff7391304889dc6bc2732408670e24db",
+      "topics.uk-pilot.yaml": "0c96577856c3545ef2f9d566cd87eb5585426572188908bd68408a9abfcd952e"
     },
-    "configuration_hash": "ef593b69ead19ce7a57c27641ebe20bca2b3d0fbdfa1028edc86689872d8319d",
+    "configuration_hash": "a6f3e33452e7f165f885bb5d23f34573e89b1aec8413f6ca80e1d6d1fd36aa39",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "3a0ea858ef1006f03fab0a8202b7c3f0a897a197b105ea2a054edf9f6bf46965",
+    "content_hash": "87e7cfc7e459340f783cbf8628ba5c8516d7fdb0f9fd65ed2b2c89ab1e346dc5",
     "created_at": "2026-08-31T12:00:00Z",
     "date_end": "2026-08-30",
     "date_start": "2026-08-01",
@@ -16087,17 +18176,19 @@
       "gdelt_ngrams": "fixture-v1",
       "google_trends_official": "google_trends_official-fixture-v1",
       "haduk_grid_weather": "haduk_grid_weather-fixture-v1",
+      "junkipedia_mp": "junkipedia_mp-fixture-v1",
       "local_disruption": "local_disruption-fixture-v1",
+      "market_prices": "market_prices-fixture-v1",
       "modis_burned_area": "modis_burned_area-fixture-v1",
-      "modis_mod13c2": "imported-fixture-v1",
+      "modis_mod13c2": "modis_mod13c2-fixture-v1",
       "ons_cost_pressures": "ons_cost_pressures-fixture-v1",
       "polling_opinion": "polling_opinion-fixture-v1",
       "rail_disruption": "rail_disruption-fixture-v1"
     },
     "status": "fixture",
     "supabase_rows": {
-      "article_records": 80,
-      "daily_attention": 240,
+      "article_records": 100,
+      "daily_attention": 300,
       "events": 2,
       "layer_observations": 336,
       "physical_observations": 1
@@ -16174,9 +18265,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16212,9 +18303,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16231,9 +18322,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16250,9 +18341,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16269,9 +18360,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16288,9 +18379,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16307,9 +18398,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16326,9 +18417,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16345,9 +18436,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16364,9 +18455,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16383,9 +18474,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16402,9 +18493,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -16421,9 +18512,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16440,9 +18531,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -16459,9 +18550,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -16478,9 +18569,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about clean transport",
       "topic_ids": [
-        "climate_change"
+        "clean_transport"
       ],
       "updated": false
     },
@@ -16497,9 +18588,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -16516,9 +18607,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about clean transport",
       "topic_ids": [
-        "climate_change"
+        "clean_transport"
       ],
       "updated": false
     },
@@ -16535,9 +18626,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about clean transport",
       "topic_ids": [
-        "climate_change"
+        "clean_transport"
       ],
       "updated": false
     },
@@ -16554,9 +18645,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "clean_transport"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16573,9 +18664,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about clean transport",
       "topic_ids": [
-        "climate_change"
+        "clean_transport"
       ],
       "updated": false
     },
@@ -16592,9 +18683,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "clean_transport"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16611,9 +18702,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "clean_transport"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16630,9 +18721,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "climate_change"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16649,9 +18740,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "clean_transport"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16668,9 +18759,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "climate_change"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16687,9 +18778,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "climate_change"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16706,9 +18797,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "clean_transport"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16725,9 +18816,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "climate_change"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -16744,9 +18835,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "clean_transport"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16763,9 +18854,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "clean_transport"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16801,9 +18892,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "clean_transport"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -16934,9 +19025,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16972,9 +19063,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -16991,9 +19082,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -17010,9 +19101,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -17029,9 +19120,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about extreme weather",
       "topic_ids": [
-        "climate_change"
+        "extreme_weather"
       ],
       "updated": false
     },
@@ -17048,9 +19139,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -17067,9 +19158,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -17086,9 +19177,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -17105,9 +19196,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about fuel prices",
       "topic_ids": [
-        "clean_transport"
+        "fuel_prices"
       ],
       "updated": false
     },
@@ -17124,9 +19215,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -17143,9 +19234,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -17162,9 +19253,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -17181,9 +19272,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about electric vehicles",
       "topic_ids": [
-        "climate_change"
+        "electric_vehicles"
       ],
       "updated": false
     },
@@ -17200,9 +19291,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -17219,9 +19310,9 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about clean transport",
+      "text": "Fixture post about climate change",
       "topic_ids": [
-        "clean_transport"
+        "climate_change"
       ],
       "updated": false
     },
@@ -17238,14 +19329,29 @@
       "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
       "schema_version": 1,
       "source": "bluesky_appview",
-      "text": "Fixture post about climate change",
+      "text": "Fixture post about clean transport",
       "topic_ids": [
-        "climate_change"
+        "clean_transport"
       ],
       "updated": false
     }
   ],
   "source_snapshots": [
+    {
+      "completeness": 0.0,
+      "endpoint": null,
+      "notes": "approved Google Sheet export or API access",
+      "observed_end": null,
+      "observed_start": null,
+      "rate_limit_note": "Fixture; no provider request made.",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "request_count": 0,
+      "retrieved_at": "2026-08-30T16:00:00Z",
+      "schema_version": 1,
+      "snapshot_id": "junkipedia_mp-fixture-v1",
+      "source": "junkipedia_mp",
+      "status": "access_pending"
+    },
     {
       "completeness": 1.0,
       "endpoint": "https://www.gov.uk/government/collections/road-fuel-prices",
@@ -17323,7 +19429,7 @@
     },
     {
       "completeness": 1.0,
-      "endpoint": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+      "endpoint": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
       "notes": "confirm source terms and delayed data",
       "observed_end": "2026-08-30",
       "observed_start": "2026-08-01",
@@ -17412,6 +19518,21 @@
       "status": "fixture"
     },
     {
+      "completeness": 0.0,
+      "endpoint": "https://lpdaac.usgs.gov/products/mod13c2v061/",
+      "notes": "Earthdata Login",
+      "observed_end": null,
+      "observed_start": null,
+      "rate_limit_note": "Fixture; no provider request made.",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "request_count": 0,
+      "retrieved_at": "2026-08-30T16:00:00Z",
+      "schema_version": 1,
+      "snapshot_id": "modis_mod13c2-fixture-v1",
+      "source": "modis_mod13c2",
+      "status": "access_pending"
+    },
+    {
       "completeness": 1.0,
       "endpoint": "https://lpdaac.usgs.gov/products/mcd64a1v061/",
       "notes": "Earthdata access and processing resources",
@@ -17425,6 +19546,21 @@
       "snapshot_id": "modis_burned_area-fixture-v1",
       "source": "modis_burned_area",
       "status": "fixture"
+    },
+    {
+      "completeness": 0.0,
+      "endpoint": "https://finance.yahoo.com/",
+      "notes": "Confirm redistribution terms before publication",
+      "observed_end": null,
+      "observed_start": null,
+      "rate_limit_note": "Fixture; no provider request made.",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "request_count": 0,
+      "retrieved_at": "2026-08-30T16:00:00Z",
+      "schema_version": 1,
+      "snapshot_id": "market_prices-fixture-v1",
+      "source": "market_prices",
+      "status": "access_pending"
     }
   ]
 }

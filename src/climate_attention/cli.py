@@ -33,6 +33,7 @@ from .article_pipeline import (
     build_article_serving_payload,
 )
 from .registries import load_event_registry
+from .sources.mp_social import import_mp_social_rows, read_xlsx_values
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -153,6 +154,12 @@ def main(argv: list[str] | None = None) -> int:
     economics.add_argument("--start")
     economics.add_argument("--end")
     economics.add_argument("--output-dir", default="data/live")
+    mp = sub.add_parser("import-mp-social", help="import aggregate UK MP post counts from an XLSX export")
+    mp.add_argument("--input", required=True)
+    mp.add_argument("--output", default="data/live/junkipedia_mp/bundle.json")
+    mp.add_argument("--release-id", required=True)
+    mp.add_argument("--run-id", required=True)
+    mp.add_argument("--source-url")
     runs = sub.add_parser("runs"); runs.add_argument("action", choices=["inspect", "retry"])
     args = parser.parse_args(argv)
     if args.command == "validate-config": return validate_config()
@@ -325,6 +332,13 @@ def main(argv: list[str] | None = None) -> int:
             collect_market_prices(symbols=args.symbols, output=output_dir / "market_prices/bundle.json", raw_dir=output_dir / "market_prices/raw", start=date.fromisoformat(args.start) if args.start else None, end=date.fromisoformat(args.end) if args.end else None),
         ]
         print(json.dumps({"status": "available", "bundles": [str(path) for path in paths]}, indent=2)); return 0
+    if args.command == "import-mp-social":
+        rows = read_xlsx_values(args.input)
+        bundle = import_mp_social_rows(rows, release_id=args.release_id, collection_run_id=args.run_id, source_url=args.source_url)
+        output = Path(args.output)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(bundle, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps({"status": "available", "output": str(output), "daily_rows": len(bundle["daily_attention"]), "category_post_total": bundle["metadata"]["category_post_total"]}, indent=2)); return 0
     if args.command == "runs":
         print(f"run action '{args.action}' is available after a provider run manifest is created"); return 0
     return 0

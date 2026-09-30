@@ -6,7 +6,7 @@ The UK Climate Attention Atlas would be an internal research and monitoring tool
 
 It would bring together signals that are usually viewed separately, such as  news coverage, search behaviour, social media, weather events, fuel prices, transport disruption and other real-world events, so that T\&E can better understand the context in which people are encountering and considering issues such as climate change, EVs and clean transport.
 
-A test phase would be undertaken for the UK, although much of the data will be available for other countries in Europe and potentially globally,   with climate change, cost of living and clean transport as core themes, and EVs available as a separate topic for deeper analysis.
+A test phase would be undertaken for the UK, although much of the data will be available for other countries in Europe and potentially globally,   with climate change, fuel prices and clean transport as core themes, and EVs available as a separate topic for deeper analysis.
 
 ## **Questions it could help T\&E answer**
 

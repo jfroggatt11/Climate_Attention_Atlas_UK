@@ -40,7 +40,7 @@ Extend the current implementation rather than replace it:
 | Component | Existing foundation | Planned change |
 | --- | --- | --- |
 | [NGrams collector](../src/climate_attention/sources/gdelt_ngrams.py) | Batched phrase matching, political flags, GAL metadata joins, article retention, estimates and byte caps | Retain a reusable article inventory; add independent event-category candidates and GKG enrichment |
-| [Topic configuration](../config/topics.uk-pilot.yaml) | Draft English phrase sets | Add fuel prices as a distinct selectable tag; preserve broader cost-of-living and transport tags |
+| [Topic configuration](../config/topics.uk-pilot.yaml) | Draft English phrase sets | Use fuel prices as the selected price topic; retain transport tags |
 | [Political configuration](../config/political_signals.uk-pilot.yaml) | Generic actor/action/party phrases and official domains | Add stable actor, party and policy identities with dated aliases |
 | [Outlet registry](../config/outlet_registry.yaml) | Small unreviewed seed panel | Review domains/editions, source type, publishing geography and coverage areas |
 | [Contracts](../src/climate_attention/contracts.py) | Topic-specific article records and match evidence | Introduce topic-independent articles and many-to-many tag/event/location records |
@@ -96,7 +96,7 @@ The initial automated release should prioritise validated mention tags. Mark sub
 
 Maintain a versioned catalogue with tag ID, definition, hierarchy, language, aliases, phrases, exclusions, mapped GKG theme codes and review status.
 
-Run all phrase sets in batched scans, with word boundaries, casing/punctuation variants and contextual disambiguation. Examples requiring review include `EV`, `net zero`, a “political storm” and someone being “flooded with messages”. Keep fuel prices distinct from household energy bills; document overlap with cost of living.
+Run all phrase sets in batched scans, with word boundaries, casing/punctuation variants and contextual disambiguation. Examples requiring review include `EV`, `net zero`, a “political storm” and someone being “flooded with messages”. Keep fuel prices distinct from household energy bills and generic price stories.
 
 Combine candidates with an OR across phrase matches, mapped GKG themes and relevant title/description matches. A GKG match proposes a tag; it does not automatically establish project-specific relevance. Parse theme codes exactly rather than relying on arbitrary substring matches.
 

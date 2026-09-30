@@ -37,8 +37,8 @@ class FakeExecutor:
                 "desc": "Example",
             }], {"total_bytes_billed": 1})
         topics = [
-            "climate_change", "cost_of_living", "fuel_prices", "clean_transport",
-            "electric_vehicles", "event_storm", "event_flood", "event_wildfire",
+            "climate_change", "fuel_prices", "clean_transport",
+            "electric_vehicles", "extreme_weather", "event_storm", "event_flood", "event_wildfire",
         ]
         rows = []
         for topic in topics:

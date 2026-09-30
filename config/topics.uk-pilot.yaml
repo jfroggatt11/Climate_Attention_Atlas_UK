@@ -20,34 +20,6 @@ topics:
           - global warming
           - climate crisis
 
-  cost_of_living:
-    label: Cost of living
-    enabled: true
-    description: Household costs, bills and prominent price pressures.
-    queries:
-      - '"cost of living"'
-      - '"cost-of-living crisis"'
-      - '"living costs"'
-      - '"household bills"'
-      - '"energy bills"'
-      - '"food prices"'
-      - '"grocery prices"'
-      - '"rent increases"'
-      - '"mortgage rates"'
-    ngram_phrases:
-      en:
-        translation_status: draft
-        phrases:
-          - cost of living
-          - cost-of-living crisis
-          - living costs
-          - household bills
-          - energy bills
-          - food prices
-          - grocery prices
-          - rent increases
-          - mortgage rates
-
   fuel_prices:
     label: Fuel prices
     enabled: true
@@ -132,3 +104,30 @@ topics:
           - battery electric vehicles
           - zero emission vehicle
           - zero emission vehicles
+
+  extreme_weather:
+    label: Extreme weather
+    enabled: true
+    description: Discussion of extreme-weather events, their impacts, or preparation for them.
+    queries:
+      - 'flood*'
+      - wildfire
+      - heatwave
+      - storm
+      - drought
+      - 'extreme cold'
+    ngram_phrases:
+      en:
+        translation_status: draft
+        phrases:
+          - flood
+          - flooding
+          - wildfire
+          - wildfires
+          - heatwave
+          - heatwaves
+          - storm
+          - storms
+          - drought
+          - droughts
+          - extreme cold

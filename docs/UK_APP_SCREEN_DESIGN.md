@@ -126,7 +126,7 @@ Explore how attention, conditions and events change across UK places and through
 │ Attention            │      counties / local authorities         │ London     │
 │  ● Climate change    │       ● article mention                  │ 12–18 Jul  │
 │  ○ Clean transport   │           ▲ event                        │ 1.24% topic │
-│  ○ Cost of living    │                                          │ 8,410 total │
+│  ○ Fuel prices    │                                          │ 8,410 total │
 │ Physical             │  ─────────────────────────────────────   │ Sources     │
 │  □ Temperature       │      Date: 18 Jul 2025                    │ GDELT      │
 │  □ NDVI / grass      │                                          │ ONS geo     │

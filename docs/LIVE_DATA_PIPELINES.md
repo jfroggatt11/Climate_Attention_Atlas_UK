@@ -6,6 +6,27 @@ bundle under `data/live/<source>/`, keeps raw responses or source files under a
 notes in `source_snapshot`. Live bundles are candidates for review; they do not
 replace the checked-in fixture release automatically.
 
+## Political communication: UK MP social posts
+
+The MP importer reads the `engagement` tab exported from Google Sheets or XLSX.
+It uses the day-grain `posts` field only and ignores likes, shares, comments and
+views. It maps `climate_change`, `evs`, `fuel_prices` and `extreme_weather` to
+the atlas topic IDs, aggregates party/platform rows to UK topic-day totals, and
+checks those totals against the month and year control rows.
+
+```bash
+uv run uk-atlas import-mp-social \
+  --input /path/to/social_media_uk_mp.xlsx \
+  --output data/live/junkipedia_mp/bundle.json \
+  --release-id uk-atlas-candidate-2025-01-01-2025-12-31 \
+  --run-id junkipedia-mp-2026-09-30
+```
+
+The resulting series measure classified MP communication volume, not enacted
+policy. The source notes describe a candidate set and weekly classification
+rebuild, so the release must retain classifier and coverage notes until a more
+sophisticated event-discourse method is introduced.
+
 ## Temperature: HadUK-Grid
 
 HadUK-Grid is the Met Office's open-government-licence UK land observation
@@ -119,6 +140,7 @@ uv run uk-atlas validate-live-candidate
 
 The candidate is the frontend default. Add `?release=candidate` explicitly if
 needed; add `?release=fixture` to view the synthetic interface fixture. It
-contains real temperature, raw NDVI, greenness anomaly, MCD64, FIRMS, GDACS and
-economic snapshots, but the browser does not refresh them. News and Bluesky are empty in this
-candidate until their live collection and denominator review is complete.
+contains real temperature, raw NDVI, greenness anomaly, MCD64, FIRMS, GDACS,
+economic snapshots and, when imported, classified UK MP post counts. The browser
+does not refresh them. News and Bluesky remain empty until their live collection
+and denominator review is complete.

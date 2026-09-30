@@ -326,7 +326,7 @@ class ArticleMatchEvidence(Contract):
 class DailyAttention(Contract):
     schema_version: Literal[1] = 1
     date: date
-    source: Literal["gdelt_ngrams", "bluesky", "google_trends"]
+    source: Literal["gdelt_ngrams", "bluesky", "google_trends", "junkipedia_mp"]
     topic_id: str
     measure: Literal["count", "share", "index"]
     value: float | None
