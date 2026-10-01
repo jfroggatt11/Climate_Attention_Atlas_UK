@@ -43,7 +43,11 @@ their own sampling uncertainty; they are not daily counts and are not merged int
 GDELT article denominators, Bluesky post denominators, or Google Trends indices.
 Question-level crosswalks must flag wording, mode, population, and response-scale
 changes before series are compared. Until this metadata and access review is
-complete, the polling layer remains access-pending in the release registry.
+complete, the polling layer remains access-pending in the release registry. The
+current source and access review is in
+[POLLING_SOURCE_REVIEW.md](POLLING_SOURCE_REVIEW.md); it recommends DESNZ PAT as
+the first production series and ONS OPN as an irregular Great Britain support
+series rather than combining unrelated poll questions into one daily line.
 
 ## Test topics, translation, and verification
 

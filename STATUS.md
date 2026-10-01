@@ -35,7 +35,7 @@
   viewport while retaining stacked controls and smaller canvas limits on narrow
   screens.
 - **Known issues:** GDELT BigQuery, official Google Trends, production Bluesky
-  Jetstream, DESNZ/ONS/HadUK-Grid/EA/rail/oil integrations and finer geography are
+  Jetstream, ONS/HadUK-Grid/EA/rail/oil integrations and finer geography are
   intentionally deferred until T&E access and review. Seed phrases and account
   panel are test definitions, not validated measures.
 - **Next step:** connect the registered adapters to T&E-approved public/API feeds,

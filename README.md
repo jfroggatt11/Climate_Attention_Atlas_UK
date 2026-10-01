@@ -107,6 +107,7 @@ collect-gdacs-live    collect free historical GDACS event context
 collect-ea-floods-live snapshot the current England Environment Agency feed
 collect-firms-live     collect NASA FIRMS country-day fire detections
 collect-desnz-live     collect official weekly road fuel prices
+collect-desnz-pat-live collect the DESNZ Public Attitudes Tracker workbook
 collect-ons-cpi-live   collect official ONS CPI time series
 collect-brent-live     collect public FRED Brent spot prices
 collect-market-live    collect exploratory Tesla/BP/Shell closes
@@ -126,6 +127,8 @@ runs inspect|retry    inspect or resume durable run state
 See [STATUS.md](STATUS.md), [PLAN.md](PLAN.md), [docs/LIVE_DATA_ONRAMP.md](docs/LIVE_DATA_ONRAMP.md), [docs/operations.md](docs/operations.md),
 and [docs/data-dictionary.md](docs/data-dictionary.md) for handover details. The
 Bluesky measurement choices are documented in [docs/BLUESKY_PANEL_OPTIONS.md](docs/BLUESKY_PANEL_OPTIONS.md).
+The public polling source review and refresh design are documented in
+[docs/POLLING_SOURCE_REVIEW.md](docs/POLLING_SOURCE_REVIEW.md).
 frontend deliberately labels the GDELT denominator as captured GDELT UK news and
 the social denominator as posts from monitored Bluesky accounts. “Attention” is
 not one undifferentiated scale, and the pilot makes no causal claim.

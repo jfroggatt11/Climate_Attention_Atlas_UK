@@ -470,7 +470,7 @@ class DataLayerDefinition(Contract):
     layer_id: str
     label: str
     provider: str
-    cadence: Literal["daily", "weekly", "monthly", "event_driven", "on_demand"]
+    cadence: Literal["daily", "weekly", "monthly", "triannual", "event_driven", "on_demand"]
     geography: str
     units: list[str] = Field(min_length=1)
     status: Literal["fixture_ready", "adapter_ready", "access_pending", "deferred"]

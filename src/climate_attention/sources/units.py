@@ -15,6 +15,7 @@ EXPECTED_UNITS: dict[str, set[str]] = {
     "ftse100": {"index_points"},
     "google_trends_official": {"index_0_100"},
     "polling_opinion": {"percent", "sample_size"},
+    "desnz_pat": {"percent", "sample_size"},
     "local_disruption": {"incidents"},
     "firms_hotspots": {"hotspots"},
     "modis_burned_area": {"hectares"},

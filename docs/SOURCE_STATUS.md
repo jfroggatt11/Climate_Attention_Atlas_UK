@@ -10,5 +10,6 @@
 | MODIS MCD64 / FIRMS | Event fixture + adapter port | Keep hotspots separate from named events and burned area. |
 | GDACS | Event fixture + adapter port | Named alerts, not a complete UK local incident register. |
 | DESNZ, ONS, HadUK-Grid, Environment Agency, Brent | Live adapters / snapshots | Refresh official public feeds; preserve revisions and current-only flood semantics. |
+| DESNZ Public Attitudes Tracker | Live collector + parser | Refresh triannual GOV.UK time-series workbooks; preserve wave, question, bases, missing low values and source hashes. |
 | Tesla, BP, Shell | Exploratory market adapter | Refresh daily closes, then confirm redistribution terms before publication. |
 | MODIS MCD64 burned area | Live AppEEARS adapter | Use Earthdata credentials for bounded Burn_Date tasks; retain native rasters and task IDs. |

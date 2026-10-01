@@ -18,7 +18,7 @@ from .validation import audit_release
 REQUIRED = ("haduk_grid_weather", "modis_mod13c2", "gdacs", "firms")
 OPTIONAL = (
     "environment_agency_alerts", "modis_burned_area", "desnz_fuel_prices",
-    "ons_cost_pressures", "brent_oil", "market_prices", "junkipedia_mp",
+    "ons_cost_pressures", "brent_oil", "market_prices", "junkipedia_mp", "desnz_pat",
 )
 
 
@@ -64,6 +64,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
                 "revision_status": "final",
                 "metadata": {**row.get("metadata", {}), "source_bundle_sha256": source_hashes["haduk_grid_weather"]},
             }).model_dump(mode="json"))
+    data_layers = list(weather)
 
     daily_attention: list[dict[str, Any]] = []
     if "junkipedia_mp" in bundles:
@@ -133,6 +134,28 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
     for source in OPTIONAL:
         if source not in bundles or source == "junkipedia_mp":
             continue
+        if source == "desnz_pat":
+            for row in bundles[source][0]["records"]:
+                observed_text = row.get("date") or row.get("observed_at")
+                if not observed_text:
+                    continue
+                observed = date.fromisoformat(str(observed_text)[:10])
+                if not (start <= observed <= end):
+                    continue
+                data_layers.append(ObservationRecord(
+                    observation_id=row.get("record_id") or f"{source}:{row.get('series_id')}:{observed}",
+                    source=source, series_id=row.get("series_id", "polling"),
+                    metric=row.get("metric", "survey_response_share"), observed_at=observed,
+                    geography=row.get("geography", "UK"), geography_level="country",
+                    value=(float(row["value"]) if row.get("value") is not None else None),
+                    unit=row.get("unit", "percent"),
+                    quality_status=("observed" if row.get("value") is not None else "missing"),
+                    completeness=(1.0 if row.get("value") is not None else 0.0),
+                    revision_status="initial", collection_run_id=bundles[source][0].get("collection_run_id", "unknown"),
+                    collected_at=bundles[source][0]["source_snapshot"]["retrieved_at"], release_id=release_id,
+                    metadata={**row.get("metadata", {}), "source_bundle_sha256": source_hashes[source]},
+                ).model_dump(mode="json"))
+            continue
         for row in bundles[source][0]["records"]:
             observed_text = row.get("date") or row.get("observed_at")
             if not observed_text:
@@ -182,6 +205,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
         "brent_oil": ("Brent crude spot price", "FRED / U.S. EIA", "daily", "usd_per_barrel"),
         "market_prices": ("Company closing share prices", "Yahoo Finance chart endpoint", "daily", "local_currency_per_share"),
         "junkipedia_mp": ("UK MP social posts", "Junkipedia", "daily", "posts"),
+        "desnz_pat": ("UK public attitudes · DESNZ PAT", "DESNZ", "triannual", "percent"),
     }
     for source, (label, provider, cadence, unit) in optional_definitions.items():
         if source in bundles:
@@ -196,12 +220,12 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
             configuration_files=release_config_hashes(CONFIG), source_snapshots=snapshots_by_source,
             parquet_outputs=[],
             supabase_rows={"daily_attention": len(daily_attention), "article_records": 0, "events": len(events),
-                           "physical_observations": len(physical), "layer_observations": len(weather)},
+                           "physical_observations": len(physical), "layer_observations": len(data_layers)},
             frontend_assets=["frontend/public/data/candidate.json"], status="candidate",
-            methodology_note="This candidate contains physical and economic context plus classified UK MP post counts when the Junkipedia bundle is present. News and Bluesky attention remain unavailable. MP counts measure communication volume, not enacted policy, and do not include engagement counters. MODIS raw NDVI and greenness anomalies use a UK calendar-month 2001–2020 baseline; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
+            methodology_note="This candidate contains physical and economic context, DESNZ PAT survey observations, plus classified UK MP post counts when the Junkipedia bundle is present. News and Bluesky attention remain unavailable. DESNZ PAT observations are weighted response shares from irregular survey waves, not daily attention. MP counts measure communication volume, not enacted policy, and do not include engagement counters. MODIS raw NDVI and greenness anomalies use a UK calendar-month 2001–2020 baseline; FIRMS detections are not wildfires; market closes are exploratory context. Associations do not establish causality.",
         ).model_dump(mode="json"),
         "daily_attention": daily_attention, "news_denominators": [], "articles": [], "social_posts": [],
-        "physical_observations": physical, "events": events, "data_layers": weather,
+        "physical_observations": physical, "events": events, "data_layers": data_layers,
         "source_snapshots": snapshots, "layer_definitions": definitions,
         "metadata": {"panel_definition": "Junkipedia classified UK MP channels when available; no Bluesky panel collected", "article_denominator": "Unavailable",
                      "source_bundle_sha256": source_hashes,

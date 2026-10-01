@@ -24,6 +24,7 @@ from .live import (
     load_live_countries,
 )
 from .economic import collect_brent, collect_desnz_fuel_prices, collect_market_prices, collect_ons_cpi
+from .polling import collect_desnz_pat
 from .gdelt_pipeline import build_gal_gkg_join_sql, build_gal_inventory_sql, build_gkg_enrichment_sql
 from .article_pipeline import (
     AtomicPipelineStore,
@@ -137,6 +138,9 @@ def main(argv: list[str] | None = None) -> int:
     desnz = sub.add_parser("collect-desnz-live", help="collect official weekly UK road fuel prices")
     desnz.add_argument("--output", default="data/live/desnz_fuel_prices/bundle.json")
     desnz.add_argument("--raw-dir", default="data/live/desnz_fuel_prices/raw")
+    pat = sub.add_parser("collect-desnz-pat-live", help="collect the DESNZ Public Attitudes Tracker time-series workbook")
+    pat.add_argument("--output", default="data/live/desnz_pat/bundle.json")
+    pat.add_argument("--raw-dir", default="data/live/desnz_pat/raw")
     ons = sub.add_parser("collect-ons-cpi-live", help="collect official ONS CPI time series")
     ons.add_argument("--output", default="data/live/ons_cost_pressures/bundle.json")
     ons.add_argument("--raw-dir", default="data/live/ons_cost_pressures/raw")
@@ -320,6 +324,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"wrote {output}"); return 0
     if args.command == "collect-desnz-live":
         output = collect_desnz_fuel_prices(output=Path(args.output), raw_dir=Path(args.raw_dir)); print(f"wrote {output}"); return 0
+    if args.command == "collect-desnz-pat-live":
+        output = collect_desnz_pat(output=Path(args.output), raw_dir=Path(args.raw_dir)); print(f"wrote {output}"); return 0
     if args.command == "collect-ons-cpi-live":
         output = collect_ons_cpi(output=Path(args.output), raw_dir=Path(args.raw_dir)); print(f"wrote {output}"); return 0
     if args.command == "collect-brent-live":
