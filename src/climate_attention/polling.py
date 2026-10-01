@@ -122,13 +122,16 @@ def parse_desnz_pat_workbook(
         if sheet.title.lower() == "table of contents":
             continue
         rows = sheet.iter_rows(values_only=True)
-        first = next(rows, None)
+        next(rows, None)
         question_text_row = next(rows, None)
         question_text = question_text_row[0] if question_text_row else None
         # Rows 3-8 are notes. The table header is identified rather than relying
         # on a fixed row so a small cover-note change does not shift the parser.
         header = None
+        base_label = None
         for candidate in rows:
+            if str(candidate[0] or "").strip().lower().startswith("base:"):
+                base_label = str(candidate[0]).strip()
             if str(candidate[0] or "").strip().lower() == "subgroup identifier row":
                 header = candidate
                 break
@@ -168,9 +171,10 @@ def parse_desnz_pat_workbook(
                         "question_id": question_id,
                         "question_text": str(question_text or "").strip(),
                         "response_label": label, "wave": wave_label,
-                        "population": "adults_16_plus", "base_label": "All respondents",
+                        "population": "adults_16_plus", "base_label": base_label,
                         "unweighted_n": unweighted_n, "weighted_base": weighted_base,
-                        "mode": "online_and_paper", "source_url": source_url,
+                        "date_basis": "seasonal_wave_anchor_not_fieldwork_date",
+                        "source_url": source_url,
                         "workbook_sha256": digest,
                         "quality_status": "observed" if estimate is not None else "missing",
                     },
@@ -188,14 +192,27 @@ def collect_desnz_pat(*, output: Path, raw_dir: Path, client: httpx.Client | Non
         release = discover_desnz_pat_release(client=client)
         workbook_response = client.get(release["time_series_url"])
         workbook_response.raise_for_status()
-        raw_dir.mkdir(parents=True, exist_ok=True)
         release_id = f"desnz-pat-{_slug(release['release_title'])}"
         run_id = f"{release_id}-{_now().strftime('%Y%m%dT%H%M%SZ')}"
-        workbook_path = raw_dir / Path(release["time_series_url"]).name
-        workbook_path.write_bytes(workbook_response.content)
-        landing_path = raw_dir / "release-page.json"
-        landing_path.write_text(json.dumps(release["page_payload"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        release_dir = raw_dir / release_id
+        release_dir.mkdir(parents=True, exist_ok=True)
+        workbook_digest = hashlib.sha256(workbook_response.content).hexdigest()
+        workbook_path = release_dir / f"time-series-{workbook_digest[:12]}.xlsx"
+        if not workbook_path.exists():
+            workbook_path.write_bytes(workbook_response.content)
+        landing_content = json.dumps(release["page_payload"], ensure_ascii=False, indent=2) + "\n"
+        landing_digest = hashlib.sha256(landing_content.encode("utf-8")).hexdigest()
+        landing_path = release_dir / f"release-page-{landing_digest[:12]}.json"
+        if not landing_path.exists():
+            landing_path.write_text(landing_content, encoding="utf-8")
         records = parse_desnz_pat_workbook(workbook_path, release_id=release_id, collection_run_id=run_id, source_url=release["release_page"])
+        current_wave = _wave_date(str(release["release_title"]))
+        if current_wave and not any(
+            row["date"] == current_wave.isoformat() and row["metadata"]["question_id"] == "CLIMCONCERN"
+            and row["metadata"]["response_label"] == "Net: Total concerned" and row["value"] is not None
+            for row in records
+        ):
+            raise ValueError(f"DESNZ PAT workbook lacks current-wave CLIMCONCERN series: {release['release_title']}")
         dates = sorted(row["date"] for row in records)
         retrieved = _now()
         bundle = {

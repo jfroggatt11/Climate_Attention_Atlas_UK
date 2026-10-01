@@ -22,6 +22,7 @@ def _workbook(path: Path) -> None:
     sheet.append(["Unweighted Base", 100, 80, 90])
     sheet.append(["Weighted Base", 100.0, 81.0, 91.0])
     sheet.append(["Very concerned", 0.4, 0.42, 0.45])
+    sheet.append(["Net: Total concerned", 0.8, 0.82, 0.83])
     sheet.append(["Low suppressed", 0.1, "low", 0.02])
     book.save(path)
 
@@ -34,6 +35,7 @@ def test_parse_desnz_pat_workbook_preserves_question_metadata(tmp_path):
     assert len(observed) == 2
     assert observed[0]["value"] == 42.0
     assert observed[0]["metadata"]["wave"] == "Autumn 2021"
+    assert observed[0]["metadata"]["date_basis"] == "seasonal_wave_anchor_not_fieldwork_date"
     suppressed = [row for row in rows if row["metadata"]["response_label"] == "Low suppressed" and row["date"] == "2021-09-01"][0]
     assert suppressed["value"] is None
     assert suppressed["metadata"]["quality_status"] == "missing"
@@ -74,5 +76,5 @@ def test_collect_desnz_pat_discovers_latest_release_and_hashes_raw_files(tmp_pat
     bundle = json.loads(output.read_text())
     assert bundle["source"] == "desnz_pat"
     assert bundle["raw_response"]["workbook_sha256"]
-    assert len(bundle["records"]) == 4
+    assert len(bundle["records"]) == 6
     assert bundle["provider_metadata"]["release_title"].endswith("Spring 2026")

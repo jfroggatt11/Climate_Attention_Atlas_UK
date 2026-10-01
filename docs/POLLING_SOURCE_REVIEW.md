@@ -4,6 +4,11 @@
 **Use case:** UK Attention Atlas: compare public attitudes with news, search, social, events, physical conditions and economic context.  
 **Decision status:** source review; no production polling feed is enabled by this document.
 
+**Current local coverage:** the project archive has been backfilled from the first
+PAT wave (Autumn 2021) through the latest published wave available at the last
+refresh (Spring 2026). The candidate release includes the full available history;
+there are no fabricated observations between survey waves.
+
 ## Short answer
 
 Yes. There is enough public, free material to start a reproducible and refreshable polling layer, but it should not be built from a generic poll scrape.
@@ -73,6 +78,7 @@ For the Atlas display, use irregular points or a step/segment view with the fiel
 
 - Add desnz_pat and ons_opn_climate as separate registered layers; leave the current polling_opinion placeholder out of production.
 - Build one DESNZ collector first. Start with the time-series workbook plus questionnaire and technical overview; add crosstabs after the core parser is validated. Run `.venv/bin/uk-atlas collect-desnz-pat-live` to discover the newest GOV.UK release, archive the landing-page JSON and workbook under `data/live/desnz_pat/raw/`, and write `data/live/desnz_pat/bundle.json`.
+- Rebuild the browser candidate over the available history with `.venv/bin/uk-atlas build-live-candidate --start 2021-09-01 --end 2026-10-01 --output frontend/public/data/candidate.json`.
 - Keep the poll metadata on the normalized observation rows and implement the question crosswalk before adding any third-party poll.
 - Backfill PAT waves from autumn 2021 onward where the time-series workbook exposes them.
 - Add ONS 2021, 2022, 2023, 2024 and 2025 climate releases as separate irregular observations, preserving the GB geography label.
