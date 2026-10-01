@@ -2,6 +2,9 @@
 .env
 .env.*
 !.env.example
+*service-account*.json
+*google-credentials*.json
+credentials.json
 __pycache__/
 *.py[cod]
 *.parquet

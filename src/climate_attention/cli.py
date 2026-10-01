@@ -33,7 +33,7 @@ from .article_pipeline import (
     build_article_serving_payload,
 )
 from .registries import load_event_registry
-from .sources.mp_social import import_mp_social_rows, read_xlsx_values
+from .sources.mp_social import import_mp_social_rows, read_google_sheet_values, read_xlsx_values
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -154,8 +154,11 @@ def main(argv: list[str] | None = None) -> int:
     economics.add_argument("--start")
     economics.add_argument("--end")
     economics.add_argument("--output-dir", default="data/live")
-    mp = sub.add_parser("import-mp-social", help="import aggregate UK MP post counts from an XLSX export")
-    mp.add_argument("--input", required=True)
+    mp = sub.add_parser("import-mp-social", help="import aggregate UK MP post counts from Google Sheets or XLSX")
+    mp_source = mp.add_mutually_exclusive_group(required=True)
+    mp_source.add_argument("--input", help="local XLSX export")
+    mp_source.add_argument("--sheet-id", help="Google Sheets spreadsheet ID")
+    mp.add_argument("--range", default="engagement!A:O", help="Google Sheets A1 range")
     mp.add_argument("--output", default="data/live/junkipedia_mp/bundle.json")
     mp.add_argument("--release-id", required=True)
     mp.add_argument("--run-id", required=True)
@@ -333,8 +336,9 @@ def main(argv: list[str] | None = None) -> int:
         ]
         print(json.dumps({"status": "available", "bundles": [str(path) for path in paths]}, indent=2)); return 0
     if args.command == "import-mp-social":
-        rows = read_xlsx_values(args.input)
-        bundle = import_mp_social_rows(rows, release_id=args.release_id, collection_run_id=args.run_id, source_url=args.source_url)
+        rows = read_xlsx_values(args.input) if args.input else read_google_sheet_values(args.sheet_id, cell_range=args.range)
+        source_url = args.source_url or (f"https://docs.google.com/spreadsheets/d/{args.sheet_id}/edit" if args.sheet_id else None)
+        bundle = import_mp_social_rows(rows, release_id=args.release_id, collection_run_id=args.run_id, source_url=source_url)
         output = Path(args.output)
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(json.dumps(bundle, indent=2) + "\n", encoding="utf-8")

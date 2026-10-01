@@ -111,7 +111,7 @@ collect-ons-cpi-live   collect official ONS CPI time series
 collect-brent-live     collect public FRED Brent spot prices
 collect-market-live    collect exploratory Tesla/BP/Shell closes
 collect-economics-live collect the economic bundle together
-import-mp-social      import classified UK MP post counts from an XLSX export
+import-mp-social      import classified UK MP post counts from Google Sheets or XLSX
 aggregate             validate and materialise prepared serving aggregates
 check-quality         check completeness, duplicates, denominators and source status
 check-layers          check source-layer duplicates and snapshot coverage

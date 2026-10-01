@@ -27,6 +27,25 @@ policy. The source notes describe a candidate set and weekly classification
 rebuild, so the release must retain classifier and coverage notes until a more
 sophisticated event-discourse method is introduced.
 
+### Google Sheets credentials
+
+For a private Sheet, use a read-only service account for the scheduled
+collector:
+
+1. Create or select a Google Cloud project and enable the Google Sheets API.
+2. Create a service account. Do not grant it broad project roles.
+3. Copy its email address and share only the MP Sheet with that address as
+   **Viewer**. Google Cloud IAM permissions alone do not grant access to a
+   Sheet.
+4. Create a JSON service-account key for local testing and store it outside the
+   repository. For a hosted scheduler, use the platform secret store or
+   workload identity federation instead of committing the key.
+5. Set `GOOGLE_APPLICATION_CREDENTIALS` to the key path and pass the Sheet ID
+   from the URL (`/spreadsheets/d/<SHEET_ID>/edit`) to the importer.
+
+The importer requests `engagement!A:O` with unformatted values and read-only
+scope, so numeric post counts remain numeric and the Sheet is never modified.
+
 ## Temperature: HadUK-Grid
 
 HadUK-Grid is the Met Office's open-government-licence UK land observation

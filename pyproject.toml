@@ -19,6 +19,7 @@ dependencies = [
 dev = ["pytest>=8,<9"]
 bigquery = ["google-cloud-bigquery>=3.38,<4"]
 supabase = ["psycopg[binary]>=3.2,<4"]
+sheets = ["google-auth[requests]>=2,<3"]
 live = [
   "earthaccess>=0.13,<1",
   "numpy>=2,<3",

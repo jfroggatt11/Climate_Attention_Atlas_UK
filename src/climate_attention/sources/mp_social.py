@@ -14,6 +14,8 @@ from typing import Any, Iterable, Sequence
 from zipfile import ZipFile
 from xml.etree import ElementTree
 
+import httpx
+
 from ..contracts import DailyAttention, QualityStatus, SourceSnapshot
 
 
@@ -239,3 +241,42 @@ def read_xlsx_values(path: str | Path, *, sheet_name: str = "engagement") -> lis
                 cells[column] = text
             output.append([cells.get(index, "") for index in range(max(cells.keys(), default=-1) + 1)])
         return output
+
+
+def read_google_sheet_values(
+    spreadsheet_id: str,
+    *,
+    cell_range: str = "engagement!A:O",
+    credentials: Any | None = None,
+    client: httpx.Client | None = None,
+) -> list[list[Any]]:
+    """Read a private Sheet with application default credentials, without editing it."""
+    if not spreadsheet_id.strip():
+        raise ValueError("Google spreadsheet ID is required")
+    if credentials is None:
+        try:
+            import google.auth
+            from google.auth.transport.requests import Request
+        except ImportError as exc:
+            raise RuntimeError("Google Sheets access requires the 'sheets' optional dependencies") from exc
+        credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
+        credentials.refresh(Request())
+    elif not getattr(credentials, "token", None):
+        raise ValueError("Google credentials must carry a valid access token")
+    url = f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet_id}/values/{cell_range}"
+    own_client = client is None
+    http_client = client or httpx.Client(timeout=30)
+    try:
+        response = http_client.get(
+            url,
+            headers={"Authorization": f"Bearer {credentials.token}"},
+            params={"majorDimension": "ROWS", "valueRenderOption": "UNFORMATTED_VALUE", "dateTimeRenderOption": "FORMATTED_STRING"},
+        )
+        response.raise_for_status()
+        values = response.json().get("values", [])
+        if not isinstance(values, list) or any(not isinstance(row, list) for row in values):
+            raise ValueError("Google Sheets response does not contain row values")
+        return values
+    finally:
+        if own_client:
+            http_client.close()

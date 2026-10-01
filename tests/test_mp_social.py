@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 
 import pytest
 
-from climate_attention.sources.mp_social import import_mp_social_rows
+from climate_attention.sources.mp_social import import_mp_social_rows, read_google_sheet_values
 
 
 HEADERS = [
@@ -54,3 +54,35 @@ def test_mp_import_rejects_unreconciled_month():
     ]
     with pytest.raises(ValueError, match="month control does not reconcile"):
         import_mp_social_rows(rows, release_id="release-1", collection_run_id="run-1")
+
+
+class _Response:
+    def __init__(self, payload):
+        self.payload = payload
+
+    def raise_for_status(self):
+        return None
+
+    def json(self):
+        return self.payload
+
+
+class _Client:
+    def __init__(self):
+        self.request = None
+
+    def get(self, url, **kwargs):
+        self.request = (url, kwargs)
+        return _Response({"values": [["level", "category"], ["party", "fuel_prices"]]})
+
+
+class _Credentials:
+    token = "test-token"
+
+
+def test_google_sheet_reader_requests_unformatted_rows():
+    client = _Client()
+    values = read_google_sheet_values("sheet-123", client=client, credentials=_Credentials())
+    assert values[1][1] == "fuel_prices"
+    assert client.request[0].endswith("/spreadsheets/sheet-123/values/engagement!A:O")
+    assert client.request[1]["params"]["valueRenderOption"] == "UNFORMATTED_VALUE"

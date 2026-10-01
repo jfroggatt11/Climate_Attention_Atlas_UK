@@ -2376,11 +2376,15 @@ live = [
 supabase = [
     { name = "psycopg", extra = ["binary"] },
 ]
+sheets = [
+    { name = "google-auth", extra = ["requests"] },
+]
 
 [package.metadata]
 requires-dist = [
     { name = "earthaccess", marker = "extra == 'live'", specifier = ">=0.13,<1" },
     { name = "google-cloud-bigquery", marker = "extra == 'bigquery'", specifier = ">=3.38,<4" },
+    { name = "google-auth", extras = ["requests"], marker = "extra == 'sheets'", specifier = ">=2,<3" },
     { name = "httpx", specifier = ">=0.27,<1" },
     { name = "netcdf4", marker = "extra == 'live'", specifier = ">=1.7,<2" },
     { name = "numpy", marker = "extra == 'live'", specifier = ">=2,<3" },
@@ -2394,7 +2398,7 @@ requires-dist = [
     { name = "requests", marker = "extra == 'live'", specifier = ">=2.31,<3" },
     { name = "xarray", marker = "extra == 'live'", specifier = ">=2024.10,<2027" },
 ]
-provides-extras = ["dev", "bigquery", "supabase", "live"]
+provides-extras = ["dev", "bigquery", "supabase", "sheets", "live"]
 
 [[package]]
 name = "urllib3"
