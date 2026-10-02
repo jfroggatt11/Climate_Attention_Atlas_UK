@@ -507,7 +507,14 @@ html,body,#root{margin:0;min-width:320px;min-height:100%;background:#eef3ef}
 .atlas-chart-plot .recharts-cartesian-grid-horizontal line{stroke:#e4ece7}
 .atlas-chart-plot .recharts-tooltip-wrapper{font-size:11px}
 .atlas-event-hover .recharts-tooltip-wrapper{visibility:hidden!important}
-.atlas-event-marker{cursor:help}
+.atlas-event-marker{cursor:help;pointer-events:all}
+/* Reference overlays are visual scaffolding.  If they remain hit targets,
+   a later overlapping event can sit above the marker the user is trying to
+   inspect.  The marker group opts back in so hover and keyboard focus stay
+   deterministic even when event ranges overlap. */
+.atlas-chart-plot .recharts-reference-area,.atlas-chart-plot .recharts-reference-line{pointer-events:none}
+.atlas-chart-plot .recharts-reference-area rect,.atlas-chart-plot .recharts-reference-line line,.atlas-chart-plot .recharts-reference-line rect{pointer-events:none!important}
+.atlas-chart-plot .recharts-reference-area .atlas-event-marker,.atlas-chart-plot .recharts-reference-line .atlas-event-marker,.atlas-chart-plot .atlas-event-marker rect{pointer-events:all!important}
 .atlas-layered-events{pointer-events:all}
 .atlas-event-marker:focus-visible{outline:2px solid #b64c4c;outline-offset:2px}
 .atlas-event-tooltip{position:fixed;z-index:1000;display:grid;gap:5px;box-sizing:border-box;width:280px;max-width:calc(100vw - 16px);padding:12px 14px;border:1px solid #d9e4df;border-left:3px solid #b64c4c;border-radius:6px;background:#fff;color:#233f49;box-shadow:0 4px 16px #233f4920;font-size:12px;pointer-events:none}

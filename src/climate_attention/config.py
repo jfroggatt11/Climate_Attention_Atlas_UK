@@ -135,6 +135,7 @@ RELEASE_CONFIG_FILES = (
     "geographies.yaml",
     "countries.uk-pilot.yaml",
     "political_signals.uk-pilot.yaml",
+    "events.uk-pilot.yaml",
 )
 
 

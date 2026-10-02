@@ -11,6 +11,7 @@ from typing import Any
 from .config import release_config_hash, release_config_hashes
 from .contracts import DailyAttention, DatasetRelease, EventRecord, ObservationRecord, PhysicalObservation, SourceSnapshot
 from .pipeline import CONFIG, release_content_hash, write_json
+from .registries import load_event_registry
 from .source_layers import layer_quality_report
 from .validation import audit_release
 
@@ -20,6 +21,27 @@ OPTIONAL = (
     "environment_agency_alerts", "modis_burned_area", "desnz_fuel_prices",
     "ons_cost_pressures", "brent_oil", "market_prices", "junkipedia_mp", "desnz_pat",
 )
+
+# GDACS can list several countries for a modelled hazard even when its event
+# centroid is outside the UK. Local flood and fire context should follow the
+# mapped event location; broad hazards such as tropical cyclones remain global
+# context when the UK is one of the affected countries.
+_UK_EVENT_BOUNDS = (-8.7, 49.5, 2.5, 60.9)
+
+
+def _is_uk_event_context(row: dict[str, Any]) -> bool:
+    if "GBR" not in row.get("country_iso3s", []):
+        return False
+    hazard_type = str(row.get("hazard_type", "")).lower()
+    if hazard_type in {"tropical_cyclone", "cyclone", "storm"}:
+        return True
+    geometry = row.get("geometry") or {}
+    coordinates = geometry.get("coordinates") if isinstance(geometry, dict) else None
+    if isinstance(coordinates, list) and len(coordinates) >= 2 and geometry.get("type") == "Point":
+        longitude, latitude = float(coordinates[0]), float(coordinates[1])
+        west, south, east, north = _UK_EVENT_BOUNDS
+        return west <= longitude <= east and south <= latitude <= north
+    return True
 
 
 def _load_bundle(root: Path, source: str) -> tuple[dict[str, Any], str]:
@@ -39,7 +61,17 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
     for source in OPTIONAL:
         if (root / source / "bundle.json").is_file():
             bundles[source] = _load_bundle(root, source)
-    created_at = datetime.now(timezone.utc)
+    # A candidate is assembled from immutable source bundles.  Use the latest
+    # bundle retrieval time as its creation timestamp so rebuilding the same
+    # inputs is byte/content reproducible instead of embedding wall-clock time.
+    retrieved_at = [
+        datetime.fromisoformat(
+            str(bundle["source_snapshot"]["retrieved_at"]).replace("Z", "+00:00")
+        )
+        for bundle, _ in bundles.values()
+        if bundle.get("source_snapshot", {}).get("retrieved_at")
+    ]
+    created_at = max(retrieved_at, default=datetime.now(timezone.utc))
     release_id = f"uk-atlas-candidate-{start.isoformat()}-{end.isoformat()}"
     snapshots: list[dict[str, Any]] = []
     source_hashes: dict[str, str] = {}
@@ -177,7 +209,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
 
     events = []
     for row in bundles["gdacs"][0]["records"]:
-        if "GBR" not in row.get("country_iso3s", []):
+        if not _is_uk_event_context(row):
             continue
         began = date.fromisoformat(row["start_at"][:10])
         finished = date.fromisoformat((row.get("end_at") or row["start_at"])[:10])
@@ -190,6 +222,32 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
             alert_level=row.get("alert_level"), source_url=row.get("source_url"),
             geometry=row.get("geometry"), release_id=release_id,
         ).model_dump(mode="json"))
+
+    # The event registry carries reviewed context which does not come from a
+    # continuously polled hazard feed: named UK storms, COP meetings and
+    # major geopolitical/economic moments.  Promote registry records into the
+    # same release shape so the browser can filter and hover them uniformly.
+    registry_path = CONFIG / "events.uk-pilot.yaml"
+    if registry_path.exists():
+        registry_version, registry_events = load_event_registry(registry_path)
+        existing_ids = {item["event_id"] for item in events}
+        for item in registry_events:
+            if item.start_at is None or item.event_id in existing_ids:
+                continue
+            began = item.start_at.date()
+            finished = (item.end_at or item.start_at).date()
+            if finished < start or began > end:
+                continue
+            events.append(EventRecord(
+                event_id=item.event_id, source=item.source,
+                event_type=item.event_type, name=item.canonical_name,
+                start_at=item.start_at, end_at=item.end_at,
+                geography_ids=item.geography_ids,
+                country_codes=item.country_codes,
+                source_url=(item.source_urls[0] if item.source_urls else None),
+                geometry=item.geometry, release_id=release_id,
+            ).model_dump(mode="json"))
+            existing_ids.add(item.event_id)
 
     definitions = [
         {"layer_id": "haduk_grid_weather", "label": "HadUK-Grid UK weather", "provider": "Met Office HadUK-Grid", "cadence": "monthly", "geography": "GB", "units": ["degrees_celsius"], "status": "adapter_ready", "source_url": "https://catalogue.ceda.ac.uk/uuid/ca4c331d666f4395b1346db9070094ab/", "access_requirement": "CEDA archive token", "independence_note": "Country area-average observed temperature; annual archive release.", "release_id": release_id},
@@ -230,6 +288,7 @@ def build_candidate(root: Path, *, start: date, end: date) -> dict[str, Any]:
         "metadata": {"panel_definition": "Junkipedia classified UK MP channels when available; no Bluesky panel collected", "article_denominator": "Unavailable",
                      "source_bundle_sha256": source_hashes,
                      "review_status": "candidate; physical and event context only",
+                     "event_registry_version": registry_version if registry_path.exists() else None,
                      "flood_snapshot_is_current_only": "environment_agency_alerts" in bundles},
     }
     data["release"]["content_hash"] = release_content_hash(data)

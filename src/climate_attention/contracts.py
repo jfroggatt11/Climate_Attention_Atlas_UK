@@ -219,11 +219,17 @@ class Event(Contract):
     event_id: str
     canonical_name: str
     event_type: str
+    # Registry events may be promoted into the release alongside provider
+    # records.  Keeping the provenance and affected countries here lets the
+    # timeline menu distinguish a GDACS hazard from a curated policy or storm
+    # context event without scraping names at render time.
+    source: Literal["gdacs", "firms", "custom"] = "custom"
     aliases: list[str] = Field(default_factory=list)
     start_at: datetime | None = None
     end_at: datetime | None = None
     geometry: dict[str, Any] | None = None
     geography_ids: list[str] = Field(default_factory=list)
+    country_codes: list[str] = Field(default_factory=list)
     external_ids: dict[str, str] = Field(default_factory=dict)
     source_urls: list[str] = Field(default_factory=list)
     registry_version: str

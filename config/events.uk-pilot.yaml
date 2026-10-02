@@ -1,7 +1,1466 @@
 schema_version: 1
-registry_version: uk-events-v1
-
-# Canonical tracked events are added only from sourced review.  An empty
-# registry is valid: broad event-category candidates remain available and
-# unresolved links are retained for later adjudication.
-events: []
+registry_version: uk-events-v2
+events:
+- event_id: unfccc:cop26
+  canonical_name: UN Climate Change Conference COP26 (Glasgow)
+  event_type: cop
+  source: custom
+  aliases: []
+  start_at: '2021-10-31T00:00:00Z'
+  end_at: '2021-11-13T23:59:59Z'
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - GBR
+  external_ids: {}
+  source_urls:
+  - https://unfccc.int/event/cop-26
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:arwen
+  canonical_name: Storm Arwen
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2021-11-26T00:00:00Z'
+  end_at: '2021-11-27T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:barra
+  canonical_name: Storm Barra
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2021-12-07T00:00:00Z'
+  end_at: '2021-12-08T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:malik
+  canonical_name: Storm Malik
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2022-01-29T00:00:00Z'
+  end_at: '2022-01-29T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:corrie
+  canonical_name: Storm Corrie
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2022-01-30T00:00:00Z'
+  end_at: '2022-01-31T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:dudley
+  canonical_name: Storm Dudley
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2022-02-16T00:00:00Z'
+  end_at: '2022-02-17T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:eunice
+  canonical_name: Storm Eunice
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2022-02-18T00:00:00Z'
+  end_at: '2022-02-18T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:franklin
+  canonical_name: Storm Franklin
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2022-02-20T00:00:00Z'
+  end_at: '2022-02-21T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2021-22
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22
+  registry_version: uk-events-v2
+- event_id: conflict:ukraine-invasion
+  canonical_name: Russia’s full-scale invasion of Ukraine
+  event_type: war
+  source: custom
+  aliases: []
+  start_at: '2022-02-24T00:00:00Z'
+  end_at: null
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - UKR
+  - RUS
+  external_ids: {}
+  source_urls:
+  - https://ukraine.un.org/en/173250-statement-secretary-general-%E2%80%93-ukraine
+  registry_version: uk-events-v2
+- event_id: economic:global-energy-shock-2022
+  canonical_name: 2022 global energy crisis escalates after Ukraine invasion
+  event_type: economic_shock
+  source: custom
+  aliases: []
+  start_at: '2022-02-24T00:00:00Z'
+  end_at: null
+  geometry: null
+  geography_ids:
+  - global
+  country_codes: []
+  external_ids: {}
+  source_urls:
+  - https://www.iea.org/topics/2022-energy-crisis
+  registry_version: uk-events-v2
+- event_id: unfccc:cop27
+  canonical_name: UN Climate Change Conference COP27 (Sharm el-Sheikh)
+  event_type: cop
+  source: custom
+  aliases: []
+  start_at: '2022-11-06T00:00:00Z'
+  end_at: '2022-11-20T23:59:59Z'
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - EGY
+  external_ids: {}
+  source_urls:
+  - https://unfccc.int/event/cop-27
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:otto
+  canonical_name: Storm Otto
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-02-17T00:00:00Z'
+  end_at: '2023-02-17T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2022-23
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23
+  registry_version: uk-events-v2
+- event_id: economic:opec-cut-2023
+  canonical_name: OPEC+ production cut announcement
+  event_type: oil_market
+  source: custom
+  aliases: []
+  start_at: '2023-04-02T00:00:00Z'
+  end_at: null
+  geometry: null
+  geography_ids:
+  - global
+  country_codes: []
+  external_ids: {}
+  source_urls:
+  - https://www.opec.org/pr-detail/63-03-apr-2023.html
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:noa
+  canonical_name: Storm Noa
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-04-12T00:00:00Z'
+  end_at: '2023-04-12T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2022-23
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23
+  registry_version: uk-events-v2
+- event_id: conflict:sudan-war
+  canonical_name: War in Sudan
+  event_type: war
+  source: custom
+  aliases: []
+  start_at: '2023-04-15T00:00:00Z'
+  end_at: null
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - SDN
+  external_ids: {}
+  source_urls:
+  - https://press.un.org/en/2023/sc15291.doc.htm
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:antoni
+  canonical_name: Storm Antoni
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-08-05T00:00:00Z'
+  end_at: '2023-08-05T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2022-23
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:betty
+  canonical_name: Storm Betty
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-08-18T00:00:00Z'
+  end_at: '2023-08-19T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2022-23
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:agnes
+  canonical_name: Storm Agnes
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-09-27T00:00:00Z'
+  end_at: '2023-09-28T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: conflict:israel-gaza
+  canonical_name: Israel–Hamas war
+  event_type: war
+  source: custom
+  aliases: []
+  start_at: '2023-10-07T00:00:00Z'
+  end_at: null
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - ISR
+  - PSE
+  external_ids: {}
+  source_urls:
+  - https://www.un.org/unispal/document/unrwa-situation-report-1-on-the-situation-in-the-gaza-strip/
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:babet
+  canonical_name: Storm Babet
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-10-18T00:00:00Z'
+  end_at: '2023-10-21T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:ciaran
+  canonical_name: Storm Ciarán
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-11-01T00:00:00Z'
+  end_at: '2023-11-02T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:debi
+  canonical_name: Storm Debi
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-11-13T00:00:00Z'
+  end_at: '2023-11-13T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: unfccc:cop28
+  canonical_name: UN Climate Change Conference COP28 (Dubai)
+  event_type: cop
+  source: custom
+  aliases: []
+  start_at: '2023-11-30T00:00:00Z'
+  end_at: '2023-12-13T23:59:59Z'
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - ARE
+  external_ids: {}
+  source_urls:
+  - https://unfccc.int/event/cop-28
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:elin
+  canonical_name: Storm Elin
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-12-09T00:00:00Z'
+  end_at: '2023-12-09T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:fergus
+  canonical_name: Storm Fergus
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-12-10T00:00:00Z'
+  end_at: '2023-12-10T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:gerrit
+  canonical_name: Storm Gerrit
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2023-12-27T00:00:00Z'
+  end_at: '2023-12-28T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:henk
+  canonical_name: Storm Henk
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-01-02T00:00:00Z'
+  end_at: '2024-01-02T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:isha
+  canonical_name: Storm Isha
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-01-21T00:00:00Z'
+  end_at: '2024-01-22T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:jocelyn
+  canonical_name: Storm Jocelyn
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-01-23T00:00:00Z'
+  end_at: '2024-01-24T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:kathleen
+  canonical_name: Storm Kathleen
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-04-06T00:00:00Z'
+  end_at: '2024-04-07T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:lilian
+  canonical_name: Storm Lilian
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-08-22T00:00:00Z'
+  end_at: '2024-08-23T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2023-24
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:ashley
+  canonical_name: Storm Ashley
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-10-20T00:00:00Z'
+  end_at: '2024-10-21T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2024-25
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25
+  registry_version: uk-events-v2
+- event_id: unfccc:cop29
+  canonical_name: UN Climate Change Conference COP29 (Baku)
+  event_type: cop
+  source: custom
+  aliases: []
+  start_at: '2024-11-11T00:00:00Z'
+  end_at: '2024-11-22T23:59:59Z'
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - AZE
+  external_ids: {}
+  source_urls:
+  - https://unfccc.int/event/cop-29
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:bert
+  canonical_name: Storm Bert
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-11-22T00:00:00Z'
+  end_at: '2024-11-25T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2024-25
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:conall
+  canonical_name: Storm Conall
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-11-27T00:00:00Z'
+  end_at: '2024-11-27T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2024-25
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:darragh
+  canonical_name: Storm Darragh
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2024-12-06T00:00:00Z'
+  end_at: '2024-12-07T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2024-25
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25
+  registry_version: uk-events-v2
+- event_id: gdacs:FL:1103066
+  canonical_name: Flood in United Kingdom
+  event_type: flood
+  source: gdacs
+  aliases: []
+  start_at: '2025-01-01T01:00:00+00:00'
+  end_at: '2025-01-08T01:00:00+00:00'
+  geometry:
+    coordinates:
+    - -1.0
+    - 52.6667
+    type: Point
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    gdacs: FL:1103066
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1103066&episodeid=3&eventtype=FL
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:eowyn
+  canonical_name: Storm Éowyn
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2025-01-24T00:00:00Z'
+  end_at: '2025-01-24T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2024-25
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024111
+  canonical_name: Forest fires in Greece
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-06-22T00:00:00+00:00'
+  end_at: '2025-06-23T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 26.1153
+    - 38.3927
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - GRC
+  external_ids:
+    gdacs: WF:1024111
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024111&episodeid=1&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024149
+  canonical_name: Forest fires in United Kingdom
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-06-28T00:00:00+00:00'
+  end_at: '2025-06-30T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -3.5788
+    - 57.4581
+    type: Point
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    gdacs: WF:1024149
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024149&episodeid=2&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024174
+  canonical_name: Forest fires in Greece
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-07-02T00:00:00+00:00'
+  end_at: '2025-07-03T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 25.864
+    - 35.0379
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - GRC
+  external_ids:
+    gdacs: WF:1024174
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024174&episodeid=3&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:floris
+  canonical_name: Storm Floris
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2025-08-04T00:00:00Z'
+  end_at: '2025-08-05T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2024-25
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024500
+  canonical_name: Forest fires in France
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-06T00:00:00+00:00'
+  end_at: '2025-08-07T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 2.6819
+    - 43.1043
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - FRA
+  external_ids:
+    gdacs: WF:1024500
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024500&episodeid=2&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024558
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-08T00:00:00+00:00'
+  end_at: '2025-08-18T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -7.353
+    - 42.2381
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1024558
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024558&episodeid=15&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024588
+  canonical_name: Forest fires in Portugal
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-10T00:00:00+00:00'
+  end_at: '2025-08-19T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -7.7548
+    - 40.1947
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - PRT
+  external_ids:
+    gdacs: WF:1024588
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024588&episodeid=12&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024567
+  canonical_name: Forest fires in Greece
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-12T00:00:00+00:00'
+  end_at: '2025-08-12T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 21.662
+    - 38.1224
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - GRC
+  external_ids:
+    gdacs: WF:1024567
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024567&episodeid=1&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024568
+  canonical_name: Forest fires in Greece
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-12T00:00:00+00:00'
+  end_at: '2025-08-14T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 20.892
+    - 39.2657
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - GRC
+  external_ids:
+    gdacs: WF:1024568
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024568&episodeid=3&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024571
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-13T00:00:00+00:00'
+  end_at: '2025-08-20T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -7.5414
+    - 41.9649
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1024571
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024571&episodeid=19&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024622
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-14T00:00:00+00:00'
+  end_at: '2025-08-21T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -7.0644
+    - 42.4521
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1024622
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024622&episodeid=9&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1024608
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2025-08-15T00:00:00+00:00'
+  end_at: '2025-08-17T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -7.0428
+    - 42.4661
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1024608
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1024608&episodeid=3&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:amy
+  canonical_name: Storm Amy
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2025-10-03T00:00:00Z'
+  end_at: '2025-10-04T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:benjamin
+  canonical_name: Storm Benjamin
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2025-10-22T00:00:00Z'
+  end_at: '2025-10-23T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: unfccc:cop30
+  canonical_name: UN Climate Change Conference COP30 (Belém)
+  event_type: cop
+  source: custom
+  aliases: []
+  start_at: '2025-11-10T00:00:00Z'
+  end_at: '2025-11-22T23:59:59Z'
+  geometry: null
+  geography_ids:
+  - global
+  country_codes:
+  - BRA
+  external_ids: {}
+  source_urls:
+  - https://unfccc.int/event/cop-30
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:claudia
+  canonical_name: Storm Claudia
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2025-11-14T00:00:00Z'
+  end_at: '2025-11-14T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:bram
+  canonical_name: Storm Bram
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2025-12-08T00:00:00Z'
+  end_at: '2025-12-10T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: gdacs:FL:1103661
+  canonical_name: Flood in Ireland, United Kingdom
+  event_type: flood
+  source: gdacs
+  aliases: []
+  start_at: '2025-12-09T01:00:00+00:00'
+  end_at: '2025-12-13T01:00:00+00:00'
+  geometry:
+    coordinates:
+    - -4.75
+    - 50.4167
+    type: Point
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  - IRL
+  external_ids:
+    gdacs: FL:1103661
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1103661&episodeid=2&eventtype=FL
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:goretti
+  canonical_name: Storm Goretti
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2026-01-08T00:00:00Z'
+  end_at: '2026-01-09T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:chandra
+  canonical_name: Storm Chandra
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2026-01-26T00:00:00Z'
+  end_at: '2026-01-27T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: gdacs:FL:1103745
+  canonical_name: Flood in United Kingdom
+  event_type: flood
+  source: gdacs
+  aliases: []
+  start_at: '2026-01-29T13:00:00+00:00'
+  end_at: '2026-01-29T13:00:00+00:00'
+  geometry:
+    coordinates:
+    - -3.75
+    - 50.75
+    type: Point
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    gdacs: FL:1103745
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1103745&episodeid=1&eventtype=FL
+  registry_version: uk-events-v2
+- event_id: metoffice:storm:dave
+  canonical_name: Storm Dave
+  event_type: named_storm
+  source: custom
+  aliases: []
+  start_at: '2026-04-04T00:00:00Z'
+  end_at: '2026-04-05T23:59:59Z'
+  geometry:
+    type: Point
+    coordinates:
+    - -2.5
+    - 55.5
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    metoffice_season: 2025-26
+  source_urls:
+  - https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1028568
+  canonical_name: Forest fires in United Kingdom
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-04-25T00:00:00+00:00'
+  end_at: '2026-05-01T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -3.6964
+    - 52.3123
+    type: Point
+  geography_ids:
+  - GB
+  country_codes:
+  - GBR
+  external_ids:
+    gdacs: WF:1028568
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1028568&episodeid=6&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029260
+  canonical_name: Forest fires in Portugal
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-02T00:00:00+00:00'
+  end_at: '2026-07-08T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -8.2824
+    - 40.6204
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - PRT
+  external_ids:
+    gdacs: WF:1029260
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029260&episodeid=11&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029331
+  canonical_name: Forest fires in France
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-04T00:00:00+00:00'
+  end_at: '2026-07-08T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 2.5677
+    - 42.6724
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - FRA
+  external_ids:
+    gdacs: WF:1029331
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=7&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029448
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-09T00:00:00+00:00'
+  end_at: '2026-07-11T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -2.0012
+    - 37.1805
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1029448
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029448&episodeid=4&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029489
+  canonical_name: Forest fires in France
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-12T00:00:00+00:00'
+  end_at: '2026-07-14T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 2.5494
+    - 48.375
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - FRA
+  external_ids:
+    gdacs: WF:1029489
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029489&episodeid=3&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029540
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-18T00:00:00+00:00'
+  end_at: '2026-07-25T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -3.0589
+    - 41.1147
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1029540
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029540&episodeid=9&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029628
+  canonical_name: Forest fires in France
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-22T00:00:00+00:00'
+  end_at: '2026-08-01T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -1.0329
+    - 44.8463
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - FRA
+  external_ids:
+    gdacs: WF:1029628
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029628&episodeid=32&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029643
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-22T00:00:00+00:00'
+  end_at: '2026-07-30T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -4.5405
+    - 40.3594
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1029643
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029643&episodeid=22&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029794
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-25T00:00:00+00:00'
+  end_at: '2026-07-30T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -0.2541
+    - 39.8863
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1029794
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029794&episodeid=15&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029958
+  canonical_name: Forest fires in Greece
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-30T00:00:00+00:00'
+  end_at: '2026-08-01T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 24.4625
+    - 35.1684
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - GRC
+  external_ids:
+    gdacs: WF:1029958
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029958&episodeid=4&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1029987
+  canonical_name: Forest fires in Greece
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-07-31T00:00:00+00:00'
+  end_at: '2026-08-05T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - 23.2591
+    - 38.122
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - GRC
+  external_ids:
+    gdacs: WF:1029987
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1029987&episodeid=18&eventtype=WF
+  registry_version: uk-events-v2
+- event_id: gdacs:WF:1030410
+  canonical_name: Forest fires in Spain
+  event_type: wildfire
+  source: gdacs
+  aliases: []
+  start_at: '2026-08-10T00:00:00+00:00'
+  end_at: '2026-08-17T00:00:00+00:00'
+  geometry:
+    coordinates:
+    - -0.7181
+    - 42.4725
+    type: Point
+  geography_ids:
+  - EU
+  country_codes:
+  - ESP
+  external_ids:
+    gdacs: WF:1030410
+  source_urls:
+  - https://www.gdacs.org/report.aspx?eventid=1030410&episodeid=23&eventtype=WF
+  registry_version: uk-events-v2

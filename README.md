@@ -61,6 +61,30 @@ Live temperature, greenness and public event collectors are documented in
 reviewable, source-separated bundles under `data/live/` and never replace the
 fixture release automatically.
 
+The candidate event catalogue combines the previous Wildfire-Trends GDACS
+export with the reviewed registry in [`config/events.uk-pilot.yaml`](config/events.uk-pilot.yaml).
+The registry contains UK-centred GDACS floods and fires, major European fires
+with orange/red GDACS alerts, Met Office named storms affecting the UK/Ireland,
+COP meetings, selected wars and major oil/energy market moments. Provider
+records retain their original countries and coordinates; a country listed in
+GDACS metadata does not by itself make an event UK-local.
+
+To refresh the previous-repository GDACS snapshot while preserving the curated
+events, run:
+
+```bash
+.venv/bin/python scripts/update_event_registry.py \
+  --source ../Wildfire-Trends/frontend/public/data/events.geojson
+.venv/bin/uk-atlas build-live-candidate \
+  --start 2021-09-01 --end 2026-10-01
+.venv/bin/uk-atlas validate-live-candidate
+```
+
+The fixture build is deterministic. Live candidates now derive their creation
+time from the latest input snapshot, so identical bundles and configuration
+produce the same content hash. Refreshing named storms, COPs, conflicts or
+economic context remains a reviewed YAML change rather than an automatic feed.
+
 Build and validate the real-data candidate, then open the app. The browser now
 uses the candidate by default; add `?release=fixture` when you explicitly want
 the synthetic interface fixture:

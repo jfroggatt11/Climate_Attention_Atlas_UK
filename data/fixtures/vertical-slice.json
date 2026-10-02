@@ -17595,6 +17595,23 @@
       ]
     },
     {
+      "access_requirement": "public GOV.UK time-series workbook; retain OGL attribution and source-file hashes",
+      "cadence": "triannual",
+      "geography": "UK",
+      "independence_note": "Weighted survey response shares from UK adults aged 16+; irregular wave observations remain separate from media, search and social attention.",
+      "label": "UK public attitudes \u00b7 DESNZ PAT",
+      "layer_id": "desnz_pat",
+      "provider": "DESNZ",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "schema_version": 1,
+      "source_url": "https://www.gov.uk/government/collections/public-attitudes-tracking-survey",
+      "status": "adapter_ready",
+      "units": [
+        "percent",
+        "sample_size"
+      ]
+    },
+    {
       "access_requirement": "T&E-owned API key for durable refresh",
       "cadence": "daily",
       "geography": "GB",
@@ -18145,15 +18162,16 @@
     "configuration_files": {
       "account_panel.yaml": "cd8d895fe32dd5c723259533dacd78ee6ede53cd0f85a6ccdaec9f8ab8cda26e",
       "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
+      "events.uk-pilot.yaml": "85950e0441b4edf8ad24adc52d2b5d8f247bc4dd0ca823a0750cd2a0e6a81a97",
       "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "outlet_registry.yaml": "7d768008877bb8f822f09c29275d8a8d88366f965f491a47bb610766e23ce64a",
       "political_signals.uk-pilot.yaml": "f83c6becb1f86d366938f9aef134369dbcc9d178f3d02a91bdf5de5b69f5909c",
-      "source_layers.yaml": "c439ff42cac608c31b4261637f8dc027ff7391304889dc6bc2732408670e24db",
+      "source_layers.yaml": "b20177f4248447bfaba28993b3ad2408bff0d38ff0805e348518f03bcc796489",
       "topics.uk-pilot.yaml": "0c96577856c3545ef2f9d566cd87eb5585426572188908bd68408a9abfcd952e"
     },
-    "configuration_hash": "a6f3e33452e7f165f885bb5d23f34573e89b1aec8413f6ca80e1d6d1fd36aa39",
+    "configuration_hash": "0e0e7defdb5dfffe4441555317445b1fa03716ef387d90fce7655ea0488dc9e6",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "87e7cfc7e459340f783cbf8628ba5c8516d7fdb0f9fd65ed2b2c89ab1e346dc5",
+    "content_hash": "075c2089d963233c30ac6836a31c8e77b7ce49d85eb08d38061394b7294f3daf",
     "created_at": "2026-08-31T12:00:00Z",
     "date_end": "2026-08-30",
     "date_start": "2026-08-01",
@@ -18168,6 +18186,7 @@
       "bluesky": "seed-panel-fixture-v1",
       "brent_oil": "brent_oil-fixture-v1",
       "desnz_fuel_prices": "desnz_fuel_prices-fixture-v1",
+      "desnz_pat": "desnz_pat-fixture-v1",
       "environment_agency_alerts": "environment_agency_alerts-fixture-v1",
       "firms": "fixture-v1",
       "firms_hotspots": "firms_hotspots-fixture-v1",
@@ -19500,6 +19519,21 @@
       "schema_version": 1,
       "snapshot_id": "polling_opinion-fixture-v1",
       "source": "polling_opinion",
+      "status": "access_pending"
+    },
+    {
+      "completeness": 0.0,
+      "endpoint": "https://www.gov.uk/government/collections/public-attitudes-tracking-survey",
+      "notes": "public GOV.UK time-series workbook; retain OGL attribution and source-file hashes",
+      "observed_end": null,
+      "observed_start": null,
+      "rate_limit_note": "Fixture; no provider request made.",
+      "release_id": "uk-atlas-fixture-2026-08-01-2026-08-30",
+      "request_count": 0,
+      "retrieved_at": "2026-08-30T16:00:00Z",
+      "schema_version": 1,
+      "snapshot_id": "desnz_pat-fixture-v1",
+      "source": "desnz_pat",
       "status": "access_pending"
     },
     {

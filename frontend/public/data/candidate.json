@@ -233145,33 +233145,6 @@
     {
       "alert_level": "Green",
       "country_codes": [
-        "GBR",
-        "IRL"
-      ],
-      "end_at": "2025-01-25T01:00:00Z",
-      "event_id": "gdacs:FL:1103096",
-      "event_type": "flood",
-      "geography_ids": [
-        "GB"
-      ],
-      "geometry": {
-        "coordinates": [
-          -9.0759,
-          53.2594
-        ],
-        "type": "Point"
-      },
-      "name": "Flood in Ireland, United Kingdom",
-      "quality_status": "observed",
-      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
-      "schema_version": 1,
-      "source": "gdacs",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103096&episodeid=1&eventtype=FL",
-      "start_at": "2025-01-23T01:00:00Z"
-    },
-    {
-      "alert_level": "Green",
-      "country_codes": [
         "GBR"
       ],
       "end_at": "2025-06-30T00:00:00Z",
@@ -233233,33 +233206,6 @@
       "alert_level": "Green",
       "country_codes": [
         "GBR",
-        "PRT"
-      ],
-      "end_at": "2025-11-17T13:00:00Z",
-      "event_id": "gdacs:FL:1103612",
-      "event_type": "flood",
-      "geography_ids": [
-        "GB"
-      ],
-      "geometry": {
-        "coordinates": [
-          -9.1073,
-          38.6422
-        ],
-        "type": "Point"
-      },
-      "name": "Flood in Portugal, United Kingdom",
-      "quality_status": "observed",
-      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
-      "schema_version": 1,
-      "source": "gdacs",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103612&episodeid=1&eventtype=FL",
-      "start_at": "2025-11-17T13:00:00Z"
-    },
-    {
-      "alert_level": "Green",
-      "country_codes": [
-        "GBR",
         "IRL"
       ],
       "end_at": "2025-12-13T01:00:00Z",
@@ -233282,6 +233228,1738 @@
       "source": "gdacs",
       "source_url": "https://www.gdacs.org/report.aspx?eventid=1103661&episodeid=2&eventtype=FL",
       "start_at": "2025-12-09T01:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2021-11-13T23:59:59Z",
+      "event_id": "unfccc:cop26",
+      "event_type": "cop",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "UN Climate Change Conference COP26 (Glasgow)",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://unfccc.int/event/cop-26",
+      "start_at": "2021-10-31T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2021-11-27T23:59:59Z",
+      "event_id": "metoffice:storm:arwen",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Arwen",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2021-11-26T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2021-12-08T23:59:59Z",
+      "event_id": "metoffice:storm:barra",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Barra",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2021-12-07T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2022-01-29T23:59:59Z",
+      "event_id": "metoffice:storm:malik",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Malik",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2022-01-29T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2022-01-31T23:59:59Z",
+      "event_id": "metoffice:storm:corrie",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Corrie",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2022-01-30T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2022-02-17T23:59:59Z",
+      "event_id": "metoffice:storm:dudley",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Dudley",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2022-02-16T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2022-02-18T23:59:59Z",
+      "event_id": "metoffice:storm:eunice",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Eunice",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2022-02-18T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2022-02-21T23:59:59Z",
+      "event_id": "metoffice:storm:franklin",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Franklin",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2021-22",
+      "start_at": "2022-02-20T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "UKR",
+        "RUS"
+      ],
+      "end_at": null,
+      "event_id": "conflict:ukraine-invasion",
+      "event_type": "war",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "Russia\u2019s full-scale invasion of Ukraine",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://ukraine.un.org/en/173250-statement-secretary-general-%E2%80%93-ukraine",
+      "start_at": "2022-02-24T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [],
+      "end_at": null,
+      "event_id": "economic:global-energy-shock-2022",
+      "event_type": "economic_shock",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "2022 global energy crisis escalates after Ukraine invasion",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://www.iea.org/topics/2022-energy-crisis",
+      "start_at": "2022-02-24T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "EGY"
+      ],
+      "end_at": "2022-11-20T23:59:59Z",
+      "event_id": "unfccc:cop27",
+      "event_type": "cop",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "UN Climate Change Conference COP27 (Sharm el-Sheikh)",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://unfccc.int/event/cop-27",
+      "start_at": "2022-11-06T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-02-17T23:59:59Z",
+      "event_id": "metoffice:storm:otto",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Otto",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23",
+      "start_at": "2023-02-17T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [],
+      "end_at": null,
+      "event_id": "economic:opec-cut-2023",
+      "event_type": "oil_market",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "OPEC+ production cut announcement",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://www.opec.org/pr-detail/63-03-apr-2023.html",
+      "start_at": "2023-04-02T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-04-12T23:59:59Z",
+      "event_id": "metoffice:storm:noa",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Noa",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23",
+      "start_at": "2023-04-12T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "SDN"
+      ],
+      "end_at": null,
+      "event_id": "conflict:sudan-war",
+      "event_type": "war",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "War in Sudan",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://press.un.org/en/2023/sc15291.doc.htm",
+      "start_at": "2023-04-15T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-08-05T23:59:59Z",
+      "event_id": "metoffice:storm:antoni",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Antoni",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23",
+      "start_at": "2023-08-05T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-08-19T23:59:59Z",
+      "event_id": "metoffice:storm:betty",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Betty",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2022-23",
+      "start_at": "2023-08-18T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-09-28T23:59:59Z",
+      "event_id": "metoffice:storm:agnes",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Agnes",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-09-27T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ISR",
+        "PSE"
+      ],
+      "end_at": null,
+      "event_id": "conflict:israel-gaza",
+      "event_type": "war",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "Israel\u2013Hamas war",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://www.un.org/unispal/document/unrwa-situation-report-1-on-the-situation-in-the-gaza-strip/",
+      "start_at": "2023-10-07T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-10-21T23:59:59Z",
+      "event_id": "metoffice:storm:babet",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Babet",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-10-18T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-11-02T23:59:59Z",
+      "event_id": "metoffice:storm:ciaran",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Ciar\u00e1n",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-11-01T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-11-13T23:59:59Z",
+      "event_id": "metoffice:storm:debi",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Debi",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-11-13T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ARE"
+      ],
+      "end_at": "2023-12-13T23:59:59Z",
+      "event_id": "unfccc:cop28",
+      "event_type": "cop",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "UN Climate Change Conference COP28 (Dubai)",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://unfccc.int/event/cop-28",
+      "start_at": "2023-11-30T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-12-09T23:59:59Z",
+      "event_id": "metoffice:storm:elin",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Elin",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-12-09T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-12-10T23:59:59Z",
+      "event_id": "metoffice:storm:fergus",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Fergus",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-12-10T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2023-12-28T23:59:59Z",
+      "event_id": "metoffice:storm:gerrit",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Gerrit",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2023-12-27T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-01-02T23:59:59Z",
+      "event_id": "metoffice:storm:henk",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Henk",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2024-01-02T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-01-22T23:59:59Z",
+      "event_id": "metoffice:storm:isha",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Isha",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2024-01-21T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-01-24T23:59:59Z",
+      "event_id": "metoffice:storm:jocelyn",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Jocelyn",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2024-01-23T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-04-07T23:59:59Z",
+      "event_id": "metoffice:storm:kathleen",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Kathleen",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2024-04-06T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-08-23T23:59:59Z",
+      "event_id": "metoffice:storm:lilian",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Lilian",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2023-24",
+      "start_at": "2024-08-22T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-10-21T23:59:59Z",
+      "event_id": "metoffice:storm:ashley",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Ashley",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25",
+      "start_at": "2024-10-20T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "AZE"
+      ],
+      "end_at": "2024-11-22T23:59:59Z",
+      "event_id": "unfccc:cop29",
+      "event_type": "cop",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "UN Climate Change Conference COP29 (Baku)",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://unfccc.int/event/cop-29",
+      "start_at": "2024-11-11T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-11-25T23:59:59Z",
+      "event_id": "metoffice:storm:bert",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Bert",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25",
+      "start_at": "2024-11-22T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-11-27T23:59:59Z",
+      "event_id": "metoffice:storm:conall",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Conall",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25",
+      "start_at": "2024-11-27T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2024-12-07T23:59:59Z",
+      "event_id": "metoffice:storm:darragh",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Darragh",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25",
+      "start_at": "2024-12-06T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-01-24T23:59:59Z",
+      "event_id": "metoffice:storm:eowyn",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm \u00c9owyn",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25",
+      "start_at": "2025-01-24T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GRC"
+      ],
+      "end_at": "2025-06-23T00:00:00Z",
+      "event_id": "gdacs:WF:1024111",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          26.1153,
+          38.3927
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Greece",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024111&episodeid=1&eventtype=WF",
+      "start_at": "2025-06-22T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GRC"
+      ],
+      "end_at": "2025-07-03T00:00:00Z",
+      "event_id": "gdacs:WF:1024174",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          25.864,
+          35.0379
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Greece",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024174&episodeid=3&eventtype=WF",
+      "start_at": "2025-07-02T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-08-05T23:59:59Z",
+      "event_id": "metoffice:storm:floris",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Floris",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-2024-25",
+      "start_at": "2025-08-04T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "FRA"
+      ],
+      "end_at": "2025-08-07T00:00:00Z",
+      "event_id": "gdacs:WF:1024500",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          2.6819,
+          43.1043
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in France",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024500&episodeid=2&eventtype=WF",
+      "start_at": "2025-08-06T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2025-08-18T00:00:00Z",
+      "event_id": "gdacs:WF:1024558",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -7.353,
+          42.2381
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024558&episodeid=15&eventtype=WF",
+      "start_at": "2025-08-08T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "PRT"
+      ],
+      "end_at": "2025-08-19T00:00:00Z",
+      "event_id": "gdacs:WF:1024588",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -7.7548,
+          40.1947
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Portugal",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024588&episodeid=12&eventtype=WF",
+      "start_at": "2025-08-10T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GRC"
+      ],
+      "end_at": "2025-08-12T00:00:00Z",
+      "event_id": "gdacs:WF:1024567",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          21.662,
+          38.1224
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Greece",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024567&episodeid=1&eventtype=WF",
+      "start_at": "2025-08-12T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GRC"
+      ],
+      "end_at": "2025-08-14T00:00:00Z",
+      "event_id": "gdacs:WF:1024568",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          20.892,
+          39.2657
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Greece",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024568&episodeid=3&eventtype=WF",
+      "start_at": "2025-08-12T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2025-08-20T00:00:00Z",
+      "event_id": "gdacs:WF:1024571",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -7.5414,
+          41.9649
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024571&episodeid=19&eventtype=WF",
+      "start_at": "2025-08-13T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2025-08-21T00:00:00Z",
+      "event_id": "gdacs:WF:1024622",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -7.0644,
+          42.4521
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024622&episodeid=9&eventtype=WF",
+      "start_at": "2025-08-14T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2025-08-17T00:00:00Z",
+      "event_id": "gdacs:WF:1024608",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -7.0428,
+          42.4661
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1024608&episodeid=3&eventtype=WF",
+      "start_at": "2025-08-15T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-10-04T23:59:59Z",
+      "event_id": "metoffice:storm:amy",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Amy",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2025-10-03T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-10-23T23:59:59Z",
+      "event_id": "metoffice:storm:benjamin",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Benjamin",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2025-10-22T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "BRA"
+      ],
+      "end_at": "2025-11-22T23:59:59Z",
+      "event_id": "unfccc:cop30",
+      "event_type": "cop",
+      "geography_ids": [
+        "global"
+      ],
+      "geometry": null,
+      "name": "UN Climate Change Conference COP30 (Bel\u00e9m)",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://unfccc.int/event/cop-30",
+      "start_at": "2025-11-10T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-11-14T23:59:59Z",
+      "event_id": "metoffice:storm:claudia",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Claudia",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2025-11-14T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2025-12-10T23:59:59Z",
+      "event_id": "metoffice:storm:bram",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Bram",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2025-12-08T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2026-01-09T23:59:59Z",
+      "event_id": "metoffice:storm:goretti",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Goretti",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2026-01-08T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2026-01-27T23:59:59Z",
+      "event_id": "metoffice:storm:chandra",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Chandra",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2026-01-26T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2026-01-29T13:00:00Z",
+      "event_id": "gdacs:FL:1103745",
+      "event_type": "flood",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -3.75,
+          50.75
+        ],
+        "type": "Point"
+      },
+      "name": "Flood in United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1103745&episodeid=1&eventtype=FL",
+      "start_at": "2026-01-29T13:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2026-04-05T23:59:59Z",
+      "event_id": "metoffice:storm:dave",
+      "event_type": "named_storm",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.5,
+          55.5
+        ],
+        "type": "Point"
+      },
+      "name": "Storm Dave",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "custom",
+      "source_url": "https://weather.metoffice.gov.uk/warnings-and-advice/uk-storm-centre/uk-storm-season-202526",
+      "start_at": "2026-04-04T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GBR"
+      ],
+      "end_at": "2026-05-01T00:00:00Z",
+      "event_id": "gdacs:WF:1028568",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "GB"
+      ],
+      "geometry": {
+        "coordinates": [
+          -3.6964,
+          52.3123
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in United Kingdom",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1028568&episodeid=6&eventtype=WF",
+      "start_at": "2026-04-25T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "PRT"
+      ],
+      "end_at": "2026-07-08T00:00:00Z",
+      "event_id": "gdacs:WF:1029260",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -8.2824,
+          40.6204
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Portugal",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029260&episodeid=11&eventtype=WF",
+      "start_at": "2026-07-02T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "FRA"
+      ],
+      "end_at": "2026-07-08T00:00:00Z",
+      "event_id": "gdacs:WF:1029331",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          2.5677,
+          42.6724
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in France",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029331&episodeid=7&eventtype=WF",
+      "start_at": "2026-07-04T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2026-07-11T00:00:00Z",
+      "event_id": "gdacs:WF:1029448",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -2.0012,
+          37.1805
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029448&episodeid=4&eventtype=WF",
+      "start_at": "2026-07-09T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "FRA"
+      ],
+      "end_at": "2026-07-14T00:00:00Z",
+      "event_id": "gdacs:WF:1029489",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          2.5494,
+          48.375
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in France",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029489&episodeid=3&eventtype=WF",
+      "start_at": "2026-07-12T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2026-07-25T00:00:00Z",
+      "event_id": "gdacs:WF:1029540",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -3.0589,
+          41.1147
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029540&episodeid=9&eventtype=WF",
+      "start_at": "2026-07-18T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "FRA"
+      ],
+      "end_at": "2026-08-01T00:00:00Z",
+      "event_id": "gdacs:WF:1029628",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -1.0329,
+          44.8463
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in France",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029628&episodeid=32&eventtype=WF",
+      "start_at": "2026-07-22T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2026-07-30T00:00:00Z",
+      "event_id": "gdacs:WF:1029643",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -4.5405,
+          40.3594
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029643&episodeid=22&eventtype=WF",
+      "start_at": "2026-07-22T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2026-07-30T00:00:00Z",
+      "event_id": "gdacs:WF:1029794",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -0.2541,
+          39.8863
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029794&episodeid=15&eventtype=WF",
+      "start_at": "2026-07-25T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GRC"
+      ],
+      "end_at": "2026-08-01T00:00:00Z",
+      "event_id": "gdacs:WF:1029958",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          24.4625,
+          35.1684
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Greece",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029958&episodeid=4&eventtype=WF",
+      "start_at": "2026-07-30T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "GRC"
+      ],
+      "end_at": "2026-08-05T00:00:00Z",
+      "event_id": "gdacs:WF:1029987",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          23.2591,
+          38.122
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Greece",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1029987&episodeid=18&eventtype=WF",
+      "start_at": "2026-07-31T00:00:00Z"
+    },
+    {
+      "alert_level": null,
+      "country_codes": [
+        "ESP"
+      ],
+      "end_at": "2026-08-17T00:00:00Z",
+      "event_id": "gdacs:WF:1030410",
+      "event_type": "wildfire",
+      "geography_ids": [
+        "EU"
+      ],
+      "geometry": {
+        "coordinates": [
+          -0.7181,
+          42.4725
+        ],
+        "type": "Point"
+      },
+      "name": "Forest fires in Spain",
+      "quality_status": "observed",
+      "release_id": "uk-atlas-candidate-2021-09-01-2026-10-01",
+      "schema_version": 1,
+      "source": "gdacs",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1030410&episodeid=23&eventtype=WF",
+      "start_at": "2026-08-10T00:00:00Z"
     }
   ],
   "layer_definitions": [
@@ -233481,6 +235159,7 @@
   ],
   "metadata": {
     "article_denominator": "Unavailable",
+    "event_registry_version": "uk-events-v2",
     "flood_snapshot_is_current_only": true,
     "panel_definition": "Junkipedia classified UK MP channels when available; no Bluesky panel collected",
     "review_status": "candidate; physical and event context only",
@@ -311439,16 +313118,17 @@
     "configuration_files": {
       "account_panel.yaml": "cd8d895fe32dd5c723259533dacd78ee6ede53cd0f85a6ccdaec9f8ab8cda26e",
       "countries.uk-pilot.yaml": "3f0573c0696a80712aa848b6a384fbe32b21a2d86af14b9c3f0d5bee819db75b",
+      "events.uk-pilot.yaml": "85950e0441b4edf8ad24adc52d2b5d8f247bc4dd0ca823a0750cd2a0e6a81a97",
       "geographies.yaml": "e96f15c09ed4cdddbaa96a35e806ab996968041fc4d282b1b308d5c523474031",
       "outlet_registry.yaml": "7d768008877bb8f822f09c29275d8a8d88366f965f491a47bb610766e23ce64a",
       "political_signals.uk-pilot.yaml": "f83c6becb1f86d366938f9aef134369dbcc9d178f3d02a91bdf5de5b69f5909c",
       "source_layers.yaml": "b20177f4248447bfaba28993b3ad2408bff0d38ff0805e348518f03bcc796489",
       "topics.uk-pilot.yaml": "0c96577856c3545ef2f9d566cd87eb5585426572188908bd68408a9abfcd952e"
     },
-    "configuration_hash": "af507a1113ad856b3be01b13f25af5f26912d6be39385e6ebce0d9a592af8f25",
+    "configuration_hash": "0e0e7defdb5dfffe4441555317445b1fa03716ef387d90fce7655ea0488dc9e6",
     "configuration_version": "uk-pilot-v1",
-    "content_hash": "db614261c8a7f4a6478546c9f903aefdcd78213629cc2b34d15427ab1ddc18e6",
-    "created_at": "2026-10-01T12:16:22.835554Z",
+    "content_hash": "6d1eb52e0a94b35da6028f7fdaa4c9238329783229e6bae61bd108efd7ed8eb9",
+    "created_at": "2026-10-01T12:15:37.505561Z",
     "date_end": "2026-10-01",
     "date_start": "2021-09-01",
     "frontend_assets": [
@@ -311476,7 +313156,7 @@
     "supabase_rows": {
       "article_records": 0,
       "daily_attention": 3051,
-      "events": 6,
+      "events": 73,
       "layer_observations": 3122,
       "physical_observations": 3634
     }
