@@ -240,7 +240,11 @@
     .atlas-app .atlas-event-menu-actions>span { margin-right: auto; }
     .atlas-app .atlas-event-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; }
     .atlas-app .atlas-event-group { padding: 10px; border: 1px solid #eadfce; border-radius: 7px; background: #fff; }
-    .atlas-app .atlas-event-group-heading { display: grid; gap: 2px; margin-bottom: 8px; }
+    .atlas-app .atlas-event-group-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: start; gap: 8px; margin-bottom: 8px; cursor: pointer; list-style: none; }
+    .atlas-app .atlas-event-group-heading::-webkit-details-marker { display: none; }
+    .atlas-app .atlas-event-group-heading::after { content: '⌄'; color: var(--atlas-muted); font-size: 14px; line-height: 1; }
+    .atlas-app .atlas-event-group:not([open]) .atlas-event-group-heading::after { content: '›'; }
+    .atlas-app .atlas-event-group-heading > span { display: grid; gap: 2px; }
     .atlas-app .atlas-event-group-heading strong { color: #5c462f; font-size: 11px; }
     .atlas-app .atlas-event-group-heading small { color: var(--atlas-muted); font-size: 9px; }
     .atlas-app .atlas-event-subgroup { display: grid; gap: 5px; margin-top: 8px; }
