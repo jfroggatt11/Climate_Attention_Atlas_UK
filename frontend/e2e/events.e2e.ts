@@ -1,12 +1,23 @@
 import { expect, test } from '@playwright/test'
 
+test('event menu groups hazards and cleans provider country labels', async ({ page }) => {
+  await page.goto('/timeline?release=candidate')
+  await page.getByText('Browse and select events', { exact: true }).click()
+  await expect(page.locator('.atlas-event-group-heading').getByText('Weather and hazards', { exact: true })).toBeVisible()
+  await expect(page.getByText('Flood affecting Portugal and the United Kingdom', { exact: true })).toBeVisible()
+  await page.getByLabel('Event type').selectOption('weather')
+  await expect(page.locator('.atlas-event-option')).toHaveCount(6)
+  await page.locator('.atlas-event-filters select').nth(1).selectOption('local')
+  await expect(page.locator('.atlas-event-subgroup h4').getByText('Global / regional', { exact: true })).toHaveCount(0)
+})
+
 for (const plot of ['lines']) {
   test(`event tooltips show original dates in ${plot}`, async ({ page }, testInfo) => {
     await page.goto(`/timeline?left=physical:desnz_fuel_prices:uk_diesel&right=physical:market_prices:tsla&events=all&plot=${plot}`)
     const tooltip = page.getByRole('tooltip')
     const range = page.locator('[data-event-id="gdacs:FL:1103066"]')
     await range.hover({ force: plot === 'layers' })
-    await expect(tooltip).toContainText('Flood in United Kingdom')
+    await expect(tooltip).toContainText('Flood in the United Kingdom')
     await expect(tooltip).toContainText('Start: 01 Jan 2025')
     await expect(tooltip).toContainText('End: 08 Jan 2025')
     await page.screenshot({ path: testInfo.outputPath('event-tooltip.png') })
@@ -14,7 +25,7 @@ for (const plot of ['lines']) {
     await expect(tooltip).toHaveCount(0)
 
     await page.locator('[data-event-id="gdacs:FL:1103612"]').hover()
-    await expect(tooltip).toContainText('Flood in Portugal, United Kingdom')
+    await expect(tooltip).toContainText('Flood affecting Portugal and the United Kingdom')
     await expect(tooltip).toContainText('Start: 17 Nov 2025')
     await expect(tooltip).toContainText('End: 17 Nov 2025')
 

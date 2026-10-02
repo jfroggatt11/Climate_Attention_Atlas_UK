@@ -6,9 +6,9 @@ monitored-account social posts, polling, search interest and MODIS vegetation
 observations as separate layers with explicit units and denominators.
 
 The published layer hierarchy has three top-level groups: **External events and
-conditions** (Climate, Energy markets and Events), **Attention and public attitudes**
+conditions** (Climate and Events), **Attention and public attitudes**
 (News, Search, Social and Polling), and **Secondary impacts and responses**
-(Economic, Political and Disruption). Events remain X-axis markers; observed series
+(Economic, Political and Disruption). Brent crude, petrol and diesel prices are grouped under Economic. Events remain X-axis markers; observed series
 from the other categories can be assigned to chart axes when available.
 
 The checked-in fixture remains a local, reproducible **synthetic fixture / engineering

@@ -87,10 +87,10 @@
   measure. Available measures are organised in collapsible data categories and can now be
   assigned to either chart axis with unit-compatible axes, source labels and
   URL-persisted series selections. Events remain separate x-axis markers.
-- 2026-09-27: Published the three-level layer hierarchy: External events and conditions, Attention and public attitudes, and Secondary impacts and responses. Energy markets are kept with external conditions for Brent shocks; household prices, shares, policy and disruption remain secondary impacts.
+- 2026-09-27: Published the three-level layer hierarchy: External events and conditions, Attention and public attitudes, and Secondary impacts and responses. Brent crude, petrol and diesel prices are grouped under the Economic category; climate observations and events remain under External events and conditions.
 
 ## Shared data-layer taxonomy
 
-The atlas uses three top-level groups across every page and visualisation: **External events and conditions** (dated hazards and geopolitical events, plus environmental measures, energy-market shocks and other external conditions), **Attention and public attitudes** (News, Search, Social and Polling), and **Secondary impacts and responses** (Economic, Political and Disruption). Each category has one label and colour in the picker, axes, map controls, methods page and source registry. A source's group describes its analytical role, not a causal claim: temperature, rainfall, greenness and burned area are observations, while events are dated markers.
+The atlas uses three top-level groups across every page and visualisation: **External events and conditions** (dated hazards and environmental measures), **Attention and public attitudes** (News, Search, Social and Polling), and **Secondary impacts and responses** (Economic, Political and Disruption). Each category has one label and colour in the picker, axes, map controls, methods page and source registry. Brent crude, petrol and diesel prices appear together under Economic. A source's group describes its analytical role, not a causal claim: temperature, rainfall, greenness and burned area are observations, while events are dated markers.
 
 Events are stored separately from time-series measures: single dates render as points and start/end ranges as shaded regions on the X axis. External conditions and secondary impacts can be added to either Y axis when an observed measure is available. Pending categories and sources remain visible with their access status.
